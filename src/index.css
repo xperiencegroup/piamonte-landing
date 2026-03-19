@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@theme {
+  --font-dmsans: "DM Sans";
+
+  /* Font sizes */
+  --text-boton: clamp(11px, 1.40625vw, 18px);
+
+  /* Colors */
+  --color-gris: #33302b;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
