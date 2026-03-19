@@ -1,7 +1,3 @@
 export default function Ubicacion() {
-  return (
-    <div>
-      <Ubicacion />
-    </div>
-  );
+  return <div>Ubicación</div>;
 }

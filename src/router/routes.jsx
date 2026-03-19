@@ -3,7 +3,7 @@ import Home from "@/pages/Home.jsx";
 import Ubicacion from "@/pages/Ubicacion";
 import Nosotros from "@/pages/Nosotros";
 import Contacto from "@/pages/Contacto";
-import MainLayout from "@/components/layouts/MainLayout";
+import MainLayout from "@/layouts/MainLayout/MainLayout";
 
 export default function Router() {
   return (
