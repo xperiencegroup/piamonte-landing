@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   font-synthesis: none;
@@ -14,7 +15,16 @@
   --text-boton: clamp(11px, 1.40625vw, 18px);
 
   /* Colors */
+  --color-nude: #eeece0;
   --color-gris: #33302b;
+  --color-cafe: #513a2b;
+  --color-amarillo: #efe181;
+}
+
+@layer base {
+  * {
+    @apply transition-colors duration-150;
+  }
 }
 
 * {
