@@ -17,3 +17,14 @@
   font-style: italic;
   font-display: swap;
 }
+
+/* SelineaBonique */
+
+@font-face {
+  font-family: "Selinea Bonique";
+  src: url("/src/assets/fonts/SelineaBonique/SelineaBonique.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

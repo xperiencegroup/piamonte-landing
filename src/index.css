@@ -10,15 +10,19 @@
 
 @theme {
   --font-dmsans: "DM Sans";
+  --font-selinea: "Selinea Bonique";
 
   /* Font sizes */
   --text-boton: clamp(11px, 1.40625vw, 18px);
+  --text-paragraph: clamp(8px, 1.484375vw, 19px);
+  --text-letter-title: clamp(27px, 4.6875vw, 60px);
 
   /* Colors */
   --color-nude: #eeece0;
   --color-gris: #33302b;
   --color-cafe: #513a2b;
   --color-amarillo: #efe181;
+  --color-verde: #374432;
 }
 
 @layer base {
@@ -33,5 +37,5 @@
 }
 
 body {
-  background-color: #333;
+  @apply bg-cyan-500 font-dmsans;
 }
