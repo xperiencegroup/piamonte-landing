@@ -8,7 +8,7 @@ export default function MasterplanLotes() {
         <img
           src={lotesBackground}
           alt="Fondo principal"
-          className="absolute inset-0 -z-10 object-cover"
+          className="absolute inset-0 w-full h-dvh -z-10 object-cover"
         />
         {/* Overlay */}
         <div className="linear-gradient-shadow" />

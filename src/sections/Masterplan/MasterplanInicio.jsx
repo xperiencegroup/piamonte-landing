@@ -9,7 +9,7 @@ export default function MasterplanInicio() {
         <img
           src={mainBackground}
           alt="Fondo principal"
-          className="absolute inset-0 -z-10 object-cover"
+          className="absolute inset-0 h-full w-dvw -z-10 object-cover"
         />
         {/* Overlay */}
         <div className="linear-gradient-shadow" />
