@@ -6,7 +6,7 @@ import PlayButton from "@/assets/icons/video/playButton";
 export default function ToggleTheme() {
   const { theme, toggleTheme } = useTheme();
   return (
-    <div className="fixed z-10 w-[clamp(65px,7.109375vw,91px)] flex bottom-10 self-center justify-center gap-[clamp(5px,0.546875vw,7px)] bg-cafe dark:bg-nude rounded-full">
+    <div className="fixed z-10 w-[clamp(65px,7.109375vw,91px)] flex bottom-6 self-center justify-center gap-[clamp(5px,0.546875vw,7px)] bg-cafe dark:bg-nude rounded-full">
       <div className="size-[clamp(30px,3.28125vw,42px)] flex justify-center items-center">
         <button
           onClick={toggleTheme}
