@@ -4,6 +4,7 @@ import Ubicacion from "@/pages/Ubicacion";
 import Nosotros from "@/pages/Nosotros";
 import Contacto from "@/pages/Contacto";
 import MainLayout from "@/layouts/MainLayout/MainLayout";
+import Masterplan from "@/pages/Masterplan";
 
 export default function Router() {
   return (
@@ -11,6 +12,7 @@ export default function Router() {
       <Routes>
         <Route element={<MainLayout />}>
           <Route index element={<Home />} />
+          <Route path="/masterplan" element={<Masterplan />} />
           <Route path="/ubicacion" element={<Ubicacion />} />
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/contacto" element={<Contacto />} />
