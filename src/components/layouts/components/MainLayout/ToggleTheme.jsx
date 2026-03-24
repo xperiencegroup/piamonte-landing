@@ -1,6 +1,6 @@
 import { useTheme } from "@/hooks/useTheme";
-import sunIcon from "@/assets/icons/theme/SunIcon.svg";
-import moonIcon from "@/assets/icons/theme/MoonIcon.svg";
+import sunIcon from "@/assets/icons/theme/sunIcon.svg";
+import moonIcon from "@/assets/icons/theme/moonIcon.svg";
 import PlayButton from "@/assets/icons/video/playButton";
 
 export default function ToggleTheme() {
