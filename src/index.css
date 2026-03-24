@@ -39,7 +39,7 @@
 }
 
 body {
-  @apply bg-cyan-500 font-dmsans;
+  @apply font-dmsans;
 }
 
 .linear-gradient-shadow {

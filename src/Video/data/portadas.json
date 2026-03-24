@@ -1,0 +1,7 @@
+{
+  "home": {
+    "type": "portada",
+    "loop": true,
+    "src": "/videos/portadas/piamonte_banner.mp4"
+  }
+}
