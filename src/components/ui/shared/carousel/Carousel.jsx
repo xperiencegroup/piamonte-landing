@@ -1,38 +1,26 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import RowIcon from "@/assets/icons/shared/rowIcon";
 
-export function Carousel({ slides = [], navIndicator }) {
+export function Carousel({ slides = [] }) {
   const autoplay = useRef(Autoplay({ delay: 10000, stopOnInteraction: true }));
-
-  const [scrollSnaps, setScrollSnaps] = useState([]);
-  const [selectedSnap, setSelectedSnap] = useState(0);
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     autoplay.current,
   ]);
 
-  const goTo = (index) => emblaApi?.scrollTo(index);
-
-  const setupSnaps = (api) => setScrollSnaps(api.scrollSnapList());
-
-  const setActiveSnap = (api) => setSelectedSnap(api.selectedScrollSnap());
+  const scrollNext = () => emblaApi?.scrollNext();
+  const scrollPrev = () => emblaApi?.scrollPrev();
 
   useEffect(() => {
     if (!emblaApi) return;
 
     autoplay.current.play();
-
-    setupSnaps(emblaApi);
-    setActiveSnap(emblaApi);
-
-    emblaApi.on("reInit", setupSnaps);
-    emblaApi.on("reInit", setActiveSnap);
-    emblaApi.on("select", setActiveSnap);
   }, [emblaApi]);
 
   return (
-    <div className="embla flex flex-col justify-end w-full h-full text-valo">
+    <div className="relative embla flex flex-col justify-center w-full h-full">
       <div className="embla__viewport w-full h-full flex" ref={emblaRef}>
         <div className="embla__container flex w-full h-full">
           {slides.map((slide, index) => (
@@ -43,17 +31,19 @@ export function Carousel({ slides = [], navIndicator }) {
         </div>
       </div>
 
-      <div className="flex gap-2 justify-center">
-        {scrollSnaps.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goTo(index)}
-            className="flex hover:cursor-pointer"
-          >
-            {navIndicator?.(index, index === selectedSnap)}
-          </button>
-        ))}
-      </div>
+      <button
+        onClick={scrollPrev}
+        className="group absolute -translate-x-[130%] rotate-180 hover:cursor-pointer"
+      >
+        <RowIcon className="size-[clamp(12px,2.158594vw,27.63px)] text-gris dark:text-nude group-hover:text-cafe-claro dark:group-hover:text-amarillo" />
+      </button>
+
+      <button
+        onClick={scrollNext}
+        className="group absolute right-0 translate-x-[130%] hover:cursor-pointer"
+      >
+        <RowIcon className="size-[clamp(12px,2.158594vw,27.63px)] text-gris dark:text-nude group-hover:text-cafe-claro dark:group-hover:text-amarillo" />
+      </button>
     </div>
   );
 }

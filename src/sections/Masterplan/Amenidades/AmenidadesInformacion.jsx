@@ -5,13 +5,6 @@ import Slide2 from "./Carousel/Slide2";
 import Slide3 from "./Carousel/Slide3";
 import Slide4 from "./Carousel/Slide4";
 
-const navIndicator = (index, isActive) =>
-  isActive ? (
-    <span className="size-[clamp(20px,2.08vw,40px)] rounded-full border-[3px] border-gris" />
-  ) : (
-    <span className="size-[clamp(20px,2.08vw,40px)] rounded-full border-[3px] border-amarillo" />
-  );
-
 const SLIDES = [<Slide1 />, <Slide2 />, <Slide3 />, <Slide4 />];
 
 export default function AmenidadesInformacion() {
