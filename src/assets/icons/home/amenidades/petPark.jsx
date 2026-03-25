@@ -1,4 +1,4 @@
-export default function petPark({ className = "" }) {
+export default function PetPark({ className = "" }) {
   return (
     <svg
       viewBox="0 0 19 19"
