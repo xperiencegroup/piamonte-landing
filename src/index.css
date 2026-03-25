@@ -18,6 +18,7 @@
   --text-letter-title: clamp(27px, 4.6875vw, 60px);
   --text-boton-grande: clamp(9px, 1.5625vw, 20px);
   --text-boton-normal: clamp(8px, 1.40625vw, 18px);
+  --text-paper: clamp(8px, 1.40625vw, 18px);
 
   /* Colors */
   --color-nude: #eeece0;
@@ -44,4 +45,19 @@ body {
 
 .linear-gradient-shadow {
   @apply absolute inset-0 -z-10 bg-linear-to-b from-[#C1BDAC]/85 from-20% via-[#DDDACC]/0 via-40% to-[#E9E6D7] dark:from-[#33302B]/85 dark:via-[#2D2B28]/0  dark:to-[#2D2B28];
+}
+
+/* EMBLA Carousel */
+.embla__viewport {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
 }
