@@ -26,6 +26,7 @@ export default function Router() {
 
               <Route path="/masterplan" element={<Masterplan />} />
               <Route path="/masterplan/lotes" element={<MasterplanLotes />} />
+
               <Route
                 path="/masterplan/amenidades"
                 element={<AmenidadesLayout />}

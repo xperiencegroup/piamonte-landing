@@ -10,6 +10,7 @@ import { VideoPlayerContext } from "./context/VideoPlayerContext";
 const VIDEOS_MAP = {
   // PORTADAS
   "/": portadas.home,
+  "/masterplan/amenidades/video-tour": portadas.home,
 };
 const EMPTY_JSON = {
   videos: [{ type: "idle", position: 1, src: "" }],

@@ -45,7 +45,7 @@ body {
 }
 
 .linear-gradient-shadow {
-  @apply absolute inset-0 -z-10 bg-linear-to-b from-[#C1BDAC]/85 from-20% via-[#DDDACC]/0 via-40% to-[#E9E6D7] dark:from-[#33302B]/85 dark:via-[#2D2B28]/0  dark:to-[#2D2B28];
+  @apply absolute inset-0 -z-10 bg-linear-to-b from-[#C1BDAC]/85 from-20% via-[#DDDACC]/0 via-40% to-[#E9E6D7] dark:from-[#33302B]/85 dark:via-[#2D2B28]/0 dark:to-[#2D2B28];
 }
 
 /* EMBLA Carousel */
