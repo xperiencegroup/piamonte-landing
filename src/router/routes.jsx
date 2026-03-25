@@ -11,6 +11,9 @@ import { VideoPlayerProvider } from "@/Video/context/VideoPlayerProvider";
 import VideoComponentLayout from "@/Video/VideoComponentLayout";
 import AmenidadesLayout from "@/layouts/Amenidades/AmenidadesLayout";
 import AmenidadesInformacion from "@/sections/Masterplan/Amenidades/AmenidadesInformacion";
+import AmenidadesVideoTour from "@/sections/Masterplan/Amenidades/AmenidadesVideoTour";
+import AmenidadesFotoRenders from "@/sections/Masterplan/Amenidades/AmenidadesFotoRenders";
+import AmenidadesRecorridos from "@/sections/Masterplan/Amenidades/AmenidadesRecorridos";
 
 export default function Router() {
   return (
@@ -23,14 +26,26 @@ export default function Router() {
 
               <Route path="/masterplan" element={<Masterplan />} />
               <Route path="/masterplan/lotes" element={<MasterplanLotes />} />
-              <Route element={<AmenidadesLayout />}>
-                <Route
-                  path="/masterplan/amenidades"
-                  element={<MasterplanAmenidades />}
-                />
+              <Route
+                path="/masterplan/amenidades"
+                element={<AmenidadesLayout />}
+              >
+                <Route index element={<MasterplanAmenidades />} />
                 <Route
                   path="/masterplan/amenidades/informacion"
                   element={<AmenidadesInformacion />}
+                />
+                <Route
+                  path="/masterplan/amenidades/video-tour"
+                  element={<AmenidadesVideoTour />}
+                />
+                <Route
+                  path="/masterplan/amenidades/foto-renders"
+                  element={<AmenidadesFotoRenders />}
+                />
+                <Route
+                  path="/masterplan/amenidades/recorridos-virtuales"
+                  element={<AmenidadesRecorridos />}
                 />
               </Route>
 
