@@ -10,6 +10,7 @@ import MasterplanAmenidades from "@/sections/Masterplan/MasterplanAmenidades";
 import { VideoPlayerProvider } from "@/Video/context/VideoPlayerProvider";
 import VideoComponentLayout from "@/Video/VideoComponentLayout";
 import AmenidadesLayout from "@/layouts/Amenidades/AmenidadesLayout";
+import AmenidadesInformacion from "@/sections/Masterplan/Amenidades/AmenidadesInformacion";
 
 export default function Router() {
   return (
@@ -26,6 +27,10 @@ export default function Router() {
                 <Route
                   path="/masterplan/amenidades"
                   element={<MasterplanAmenidades />}
+                />
+                <Route
+                  path="/masterplan/amenidades/informacion"
+                  element={<AmenidadesInformacion />}
                 />
               </Route>
 
