@@ -25,7 +25,7 @@ export default function AmenidadesInformacion() {
       <div className="relative z-0 w-full h-full">
         <div className="flex relative w-full h-full justify-center items-end pb-[clamp(18px,3.125vw,40px)]">
           <div className="w-[clamp(490px,86.328125vw,1105px)] h-[clamp(251px,44.140625vw,565px)]">
-            <Carousel slides={SLIDES} />
+            <Carousel slides={SLIDES} variant="card" arrows="outside" />
           </div>
         </div>
       </div>
