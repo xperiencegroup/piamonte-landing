@@ -11,6 +11,8 @@ const VIDEOS_MAP = {
   // PORTADAS
   "/": portadas.home,
   "/masterplan/amenidades/video-tour": portadas.home,
+  "/nosotros": portadas.home,
+  "/contacto": portadas.home,
 };
 const EMPTY_JSON = {
   videos: [{ type: "idle", position: 1, src: "" }],

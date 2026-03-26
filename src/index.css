@@ -19,6 +19,7 @@
   --text-boton-grande: clamp(9px, 1.5625vw, 20px);
   --text-boton-normal: clamp(8px, 1.40625vw, 18px);
   --text-paper: clamp(8px, 1.40625vw, 18px);
+  --text-frase: clamp(28px, 5vw, 64px);
 
   /* Colors */
   --color-nude: #eeece0;
@@ -27,6 +28,7 @@
   --color-cafe-claro: #7f6d60;
   --color-amarillo: #efe181;
   --color-verde: #374432;
+  --color-verde-claro: #6c7464;
 }
 
 @layer base {
