@@ -14,6 +14,9 @@ import AmenidadesInformacion from "@/sections/Masterplan/Amenidades/AmenidadesIn
 import AmenidadesVideoTour from "@/sections/Masterplan/Amenidades/AmenidadesVideoTour";
 import AmenidadesFotoRenders from "@/sections/Masterplan/Amenidades/AmenidadesFotoRenders";
 import AmenidadesRecorridos from "@/sections/Masterplan/Amenidades/AmenidadesRecorridos";
+import LoteLayout from "@/layouts/Lotes/LoteLayout";
+import LoteVista360 from "@/sections/Masterplan/Lotes/LoteVista360";
+import LoteInformacion from "@/sections/Masterplan/Lotes/LoteInformacion";
 
 export default function Router() {
   return (
@@ -24,9 +27,17 @@ export default function Router() {
             <Route element={<MainLayout />}>
               <Route index element={<Home />} />
 
+              {/* Masterplan */}
               <Route path="/masterplan" element={<Masterplan />} />
               <Route path="/masterplan/lotes" element={<MasterplanLotes />} />
 
+              {/* Lotes */}
+              <Route path="/masterplan/lotes/:id" element={<LoteLayout />}>
+                <Route path="vista-360" element={<LoteVista360 />} />
+                <Route path="informacion" element={<LoteInformacion />} />
+              </Route>
+
+              {/* Amenidades */}
               <Route
                 path="/masterplan/amenidades"
                 element={<AmenidadesLayout />}
@@ -50,8 +61,13 @@ export default function Router() {
                 />
               </Route>
 
+              {/* Ubicación */}
               <Route path="/ubicacion" element={<Ubicacion />} />
+
+              {/* Nosotros */}
               <Route path="/nosotros" element={<Nosotros />} />
+
+              {/* Contacto */}
               <Route path="/contacto" element={<Contacto />} />
             </Route>
           </Route>
