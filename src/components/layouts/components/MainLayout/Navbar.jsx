@@ -9,7 +9,7 @@ const MENU = [
     label: "Piamonte Xperience",
   },
   {
-    to: "/ubicacion",
+    to: "/ubicacion?filter=como-llegar",
     label: "Ubicación",
   },
   {
@@ -28,7 +28,8 @@ export default function Navbar() {
   const location = useLocation();
 
   const isActive = (path) => {
-    return location.pathname.startsWith(path);
+    const cleanPath = path.split("?")[0];
+    return location.pathname.startsWith(cleanPath);
   };
 
   return (
