@@ -1,5 +1,5 @@
 import AdvanceMarker from "@/components/ui/shared/map/AdvanceMarker";
-import PaperTitle from "@/assets/images/Nosotros/PaperTitle.png";
+import PaperTitle from "@/assets/images/Nosotros/paperTitle.png";
 
 const VIALIDADES_NAMES = [
   {

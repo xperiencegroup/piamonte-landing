@@ -1,5 +1,5 @@
 import PaperBody from "@/assets/images/Nosotros/PaperBody.png";
-import PaperTitle from "@/assets/images/Nosotros/PaperTitle.png";
+import PaperTitle from "@/assets/images/Nosotros/paperTitle.png";
 
 export default function Wellness() {
   return (
