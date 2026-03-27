@@ -1,6 +1,5 @@
 import { useSearchParams } from "react-router";
 import GoogleMap from "@/components/ui/shared/map/GoogleMap";
-import { useLocation } from "react-router";
 
 const SUBMENU_BUTTON = [
   {
@@ -8,7 +7,7 @@ const SUBMENU_BUTTON = [
     label: "Como llegar",
   },
   {
-    id: "acceso",
+    id: "accesos",
     label: "Accesos",
   },
   {
