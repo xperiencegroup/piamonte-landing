@@ -11,6 +11,7 @@
 @theme {
   --font-dmsans: "DM Sans";
   --font-selinea: "Selinea Bonique";
+  --font-baskerville: "Baskerville";
 
   /* Font sizes */
   --text-boton: clamp(11px, 1.40625vw, 18px);
@@ -20,6 +21,8 @@
   --text-boton-normal: clamp(8px, 1.40625vw, 18px);
   --text-paper: clamp(8px, 1.40625vw, 18px);
   --text-frase: clamp(28px, 5vw, 64px);
+  --text-contact-title: clamp(12px, 2.1875vw, 28px);
+  --text-caption: clamp(8px, 1.25vw, 16px);
 
   /* Colors */
   --color-nude: #eeece0;
@@ -48,6 +51,10 @@ body {
 
 .linear-gradient-shadow {
   @apply absolute inset-0 -z-10 bg-linear-to-b from-[#C1BDAC]/85 from-20% via-[#DDDACC]/0 via-40% to-[#E9E6D7] dark:from-[#33302B]/85 dark:via-[#2D2B28]/0 dark:to-[#2D2B28];
+}
+
+.gradient-inicio {
+  @apply absolute inset-0 -z-10 bg-linear-to-b from-nude/85 via-nude/75 via-30% to-nude/55 dark:from-gris/95 dark:via-gris/90 dark:to-gris/65;
 }
 
 /* EMBLA Carousel */
