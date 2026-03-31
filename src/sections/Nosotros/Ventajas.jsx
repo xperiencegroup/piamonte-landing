@@ -36,7 +36,7 @@ const VENTAJAS = [
   },
 ];
 
-const ROTATIONS = [-8, 3, -5, 6, -2];
+const ROTATIONS = [10, -5, 2, 14, -16];
 
 export default function Ventajas() {
   const [isOpen, setIsOpen] = useState(false);
