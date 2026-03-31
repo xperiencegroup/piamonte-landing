@@ -14,7 +14,7 @@
   --font-baskerville: "Baskerville";
 
   /* Font sizes */
-  --text-boton: clamp(11px, 1.40625vw, 18px);
+  --text-boton: clamp(8px, 1.40625vw, 18px);
   --text-paragraph: clamp(8px, 1.484375vw, 19px);
   --text-letter-title: clamp(27px, 4.6875vw, 60px);
   --text-boton-grande: clamp(9px, 1.5625vw, 20px);
@@ -22,7 +22,7 @@
   --text-paper: clamp(8px, 1.40625vw, 18px);
   --text-frase: clamp(28px, 5vw, 64px);
   --text-contact-title: clamp(12px, 2.1875vw, 28px);
-  --text-caption: clamp(8px, 1.25vw, 16px);
+  --text-caption: clamp(7px, 1.25vw, 16px);
 
   /* Colors */
   --color-nude: #eeece0;
