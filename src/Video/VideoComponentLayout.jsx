@@ -25,15 +25,30 @@ export default function VideoComponentLayout() {
   const { pathname } = useLocation();
 
   const videosRunning = VIDEOS_MAP[pathname];
+  const hasVideo = videosRunning ? true : false;
 
   const { videoRefA, videoRefB, loadPortada, activePlayer, modeState } =
     useVideoPlayer({
       json: videosRunning ?? EMPTY_JSON,
     });
 
-  // Portada: cargar video directamente sin pasar por el hook
+  // Portada: Manejo de portadas o limpiar componentes al cambiar de ruta sin video
   useEffect(() => {
-    if (!videosRunning) return;
+    const cleanVideo = (video) => {
+      if (!video) return;
+      video.pause();
+      video.removeAttribute("src");
+      video.load();
+    };
+
+    if (!hasVideo) {
+      cleanVideo(videoRefA.current);
+      cleanVideo(videoRefB.current);
+
+      setIdle();
+      return;
+    }
+
     if (videosRunning.type === "portada") {
       loadPortada(videosRunning);
       return;
