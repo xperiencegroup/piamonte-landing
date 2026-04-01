@@ -54,7 +54,7 @@ export default function AmenidadesLayout() {
       </div>
 
       {/* Navigation */}
-      <div className="shrink-0 flex flex-col w-full items-center pb-[clamp(31px,5.46875vw,70px)]">
+      <div className="shrink-0 flex flex-col w-full items-center pb-[clamp(31px,5.46875vw,70px)] px-[clamp(14px,2.5vw,32px)]">
         {isVideoTourMenu ? (
           <>
             {/* Video Tour */}
