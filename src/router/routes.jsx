@@ -43,20 +43,14 @@ export default function Router() {
                 element={<AmenidadesLayout />}
               >
                 <Route index element={<MasterplanAmenidades />} />
+                <Route path="informacion" element={<AmenidadesInformacion />} />
+                <Route path="video-tour" element={<AmenidadesVideoTour />} />
                 <Route
-                  path="/masterplan/amenidades/informacion"
-                  element={<AmenidadesInformacion />}
-                />
-                <Route
-                  path="/masterplan/amenidades/video-tour"
-                  element={<AmenidadesVideoTour />}
-                />
-                <Route
-                  path="/masterplan/amenidades/foto-renders"
+                  path="foto-renders"
                   element={<AmenidadesFotoRenders />}
                 />
                 <Route
-                  path="/masterplan/amenidades/recorridos-virtuales"
+                  path="recorridos-virtuales"
                   element={<AmenidadesRecorridos />}
                 />
               </Route>
