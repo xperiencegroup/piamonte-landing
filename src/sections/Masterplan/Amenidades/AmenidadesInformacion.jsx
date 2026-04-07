@@ -30,7 +30,7 @@ export default function AmenidadesInformacion() {
                 <img
                   src={item.backgroundImage}
                   alt="Imagen de la amenidad"
-                  className="absolute inset-0 w-full h-full object-cover p-4"
+                  className="absolute inset-0 w-full h-full object-cover p-[clamp(7px,1.25vw,16px)]"
                 />
 
                 <div
