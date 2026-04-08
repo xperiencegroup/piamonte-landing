@@ -117,7 +117,7 @@ export default function AmenidadesVideoTour() {
 
       {/* Video Tour Buttons */}
       <div className="relative flex justify-center w-full pt-[clamp(9px,1.5625vw,20px)]">
-        <div className="flex flex-wrap justify-center items-end w-full max-w-[1216px] h-fit mx-auto">
+        <div className="flex flex-wrap justify-center items-end w-full max-w-[1224px] h-fit mx-auto max-lg:gap-1">
           {VIDEO_TOUR_BUTTONS.map((item) => {
             const Icon = item.icon;
             return (
@@ -129,7 +129,7 @@ export default function AmenidadesVideoTour() {
                 {/* Icon */}
                 <div className="flex items-center justify-center size-[clamp(11px,1.875vw,24px)]">
                   <Icon
-                    className={`w-[clamp(8px,1.484375vw,19px)] h-fit ${
+                    className={`w-6 h-fit ${
                       activeParam === item.id
                         ? "text-cafe dark:text-amarillo"
                         : "text-gris dark:text-nude"
