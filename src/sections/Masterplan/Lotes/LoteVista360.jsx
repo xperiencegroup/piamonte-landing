@@ -13,8 +13,8 @@ export default function LoteVista360() {
       </div>
 
       <div className="relative z-0 w-full h-full">
-        <div className="flex relative w-full h-full justify-center items-end pb-[clamp(18px,3.125vw,40px)]">
-          <div className="w-[clamp(490px,86.328125vw,1105px)] h-[clamp(251px,44.140625vw,565px)]">
+        <div className="flex relative w-full h-full justify-center max-lg:landscape:items-end portrait:items-center lg:items-center pt-[clamp(18px,3.125vw,40px)]">
+          <div className="w-[clamp(140px,72.65vw,558px)] lg:w-[clamp(490px,86.328125vw,1105px)] h-[clamp(120px,58.67dvh,223px)] lg:h-[clamp(251px,44.140625vw,515px)]">
             <Carousel
               slides={CAROUSEL_IMAGES}
               variant="image"

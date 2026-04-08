@@ -30,10 +30,10 @@ export default function LoteLayout() {
       </div>
 
       {/* Navigation */}
-      <div className="shrink-0 flex flex-col w-full items-center pb-[clamp(31px,5.46875vw,70px)]">
+      <div className="shrink-0 flex flex-col w-full items-center pb-[clamp(31px,5.46875vw,70px)] px-[clamp(14px,2.5vw,32px)]">
         <>
           {/* Video Tour */}
-          <div className="flex justify-between items-end w-full max-w-[1216px]">
+          <div className="flex justify-between items-end w-full max-w-[clamp(140px,72.65vw,558px)] lg:max-w-[1216px]">
             {LOTE_MENU.map((item) => {
               const Icon = item.icon;
 
