@@ -27,7 +27,7 @@ export default function Contacto() {
       {/* Overlay gradiente */}
       <div className="gradient-inicio" />
 
-      <div className="flex flex-col w-full max-w-[1280px] h-full max-h-[476px] flex justify-center items-center px-[clamp(13px,2.34375vw,30px)] gap-[clamp(7px,1.25vw,16px)]">
+      <div className="flex flex-col w-full max-w-[1280px] h-full max-h-[476px] flex justify-center items-center px-[clamp(13px,2.34375vw,30px)] lg:gap-[clamp(7px,1.25vw,16px)]">
         <div className="flex w-full">
           {/* CONTENT */}
           <div className="flex-1 flex items-center text-cafe dark:text-nude text-center">
@@ -54,9 +54,9 @@ export default function Contacto() {
 
           {/* FORM */}
           <div className="flex-1 flex h-full justify-end">
-            <form className="flex flex-col w-[clamp(213px,37.578125vw,481px)] text-center gap-[clamp(11px,1.875vw,24px)]">
+            <form className="flex flex-col w-[clamp(213px,37.578125vw,481px)] text-center gap-3 lg:gap-[clamp(11px,1.875vw,24px)]">
               {/* Nombre */}
-              <div className="flex flex-col gap-[clamp(9px,1.5625vw,20px)]">
+              <div className="flex flex-col lg:gap-[clamp(9px,1.5625vw,20px)]">
                 <p className="text-contact-title font-baskerville text-cafe dark:text-nude">
                   Nombre completo
                 </p>
@@ -78,7 +78,7 @@ export default function Contacto() {
               </div>
 
               {/* Correo Electrónico */}
-              <div className="flex flex-col gap-[clamp(9px,1.5625vw,20px)]">
+              <div className="flex flex-col lg:gap-[clamp(9px,1.5625vw,20px)]">
                 <p className="text-contact-title font-baskerville text-cafe dark:text-nude">
                   Correo electrónico
                 </p>
@@ -93,7 +93,7 @@ export default function Contacto() {
               </div>
 
               {/* Número de teléfono */}
-              <div className="flex flex-col gap-[clamp(9px,1.5625vw,20px)]">
+              <div className="flex flex-col lg:gap-[clamp(9px,1.5625vw,20px)]">
                 <p className="text-contact-title font-baskerville text-cafe dark:text-nude">
                   Número de teléfono
                 </p>
@@ -113,7 +113,7 @@ export default function Contacto() {
 
               <button
                 type="submit"
-                className="flex self-end justify-center items-center gap-[clamp(4px,0.78125vw,10px)] p-[clamp(7px,1.25vw,16px)] hover:cursor-pointer"
+                className="flex self-end justify-center items-center gap-[clamp(4px,0.78125vw,10px)] lg:p-[clamp(7px,1.25vw,16px)] hover:cursor-pointer"
               >
                 <span className="flex justify-center items-center size-[clamp(11px,1.875vw,24px)]">
                   <SendIcon className="w-[clamp(8px,1.464844vw,18.75px)] h-[clamp(9px,1.640625vw,21px)] text-gris" />
@@ -127,13 +127,13 @@ export default function Contacto() {
         </div>
 
         {/* Caption and social links */}
-        <div className="w-full h-fit flex">
-          <div className="flex-1">
+        <div className="w-full h-fit flex max-lg:flex-col max-lg:gap-2">
+          <div className="flex-1 max-lg:self-center">
             <p className="text-caption text-gris dark:text-amarillo">
               © Piamonte residencial. All rights reserved
             </p>
           </div>
-          <div className="flex-1 flex justify-end">
+          <div className="flex-1 max-lg:self-center flex justify-end">
             <div className="flex w-[clamp(213px,37.578125vw,481px)] justify-between">
               {SOCIAL_LINKS.map((item) => {
                 const Icon = item.icon;
