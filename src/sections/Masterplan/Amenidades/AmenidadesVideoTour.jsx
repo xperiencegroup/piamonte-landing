@@ -1,4 +1,5 @@
 import { useSearchParams } from "react-router";
+import { AnimatePresence, motion } from "motion/react";
 import AlbercaIcon from "@/assets/icons/home/amenidades/albercaIcon";
 import BarIcon from "@/assets/icons/home/amenidades/barIcon";
 import BasketballIcon from "@/assets/icons/home/amenidades/basketballIcon";
@@ -15,6 +16,7 @@ import SalaIcon from "@/assets/icons/home/amenidades/salaIcon";
 import SalonSocialIcon from "@/assets/icons/home/amenidades/salonSocialIcon";
 import TerrazaIcon from "@/assets/icons/home/amenidades/terrazaIcon";
 import YogaIcon from "@/assets/icons/home/amenidades/yogaIcon";
+import useIsShortHeight from "@/hooks/useIsShortHeight";
 
 const VIDEO_TOUR_BUTTONS = [
   {
@@ -103,6 +105,8 @@ export default function AmenidadesVideoTour() {
   const [params, setSearchParams] = useSearchParams();
   const activeParam = params.get("section");
 
+  const isShort = useIsShortHeight();
+
   return (
     <div className="relative z-0 w-full">
       {/* Background */}
@@ -117,22 +121,73 @@ export default function AmenidadesVideoTour() {
           {VIDEO_TOUR_BUTTONS.map((item) => {
             const Icon = item.icon;
             return (
-              <button
+              <motion.button
                 key={item.id}
                 onClick={() => setSearchParams({ section: item.id })}
-                className={`relative flex items-center h-[clamp(21px,3.75vw,48px)] w-fit p-[clamp(5px,0.9375vw,12px)] gap-[clamp(4px,0.625vw,8px)] hover:cursor-pointer ${activeParam === item.id && "after:absolute after:w-full after:bottom-0 after:left-0 after:h-0.5 after:bg-cafe dark:after:bg-amarillo"}`}
+                className={`relative flex items-center h-[clamp(21px,3.75vw,48px)] w-fit p-[clamp(5px,0.9375vw,12px)] gap-[clamp(4px,0.625vw,8px)] hover:cursor-pointer`}
               >
+                {/* Icon */}
                 <div className="flex items-center justify-center size-[clamp(11px,1.875vw,24px)]">
                   <Icon
-                    className={`w-[clamp(8px,1.484375vw,19px)] h-fit ${activeParam === item.id ? "text-cafe dark:text-amarillo" : "text-gris dark:text-nude"}`}
+                    className={`w-[clamp(8px,1.484375vw,19px)] h-fit ${
+                      activeParam === item.id
+                        ? "text-cafe dark:text-amarillo"
+                        : "text-gris dark:text-nude"
+                    }`}
                   />
                 </div>
-                <p
-                  className={`uppercase ${activeParam === item.id ? "text-cafe dark:text-amarillo font-semibold" : "text-gris dark:text-nude"}`}
-                >
-                  {item.label}
-                </p>
-              </button>
+
+                {/* Label */}
+                <AnimatePresence mode="wait" initial={false}>
+                  {(!isShort || activeParam === item.id) && (
+                    <motion.div
+                      key={item.id}
+                      initial={{
+                        width: 0,
+                        opacity: 0,
+                        transition: { duration: 0.2 },
+                      }}
+                      animate={{ width: "auto", opacity: 1 }}
+                      exit={{
+                        width: 0,
+                        opacity: 0,
+                        transition: { duration: 0.2 },
+                      }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 200,
+                        damping: 25,
+                      }}
+                      className="overflow-hidden"
+                    >
+                      <p
+                        className={`text-boton uppercase whitespace-nowrap ${
+                          activeParam === item.id
+                            ? "text-cafe dark:text-amarillo font-semibold"
+                            : "text-gris dark:text-nude"
+                        }`}
+                      >
+                        {item.label}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                {/* Barra inferior */}
+                {activeParam === item.id && (
+                  <motion.div
+                    initial={false}
+                    layoutId="active-tab"
+                    className="absolute w-full bottom-0 left-0 h-px sm:h-0.5 bg-cafe dark:bg-amarillo"
+                    transition={{
+                      duration: 0.2,
+                      type: "spring",
+                      stiffness: 200,
+                      damping: 25,
+                    }}
+                  />
+                )}
+              </motion.button>
             );
           })}
         </div>
