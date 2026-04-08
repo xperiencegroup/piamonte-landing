@@ -23,6 +23,7 @@
   --text-frase: clamp(28px, 5vw, 64px);
   --text-contact-title: clamp(12px, 2.1875vw, 28px);
   --text-caption: clamp(7px, 1.25vw, 16px);
+  --text-card: clamp(5px, 1.1vw, 16px);
 
   /* Colors */
   --color-nude: #eeece0;

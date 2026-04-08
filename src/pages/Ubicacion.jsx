@@ -27,7 +27,7 @@ export default function Ubicacion() {
         <GoogleMap />
       </div>
 
-      <div className="shrink-0 self-center fixed bottom-[clamp(31px,5.46875vw,70px)] z-10 flex w-full max-w-[1216px] h-fit justify-between">
+      <div className="shrink-0 self-center fixed bottom-[clamp(31px,5.46875vw,70px)] z-10 flex w-full max-w-[1216px] h-fit justify-between px-[clamp(14px,2.5vw,32px)]">
         {SUBMENU_BUTTON.map((item) => {
           return (
             <button
@@ -35,7 +35,7 @@ export default function Ubicacion() {
               onClick={() => setSearchParams({ filter: item.id })}
               className={`relative flex w-fit justify-center items-center gap-[clamp(4px,0.78125vw,10px)] p-[clamp(7px,1.25vw,16px)] hover:cursor-pointer ${
                 isActive(item.id)
-                  ? "after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-cafe dark:after:bg-amarillo"
+                  ? "after:absolute after:bottom-0 after:left-0 after:w-full after:h-px md:after:h-0.5 after:bg-cafe dark:after:bg-amarillo"
                   : ""
               }`}
             >

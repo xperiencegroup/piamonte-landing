@@ -4,7 +4,7 @@ import PaperTitle from "@/assets/images/Nosotros/paperTitle.png";
 export default function Wellness() {
   return (
     <div className="flex flex-col w-full h-dvh justify-center items-center">
-      <div className="relative w-[clamp(478px,84.0625vw,1076px)] h-[clamp(176px,31.015625vw,397px)]">
+      <div className="relative w-[clamp(478px,84.0625vw,1076px)] h-[clamp(140px,28.5vw,387px)] lg:h-[clamp(176px,31.015625vw,397px)]">
         {/* Image */}
         <img
           src={PaperBody}
@@ -27,7 +27,7 @@ export default function Wellness() {
           </div>
 
           {/* Body */}
-          <p className="w-[clamp(355px,62.5vw,800px)] text-paragraph text-center leading-[120%] text-cafe">
+          <p className="w-[clamp(355px,62.5vw,800px)] max-lg:pt-5 text-paragraph text-center leading-[120%] text-cafe">
             La vida wellness es elegir bajar el ritmo y volver a lo esencial. Es
             despertar con calma, respirar profundo y permitir que la naturaleza
             marque el compás de tus días.
@@ -46,7 +46,7 @@ export default function Wellness() {
           </p>
         </div>
       </div>
-      <div className="w-[clamp(1px,0.15625vw,2px)] h-[clamp(65px,7.03125vw,90px)] bg-cafe" />
+      <div className="max-lg:hidden w-[clamp(1px,0.15625vw,2px)] h-[clamp(30px,5vw,60px)] lg:h-[clamp(55px,7.03125vw,90px)] bg-cafe" />
     </div>
   );
 }

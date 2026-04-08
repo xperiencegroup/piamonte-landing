@@ -7,6 +7,7 @@ import conceptoImage from "@/assets/images/Nosotros/ventajas/concepto.jpg";
 import vialidadesImage from "@/assets/images/Nosotros/ventajas/vialidades.jpg";
 import PaperTear from "../../assets/images/Masterplan/AmenidadesInformacion/Papeles/paperTear.png";
 import ClickIcon from "@/assets/icons/home/clickIcon";
+import { useEffect } from "react";
 
 const VENTAJAS = [
   {
@@ -38,14 +39,40 @@ const VENTAJAS = [
 
 const ROTATIONS = [10, -5, 2, 14, -16];
 
+function useResponsiveScale() {
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const update = () => {
+      const width = window.innerWidth;
+
+      if (width >= 1280) setScale(1);
+      else if (width >= 1024) setScale(0.75);
+      else if (width >= 800) setScale(0.6);
+      else if (width >= 568) setScale(0.45);
+      else setScale(0.4);
+    };
+
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  return scale;
+}
+
 export default function Ventajas() {
   const [isOpen, setIsOpen] = useState(false);
+  const scale = useResponsiveScale();
 
   return (
     <div className="relative flex w-full h-dvh justify-center items-center">
       <div
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex w-full justify-center items-center px-[clamp(13px,2.34375vw,30px)] ${isOpen ? "max-w-[1280px] h-[389px]" : "h-fit"} hover:cursor-pointer`}
+        className={`flex w-full justify-center items-center px-[clamp(13px,2.34375vw,30px)] ${isOpen ? "lg:max-w-[1280px] lg:h-[389px]" : "h-fit"} hover:cursor-pointer`}
+        style={{
+          height: isOpen ? 389 * scale : "auto",
+        }}
       >
         <div
           className={`${isOpen ? "flex w-full h-full justify-between" : "flex relative w-[clamp(327px,57.578125vw,737px)] h-[clamp(257px,45.15625vw,578px)] justify-center items-center"}`}
@@ -57,8 +84,8 @@ export default function Ventajas() {
                 layout
                 initial={false}
                 animate={{
-                  width: isOpen ? 229 : 532,
-                  height: isOpen ? 389 : 373,
+                  width: (isOpen ? 229 : 532) * scale,
+                  height: (isOpen ? 389 : 373) * scale,
                   rotate: isOpen ? 0 : ROTATIONS[index],
                 }}
                 transition={{
@@ -79,7 +106,7 @@ export default function Ventajas() {
                   layout
                   initial={false}
                   animate={{
-                    height: isOpen ? 299 : 341,
+                    height: (isOpen ? 299 : 341) * scale,
                   }}
                   transition={{
                     layout: { type: "spring", stiffness: 200, damping: 25 },
@@ -108,7 +135,7 @@ export default function Ventajas() {
                         duration: 0.4,
                         delay: index * 0.15,
                       }}
-                      className="grow flex justify-center items-center text-caption text-center font-regular text-gris dark:text-nude leading-[130%]"
+                      className="grow flex justify-center items-center text-card text-center font-regular text-gris dark:text-nude leading-[130%]"
                     >
                       {item.label}
                     </motion.p>

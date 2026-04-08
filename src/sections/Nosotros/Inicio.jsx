@@ -2,14 +2,17 @@ import letterImage from "@/assets/images/Nosotros/letters.png";
 
 export default function NosotrosInicio() {
   return (
-    <div className="w-full h-dvh pb-[clamp(31px,5.46875vw,70px)]">
-      <div className="flex flex-col w-full h-full justify-end items-center pb-[clamp(10px,1.796875vw,23px)]">
-        <div className="flex justify-center items-center gap-[clamp(18px,3.125vw,40px)]">
+    <div className="w-full h-dvh lg:pb-[clamp(31px,5.46875vw,70px)]">
+      <div className="flex flex-col w-full h-full justify-end items-center max-sm:px-7 sm:px-10 md:px-12 lg:pb-[clamp(10px,1.796875vw,23px)]">
+        <div className="flex h-full justify-center items-center gap-[clamp(18px,3.125vw,40px)]">
+          {/* Image */}
           <img
             src={letterImage}
             alt="Imagenes de cartas"
-            className="w-[clamp(167px,29.453125vw,377px)] h-[clamp(228px,40.078125vw,513px)]"
+            className="w-[clamp(167px,24vw,377px)] lg:w-[clamp(167px,29.453125vw,377px)] aspect-[377.82/513.33]"
           />
+
+          {/* Texts */}
           <p className="w-full max-w-[673px] text-paragraph text-center text-cafe dark:text-nude">
             En <span className="font-bold">Piamonte Residencial</span> creemos
             que vivir bien es vivir en paz. Creamos un entorno donde la
@@ -24,7 +27,9 @@ export default function NosotrosInicio() {
             Tu vida a un instante de serenidad.
           </p>
         </div>
-        <div className="w-[clamp(1px,0.15625vw,2px)] h-[clamp(65px,7.03125vw,90px)] bg-cafe" />
+
+        {/* Decoration line */}
+        <div className="max-lg:hidden w-[clamp(1px,0.15625vw,2px)] h-[clamp(65px,7.03125vw,90px)] bg-cafe" />
       </div>
     </div>
   );
