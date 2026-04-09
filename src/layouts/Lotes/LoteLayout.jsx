@@ -26,8 +26,10 @@ export default function LoteLayout() {
   return (
     <div className="flex flex-col h-dvh w-full">
       {/* Fake navbar */}
-      <div className="bg-amarillo shrink-0 h-[clamp(38px,6vw,75px)]" />
-      <div className="flex flex-col grow min-h-0 bg-cyan-500">
+      <div className="shrink-0 h-[clamp(38px,6vw,75px)]" />
+
+      {/* Content */}
+      <div className="flex flex-col grow min-h-0">
         <Outlet />
       </div>
 

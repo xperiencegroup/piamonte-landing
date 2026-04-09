@@ -49,7 +49,7 @@ export default function AmenidadesLayout() {
 
   return (
     <div className="flex flex-col h-dvh w-full">
-      <div className="flex flex-col grow">
+      <div className="flex flex-col grow min-h-0">
         <Outlet />
       </div>
 
