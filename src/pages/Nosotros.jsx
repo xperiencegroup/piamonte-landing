@@ -1,5 +1,4 @@
 import NosotrosInicio from "@/sections/Nosotros/Inicio";
-import Ventajas from "@/sections/Nosotros/Ventajas";
 import Wellness from "@/sections/Nosotros/Wellness";
 
 export default function Nosotros() {
@@ -13,9 +12,6 @@ export default function Nosotros() {
 
       {/* Wellness */}
       <Wellness />
-
-      {/* Ventajas */}
-      <Ventajas />
     </main>
   );
 }

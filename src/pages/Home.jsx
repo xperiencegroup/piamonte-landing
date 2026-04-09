@@ -13,7 +13,7 @@ export default function Home() {
       {/* Inicio */}
       <Inicio />
 
-      {/* Ventajas */}
+      {/* Ventajas Wellness */}
       <Ventajas />
 
       {/* Ver Proyecto */}
