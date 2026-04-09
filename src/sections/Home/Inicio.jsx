@@ -29,7 +29,7 @@ export default function Inicio() {
           />
         </div>
 
-        <div className="w-[clamp(1px,0.15625vw,2px)] h-[clamp(40px,7.03125vw,90px)] max-lg:translate-y-1/4 bg-cafe" />
+        <div className="w-[clamp(1px,0.15625vw,2px)] h-[clamp(40px,7.03125vw,90px)] max-lg:translate-y-1/4 bg-cafe dark:bg-nude" />
       </div>
     </div>
   );

@@ -46,7 +46,7 @@ export default function Wellness() {
           </p>
         </div>
       </div>
-      <div className="max-lg:hidden w-[clamp(1px,0.15625vw,2px)] h-[clamp(30px,5vw,60px)] lg:h-[clamp(55px,7.03125vw,90px)] bg-cafe" />
+      <div className="max-lg:hidden w-[clamp(1px,0.15625vw,2px)] h-[clamp(30px,5vw,60px)] lg:h-[clamp(55px,7.03125vw,90px)] bg-cafe dark:bg-nude" />
     </div>
   );
 }
