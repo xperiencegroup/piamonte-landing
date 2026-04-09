@@ -16,7 +16,7 @@
   /* Font sizes */
   --text-boton: clamp(8px, 1.40625vw, 18px);
   --text-paragraph: clamp(8px, 1.484375vw, 19px);
-  --text-letter-title: clamp(27px, 4.6875vw, 60px);
+  --text-letter-title: clamp(27px, 5vw, 64px);
   --text-boton-grande: clamp(9px, 1.5625vw, 20px);
   --text-boton-normal: clamp(8px, 1.40625vw, 18px);
   --text-paper: clamp(8px, 1.40625vw, 18px);

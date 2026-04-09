@@ -39,7 +39,7 @@ export default function Navbar() {
           <Link
             key={index}
             to={item.to}
-            className={`relative flex flex-col w-[clamp(99px,17.5vw,224px)] h-[clamp(24px,4.140625vw,53px)] justify-center items-center text-boton text-center font-dmsans uppercase ${isActive(item.to) ? "text-cafe dark:text-amarillo" : "text-gris dark:text-nude"}`}
+            className={`relative flex flex-col w-[clamp(99px,17.5vw,224px)] h-[clamp(24px,4.140625vw,53px)] justify-center items-center text-boton text-center font-dmsans uppercase hover:font-semibold transition-all ${isActive(item.to) ? "text-cafe dark:text-amarillo font-semibold" : "text-gris dark:text-nude"}`}
           >
             <span className="relative">
               {item.label}{" "}
@@ -61,7 +61,7 @@ export default function Navbar() {
           <Link
             key={index}
             to={item.to}
-            className={`relative flex flex-col w-[clamp(99px,17.5vw,224px)] h-[clamp(24px,4.140625vw,53px)] justify-center items-center text-boton text-center font-dmsans uppercase ${isActive(item.to) ? "text-cafe dark:text-amarillo" : "text-gris dark:text-nude"}`}
+            className={`relative flex flex-col w-[clamp(99px,17.5vw,224px)] h-[clamp(24px,4.140625vw,53px)] justify-center items-center text-boton text-center font-dmsans uppercase hover:font-semibold transition-all ${isActive(item.to) ? "text-cafe dark:text-amarillo font-semibold" : "text-gris dark:text-nude"}`}
           >
             <span className="relative">
               {item.label}{" "}

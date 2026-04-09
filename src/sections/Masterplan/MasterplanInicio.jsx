@@ -15,7 +15,7 @@ export default function MasterplanInicio() {
         <div className="linear-gradient-shadow" />
       </div>
 
-      <div className="fixed bottom-[clamp(31px,5.46875vw,70px)] flex w-full">
+      <div className="fixed bottom-[clamp(50px,8vw,102px)] flex w-full">
         <div className="flex justify-center items-end w-full gap-[clamp(11px,1.875vw,24px)]">
           <Link
             to="/masterplan/amenidades"

@@ -4,8 +4,8 @@ export default function Inicio() {
   return (
     <div className="flex justify-center items-center w-full h-dvh">
       <div className="flex lg:flex-col lg:items-center gap-[clamp(14px,2.5vw,32px)]">
-        <div className="relative w-[clamp(366px,64.453125vw,660px)] lg:w-[clamp(272px,47.8125vw,612px)] h-[clamp(159px,27.96875vw,358px)]">
-          <div className="relative z-5 w-[78%] h-full place-self-center flex flex-col justify-center items-center gap-[clamp(15px,2.65625vw,34px)]">
+        <div className="relative w-[clamp(366px,64.453125vw,660px)] lg:w-[clamp(375px,65.9375vw,844px)] h-[clamp(159px,27.96875vw,358px)]">
+          <div className="relative z-5 w-[57%] h-full place-self-center flex flex-col justify-center items-center gap-[clamp(15px,2.65625vw,34px)]">
             <h3 className="text-center font-selinea text-letter-title leading-[45%] text-verde">
               Disfruta de espacios que inspiran <br /> comunidad y bienestar
             </h3>
