@@ -26,10 +26,10 @@ export default function Vialidades() {
               path: "M 0,-1 0,1",
               strokeOpacity: 1,
               strokeColor: vialidad.strokeColor,
-              scale: 3,
+              scale: 1,
             },
             offset: "0",
-            repeat: "12px",
+            repeat: "4px",
           },
         ],
       });

@@ -25,7 +25,7 @@ export function geojsonToVialidad(geojson) {
     // Capa exterior (borde)
     {
       strokeColor: "#374432",
-      strokeWidth: 12,
+      strokeWidth: 6,
       path,
     },
     // Capa interior (color principal)
