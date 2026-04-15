@@ -3,7 +3,7 @@ import PaperTitle from "@/assets/images/Nosotros/paperTitle.png";
 
 export default function Wellness() {
   return (
-    <div className="flex flex-col w-full h-dvh justify-center items-center">
+    <div className="relative flex flex-col w-full h-dvh justify-center items-center">
       <div className="relative w-[clamp(478px,84.0625vw,1076px)] h-[clamp(140px,28.5vw,387px)] lg:h-[clamp(176px,31.015625vw,397px)]">
         {/* Image */}
         <img
@@ -46,7 +46,7 @@ export default function Wellness() {
           </p>
         </div>
       </div>
-      <div className="max-lg:hidden w-[clamp(1px,0.15625vw,2px)] h-[clamp(30px,5vw,60px)] lg:h-[clamp(55px,7.03125vw,90px)] bg-cafe dark:bg-nude" />
+      <div className="absolute bottom-[clamp(31px,5.46875vw,70px)] [@media(max-height:705px)]:hidden max-lg:hidden w-[clamp(1px,0.15625vw,2px)] h-[clamp(30px,5vw,60px)] lg:h-[clamp(65px,7.03125vw,90px)] bg-cafe dark:bg-nude" />
     </div>
   );
 }
