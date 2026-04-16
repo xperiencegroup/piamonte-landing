@@ -33,17 +33,19 @@ export default function Navbar({ navRef }) {
     return location.pathname.startsWith(cleanPath);
   };
 
-  // Navbar Animation
+  const isHome = location.pathname === "/";
+
+  // Navbar Animation when is home => "/"
   const navbarLogoOpacity = useTransform(
     scrollYProgress,
     [0.327, 0.328],
-    [0, 1],
+    isHome ? [0, 1] : [1, 1],
     { clamp: false },
   );
   const navbarPointer = useTransform(
     scrollYProgress,
     [0.327, 0.328],
-    ["none", "auto"],
+    isHome ? ["none", "auto"] : ["auto", "auto"],
   );
 
   return (

@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { motion, cubicBezier, useScroll, useTransform } from "motion/react";
 import LogoPiamonte from "@/assets/logos/main/LogoPiamonte";
 import { useOutletContext } from "react-router";
+import useDarkMode from "@/hooks/useDarkMode";
 
 export default function SplashScreen() {
   const { navRef } = useOutletContext();
   const [centerY, setCenterY] = useState(0);
   const { scrollYProgress } = useScroll();
+  const isDark = useDarkMode();
   const ease = cubicBezier(0.22, 0.3, 0.36, 1);
 
   // SplashScreen Animation
@@ -50,12 +52,20 @@ export default function SplashScreen() {
     { clamp: false },
   );
 
+  // Animation when is light theme (nude to gris)
+  const logoColor = useTransform(
+    scrollYProgress,
+    [0.0, 0.3],
+    isDark ? ["#ffffff", "#ffffff"] : ["#ffffff", "#33302b"],
+    { clamp: false },
+  );
+
   return (
     <>
       {/* Background */}
-      <div className="w-full h-dvh">
+      <div className="relative z-20 w-full h-dvh">
         <motion.div
-          className="relative z-50 w-full h-dvh bg-verde pointer-events-none"
+          className="relative w-full h-dvh bg-verde pointer-events-none"
           style={{
             opacity: splashOpacity,
           }}
@@ -85,10 +95,11 @@ export default function SplashScreen() {
           y: "-50%",
           scale,
           opacity: floatingOpacity,
+          color: logoColor,
           zIndex: 50,
         }}
       >
-        <LogoPiamonte className="w-full h-full text-gris dark:text-nude" />
+        <LogoPiamonte className="w-full h-full" />
       </motion.div>
     </>
   );
