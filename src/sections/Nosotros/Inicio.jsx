@@ -22,7 +22,7 @@ export default function NosotrosInicio() {
             />
 
             {/* Texts */}
-            <p className="w-[75%] text-paragraph text-center text-cafe dark:text-nude leading-[115%]">
+            <p className="w-[75%] text-paragraph text-center text-cafe leading-[115%]">
               En <span className="font-bold">Piamonte Residencial</span> creemos
               que vivir bien es vivir en paz. Creamos un entorno donde la
               serenidad del campo y la vida consciente se unen para ofrecer un
