@@ -208,7 +208,7 @@ export default function Ventajas() {
                 duration: 0.5,
                 ease: [0.32, 0, 0.67, 0],
               }}
-              className="absolute bottom-1/6 left-1/2 -translate-x-1/2 flex justify-center items-center size-[clamp(30px,3.28125vw,42px)]"
+              className="absolute bottom-[clamp(54.59px,9.4117647vh,80px)] left-1/2 -translate-x-1/2 flex justify-center items-center size-[clamp(30px,3.28125vw,42px)]"
             >
               <ClickIcon className="w-[clamp(12px,2.138281vw,27.37px)] h-[clamp(16px,2.871094vw,36.75px)] text-verde dark:text-nude" />
             </motion.div>
