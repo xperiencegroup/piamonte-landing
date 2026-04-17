@@ -72,7 +72,7 @@ export default function SplashScreen() {
         >
           {/* Linea decortativa */}
           <motion.div
-            className="w-[clamp(1px,0.15625vw,2px)] h-[clamp(107px,18.75vw,240px)] bg-nude"
+            className="w-[clamp(1px,0.15625vw,2px)] h-[clamp(40px,11vw,200px)] lg:h-[clamp(107px,18.75vw,240px)] bg-nude"
             style={{
               position: "absolute",
               bottom: 0,
