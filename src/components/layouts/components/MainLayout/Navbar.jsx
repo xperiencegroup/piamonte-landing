@@ -38,13 +38,13 @@ export default function Navbar({ navRef }) {
   // Navbar Animation when is home => "/"
   const navbarLogoOpacity = useTransform(
     scrollYProgress,
-    [0.327, 0.328],
+    [0.25, 0.2501],
     isHome ? [0, 1] : [1, 1],
     { clamp: false },
   );
   const navbarPointer = useTransform(
     scrollYProgress,
-    [0.327, 0.328],
+    [0.2, 0.2501],
     isHome ? ["none", "auto"] : ["auto", "auto"],
   );
 
@@ -75,7 +75,7 @@ export default function Navbar({ navRef }) {
       <motion.div
         style={{ opacity: navbarLogoOpacity, pointerEvents: navbarPointer }}
       >
-        <Link to={"/"} className="justify-center">
+        <Link to={"/"} className="justify-center hover:cursor-pointer">
           <LogoPiamonte className="w-[clamp(87px,15.3125vw,196px)] h-[clamp(16px,2.8125vw,36px)] text-gris dark:text-nude" />
         </Link>
       </motion.div>

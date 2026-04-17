@@ -12,14 +12,14 @@ export default function SplashScreen() {
   const ease = cubicBezier(0.22, 0.3, 0.36, 1);
 
   // SplashScreen Animation
-  const splashOpacity = useTransform(scrollYProgress, [0, 0.33], [1, 0], {
+  const splashOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0], {
     clamp: false,
     ease,
   });
-  const lineScaleY = useTransform(scrollYProgress, [0, 0.33], [1, 0.1]);
+  const lineScaleY = useTransform(scrollYProgress, [0, 0.25], [1, 0.1]);
 
   // Floating logo
-  const scale = useTransform(scrollYProgress, [0.03, 0.327], [1, 0.32], {
+  const scale = useTransform(scrollYProgress, [0.015, 0.25], [1, 0.32], {
     ease,
   });
 
@@ -39,7 +39,7 @@ export default function SplashScreen() {
 
   const top = useTransform(
     scrollYProgress,
-    [0.03, 0.327],
+    [0.015, 0.25],
     ["50%", `${centerY}%`],
     {
       ease,
@@ -47,7 +47,7 @@ export default function SplashScreen() {
   );
   const floatingOpacity = useTransform(
     scrollYProgress,
-    [0.327, 0.328],
+    [0.25, 0.2501],
     [1, 0],
     { clamp: false },
   );
@@ -55,7 +55,7 @@ export default function SplashScreen() {
   // Animation when is light theme (nude to gris)
   const logoColor = useTransform(
     scrollYProgress,
-    [0.0, 0.3],
+    [0.0, 0.2],
     isDark ? ["#ffffff", "#ffffff"] : ["#ffffff", "#33302b"],
     { clamp: false },
   );
@@ -63,7 +63,7 @@ export default function SplashScreen() {
   return (
     <>
       {/* Background */}
-      <div className="relative z-20 w-full h-dvh">
+      <div className="relative z-20 w-full h-dvh pointer-events-none">
         <motion.div
           className="relative w-full h-dvh bg-verde pointer-events-none"
           style={{
