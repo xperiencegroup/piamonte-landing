@@ -23,6 +23,7 @@
   --text-frase: clamp(28px, 5vw, 64px);
   --text-contact-title: clamp(12px, 2.1875vw, 28px);
   --text-caption: clamp(7px, 1.25vw, 16px);
+  --text-footer-caption: clamp(6.8px, 1.171875vw, 15px);
   --text-card: clamp(5px, 1.1vw, 16px);
 
   /* Colors */
@@ -33,6 +34,7 @@
   --color-amarillo: #efe181;
   --color-verde: #374432;
   --color-verde-claro: #6c7464;
+  --color-whatsapp: #008000;
 }
 
 @layer base {
