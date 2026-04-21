@@ -17,11 +17,13 @@ import AmenidadesRecorridos from "@/sections/Masterplan/Amenidades/AmenidadesRec
 import LoteLayout from "@/layouts/Lotes/LoteLayout";
 import LoteVista360 from "@/sections/Masterplan/Lotes/LoteVista360";
 import LoteInformacion from "@/sections/Masterplan/Lotes/LoteInformacion";
+import { ScrollToTop } from "@/components/layouts/components/ScrollToTop";
 
 export default function Router() {
   return (
     <VideoPlayerProvider>
       <BrowserRouter basename="/">
+        <ScrollToTop />
         <Routes>
           <Route element={<VideoComponentLayout />}>
             <Route element={<MainLayout />}>
