@@ -6,13 +6,19 @@ import { useVideoPlayer } from "./hooks/useVideoPlayer";
 import portadas from "./data/portadas.json";
 import { PLAYER, MODE } from "./const/Videos";
 import { VideoPlayerContext } from "./context/VideoPlayerContext";
+import piamonteXperienceVideos from "@/data/videos/piamonte_xperience.json";
 
 const VIDEOS_MAP = {
   // PORTADAS
-  "/": portadas.home,
   "/masterplan/amenidades/video-tour": portadas.home,
   "/nosotros": portadas.home,
   "/contacto": portadas.home,
+
+  // SECUENCIA DE / <-> /masterplan <-> /amenidades
+  "/": piamonteXperienceVideos,
+  "/masterplan": piamonteXperienceVideos,
+  "/masterplan/amenidades": piamonteXperienceVideos,
+  "/masterplan/lotes": piamonteXperienceVideos,
 };
 const EMPTY_JSON = {
   videos: [{ type: "idle", position: 1, src: "" }],
@@ -27,7 +33,7 @@ export default function VideoComponentLayout() {
   const videosRunning = VIDEOS_MAP[pathname];
   const hasVideo = videosRunning ? true : false;
 
-  const { videoRefA, videoRefB, loadPortada, activePlayer, modeState } =
+  const { videoRefA, videoRefB, loadPortada, goTo, activePlayer, modeState } =
     useVideoPlayer({
       json: videosRunning ?? EMPTY_JSON,
     });
@@ -54,6 +60,19 @@ export default function VideoComponentLayout() {
       return;
     }
   }, [videosRunning]);
+
+  // Manejar video de amenidades y lotes con variable global
+  useEffect(() => {
+    if (pathname === "/") {
+      goTo(1);
+    } else if (pathname === "/masterplan") {
+      goTo(2);
+    } else if (pathname === "/masterplan/amenidades") {
+      goTo(3);
+    } else if (pathname === "/masterplan/lotes") {
+      goTo(2);
+    }
+  }, [pathname]);
 
   useEffect(() => {
     if (modeState === MODE.IDLE) return setIdle();

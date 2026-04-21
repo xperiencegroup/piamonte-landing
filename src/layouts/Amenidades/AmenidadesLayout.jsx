@@ -2,6 +2,9 @@ import { Outlet } from "react-router";
 import { Link } from "react-router";
 import ReturnIcon from "@/assets/icons/shared/returnIcon";
 import { useLocation } from "react-router";
+import { VideoPlayerContext } from "@/Video/context/VideoPlayerContext";
+import { useContext } from "react";
+import { MODE } from "@/Video/const/Videos";
 
 const AMENIDADES_MENU = [
   {
@@ -40,6 +43,7 @@ const VIDEO_TOUR_MENU = [
 ];
 
 export default function AmenidadesLayout() {
+  const { mode } = useContext(VideoPlayerContext);
   const { pathname } = useLocation();
   const isActive = (path) => pathname === path;
 
@@ -94,7 +98,9 @@ export default function AmenidadesLayout() {
                     isActive(item.to)
                       ? "after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-cafe dark:after:bg-amarillo"
                       : ""
-                  }`}
+                  }
+                    ${mode === MODE.TRANSITIONING ? "pointer-events-none" : ""}
+                    `}
                 >
                   {item.icon === "return" && (
                     <ReturnIcon className="w-[clamp(9px,1.523438vw,19.5px)] h-[clamp(7px,1.289063vw,16.5px)] text-gris dark:text-nude" />

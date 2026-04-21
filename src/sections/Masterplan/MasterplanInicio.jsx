@@ -1,16 +1,15 @@
+import { VideoPlayerContext } from "@/Video/context/VideoPlayerContext";
+import { useContext } from "react";
 import { Link } from "react-router";
-import mainBackground from "@/assets/images/Masterplan/mainBackground.png";
+import { MODE } from "@/Video/const/Videos";
 
 export default function MasterplanInicio() {
+  const { mode } = useContext(VideoPlayerContext);
+
   return (
     <>
       {/* Background */}
       <div className="absolute inset-0 w-full h-dvh">
-        <img
-          src={mainBackground}
-          alt="Fondo principal"
-          className="absolute inset-0 h-full w-dvw -z-10 object-cover"
-        />
         {/* Overlay */}
         <div className="linear-gradient-shadow" />
       </div>
@@ -19,7 +18,9 @@ export default function MasterplanInicio() {
         <div className="flex justify-center items-end w-full gap-[clamp(11px,1.875vw,24px)]">
           <Link
             to="/masterplan/amenidades"
-            className="flex w-fit justify-center items-center gap-[clamp(4px,0.78125vw,10px)] p-[clamp(7px,1.25vw,16px)] border-b-[0.5px] md:border-b border-gris dark:border-nude"
+            aria-disabled={mode === MODE.TRANSITIONING}
+            tabIndex={mode === MODE.TRANSITIONING ? -1 : 0}
+            className={`flex w-fit justify-center items-center gap-[clamp(4px,0.78125vw,10px)] p-[clamp(7px,1.25vw,16px)] border-b-[0.5px] md:border-b border-gris dark:border-nude ${mode === MODE.TRANSITIONING ? "pointer-events-none" : ""}`}
           >
             <span className="text-boton-grande text-gris dark:text-nude uppercase">
               Amenidades
@@ -28,7 +29,9 @@ export default function MasterplanInicio() {
 
           <Link
             to="/masterplan/lotes"
-            className="flex w-fit justify-center items-center gap-[clamp(4px,0.78125vw,10px)] p-[clamp(7px,1.25vw,16px)] border-b-[0.5px] md:border-b border-gris dark:border-nude"
+            aria-disabled={mode === MODE.TRANSITIONING}
+            tabIndex={mode === MODE.TRANSITIONING ? -1 : 0}
+            className={`flex w-fit justify-center items-center gap-[clamp(4px,0.78125vw,10px)] p-[clamp(7px,1.25vw,16px)] border-b-[0.5px] md:border-b border-gris dark:border-nude ${mode === MODE.TRANSITIONING ? "pointer-events-none" : ""}`}
           >
             <span className="text-boton-grande text-gris dark:text-nude uppercase">
               Lotes
