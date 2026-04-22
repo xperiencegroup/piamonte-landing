@@ -119,6 +119,10 @@ export const useVideoPlayer = ({ json, onPositionChange }) => {
 
   const loadDirect = (position) => {
     clearListeners();
+
+    mode.current = MODE.IDLE;
+    setModeState(MODE.IDLE);
+
     const targetVideo = videos.find((video) => video.position === position);
 
     stagingRef.current.src = targetVideo.src;
@@ -158,8 +162,11 @@ export const useVideoPlayer = ({ json, onPositionChange }) => {
 
   const goTo = (position) => {
     if (isPortada) return;
-    // Evitar movimientos al momento de transición
-    if (modeState === MODE.TRANSITIONING) return;
+    // Al momento de transición, cargar de manera directa
+    if (modeState === MODE.TRANSITIONING) {
+      loadDirect(position);
+      return;
+    }
 
     const diff = position - currentPositionRef.current; // 1 next, -1 back
     const isLastPosition = currentPositionRef.current === lastPosition;
