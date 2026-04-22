@@ -6,19 +6,15 @@ import { useVideoPlayer } from "./hooks/useVideoPlayer";
 import portadas from "./data/portadas.json";
 import { PLAYER, MODE } from "./const/Videos";
 import { VideoPlayerContext } from "./context/VideoPlayerContext";
-import piamonteXperienceVideos from "@/data/videos/piamonte_xperience.json";
+import piamonteXperienceVideosDia from "@/data/videos/piamonte_xperience_dia.json";
+import piamonteXperienceVideosNoche from "@/data/videos/piamonte_xperience_noche.json";
+import useDarkMode from "@/hooks/useDarkMode";
 
+// PORTADAS
 const VIDEOS_MAP = {
-  // PORTADAS
   "/masterplan/amenidades/video-tour": portadas.home,
   "/nosotros": portadas.home,
   "/contacto": portadas.home,
-
-  // SECUENCIA DE / <-> /masterplan <-> /amenidades
-  "/": piamonteXperienceVideos,
-  "/masterplan": piamonteXperienceVideos,
-  "/masterplan/amenidades": piamonteXperienceVideos,
-  "/masterplan/lotes": piamonteXperienceVideos,
 };
 const EMPTY_JSON = {
   videos: [{ type: "idle", position: 1, src: "" }],
@@ -26,11 +22,28 @@ const EMPTY_JSON = {
   loop: false,
 };
 
+const VIDEO_THEMES = {
+  light: piamonteXperienceVideosDia,
+  dark: piamonteXperienceVideosNoche,
+};
+const ROUTES_WITH_SEQUENCE = [
+  "/",
+  "/masterplan",
+  "/masterplan/amenidades",
+  "/masterplan/lotes",
+];
+
 export default function VideoComponentLayout() {
   const { setIdle, setTransitioning } = useContext(VideoPlayerContext);
   const { pathname } = useLocation();
+  const isDark = useDarkMode();
 
-  const videosRunning = VIDEOS_MAP[pathname];
+  const isSequenceRoute = ROUTES_WITH_SEQUENCE.includes(pathname);
+
+  const videosRunning = isSequenceRoute
+    ? VIDEO_THEMES[isDark ? "dark" : "light"]
+    : VIDEOS_MAP[pathname];
+
   const hasVideo = videosRunning ? true : false;
 
   const { videoRefA, videoRefB, loadPortada, goTo, activePlayer, modeState } =
@@ -72,7 +85,7 @@ export default function VideoComponentLayout() {
     } else if (pathname === "/masterplan/lotes") {
       goTo(2);
     }
-  }, [pathname]);
+  }, [pathname, isDark]);
 
   useEffect(() => {
     if (modeState === MODE.IDLE) return setIdle();

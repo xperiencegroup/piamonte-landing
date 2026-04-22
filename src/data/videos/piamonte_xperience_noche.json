@@ -1,0 +1,36 @@
+{
+  "type": "sequence",
+  "navigation": "bidirectional",
+  "loop": false,
+  "autoplay": false,
+  "videos": [
+    {
+      "type": "idle",
+      "id": "position_1",
+      "position": 1,
+      "src": "/videos/xperience/noche/1N_PRC_PORTADA.mp4"
+    },
+    {
+      "type": "transition",
+      "next": "/videos/xperience/noche/2N_PRC_TRANSICION_PORTADA_A_MENU_MASTERPLAN.mp4",
+      "back": "/videos/xperience/noche/2RN_PRC_TRANSICION_MENU_MASTERPLAN_A_PORTADA.mp4"
+    },
+    {
+      "type": "idle",
+      "id": "position_2",
+      "position": 2,
+      "src": "/videos/xperience/noche/3N_PRC_MENU_MASTERPLAN.mp4"
+    },
+    {
+      "type": "transition",
+      "next": "/videos/xperience/noche/4N_PRC_TRANSICION_MENU_MASTERPLAN_A_MENU_AMENIDADES.mp4",
+      "back": "/videos/xperience/noche/4RN_PRC_TRANSICION_MENU_AMENIDADES_A_MENU_MASTERPLAN.mp4"
+    },
+    {
+      "type": "idle",
+      "id": "position_3",
+      "position": 3,
+      "src": "/videos/xperience/noche/5N_PRC_MENU_AMENIDADES.mp4"
+    }
+  ]
+}
