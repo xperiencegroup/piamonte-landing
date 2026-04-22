@@ -1,5 +1,11 @@
 import { useState, useEffect } from "react";
-import { motion, cubicBezier, useScroll, useTransform } from "motion/react";
+import {
+  motion,
+  cubicBezier,
+  useScroll,
+  useTransform,
+  useMotionValueEvent,
+} from "motion/react";
 import LogoPiamonte from "@/assets/logos/main/LogoPiamonte";
 import { useOutletContext } from "react-router";
 import useDarkMode from "@/hooks/useDarkMode";
@@ -12,11 +18,11 @@ export default function SplashScreen() {
   const ease = cubicBezier(0.22, 0.3, 0.36, 1);
 
   // SplashScreen Animation
-  const splashOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0], {
+  const splashZIndex = useTransform(scrollYProgress, [0.2499, 0.25], [20, 0], {
     clamp: false,
     ease,
   });
-  const lineScaleY = useTransform(scrollYProgress, [0, 0.25], [1, 0.1]);
+  const lineScaleY = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
 
   // Floating logo
   const scale = useTransform(scrollYProgress, [0.015, 0.25], [1, 0.32], {
@@ -56,20 +62,22 @@ export default function SplashScreen() {
   const logoColor = useTransform(
     scrollYProgress,
     [0.0, 0.2],
-    isDark ? ["#ffffff", "#ffffff"] : ["#ffffff", "#33302b"],
+    !isDark ? ["#ffffff", "#ffffff"] : ["#ffffff", "#33302b"],
     { clamp: false },
   );
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    console.log("scrollYProgress:", latest);
+  });
 
   return (
     <>
       {/* Background */}
-      <div className="relative z-20 w-full h-dvh pointer-events-none">
-        <motion.div
-          className="relative w-full h-dvh bg-verde pointer-events-none"
-          style={{
-            opacity: splashOpacity,
-          }}
-        >
+      <motion.div
+        className="relative w-full h-dvh pointer-events-none"
+        style={{ zIndex: splashZIndex }}
+      >
+        <motion.div className="relative w-full h-dvh bg-verde pointer-events-none">
           {/* Linea decortativa */}
           <motion.div
             className="w-[clamp(1px,0.15625vw,2px)] h-[clamp(40px,11vw,200px)] lg:h-[clamp(107px,18.75vw,240px)] bg-nude"
@@ -82,7 +90,7 @@ export default function SplashScreen() {
             }}
           />
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* Logo */}
       <motion.div
