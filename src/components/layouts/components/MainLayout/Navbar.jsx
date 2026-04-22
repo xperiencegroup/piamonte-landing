@@ -52,9 +52,8 @@ export default function Navbar({ navRef }) {
     scrollYProgress,
     [0.25, 0.27],
     isHome ? [0, 1] : [1, 1],
+    { clamp: false },
   );
-
-  console.log(isHome);
 
   return (
     <nav
