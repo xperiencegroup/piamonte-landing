@@ -12,10 +12,8 @@ export default function CapaLotesMapped({ className = "", handleSelectLote }) {
 
   return (
     <svg
-      width="1096"
-      height="328"
-      viewBox="0 0 1096 328"
-      fill="none"
+      viewBox="0 0 1920 1080"
+      preserveAspectRatio="xMidYMid slice"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
@@ -24,6 +22,7 @@ export default function CapaLotesMapped({ className = "", handleSelectLote }) {
           return (
             <g
               key={lote.id}
+              transform="translate(196,310) scale(1.258)"
               className="group hover:cursor-pointer"
               onClick={() => handleSelectLote(lote.id)}
               onMouseEnter={() => setHoveredId(lote.id)}
