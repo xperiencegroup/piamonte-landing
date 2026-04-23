@@ -31,6 +31,9 @@ const ROUTES_WITH_SEQUENCE = [
   "/masterplan",
   "/masterplan/amenidades",
   "/masterplan/lotes",
+  "/masterplan/amenidades/foto-renders",
+  "/masterplan/amenidades/recorridos-virtuales",
+  "/masterplan/amenidades/informacion",
 ];
 
 export default function VideoComponentLayout() {
@@ -80,7 +83,7 @@ export default function VideoComponentLayout() {
       goTo(1);
     } else if (pathname === "/masterplan") {
       goTo(2);
-    } else if (pathname === "/masterplan/amenidades") {
+    } else if (pathname.startsWith("/masterplan/amenidades")) {
       goTo(3);
     } else if (pathname === "/masterplan/lotes") {
       goTo(2);
