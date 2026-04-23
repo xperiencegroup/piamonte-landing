@@ -26,6 +26,7 @@
   --text-caption: clamp(7px, 1.25vw, 16px);
   --text-footer-caption: clamp(6.8px, 1.171875vw, 15px);
   --text-card: clamp(5px, 1.1vw, 16px);
+  --text-card-subtitle: clamp(5.44px, 0.9375vw, 12px);
 
   /* Colors */
   --color-nude: #eeece0;
@@ -73,5 +74,22 @@ body {
 
 .embla__slide {
   flex: 0 0 100%;
+  min-width: 0;
+}
+
+/* Gallery Carousel (Embla) */
+.gallery {
+  max-width: 1280px;
+  margin: auto;
+}
+
+.gallery__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+}
+
+.gallery_slide {
+  transform: translate3d(0, 0, 0);
+  flex: 0 0 20%;
   min-width: 0;
 }
