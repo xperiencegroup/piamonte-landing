@@ -2,6 +2,7 @@ import InstagramIcon from "@/assets/icons/contact/InstagramIcon";
 import LinkedinIcon from "@/assets/icons/contact/LinkedinIcon";
 import SendIcon from "@/assets/icons/contact/SendIcon";
 import XIcon from "@/assets/icons/contact/XIcon";
+import PaperBackground from "@/assets/images/Contacto/PaperBackground.svg";
 
 const SOCIAL_LINKS = [
   {
@@ -31,17 +32,26 @@ export default function Contacto() {
         <div className="flex w-full">
           {/* CONTENT */}
           <div className="flex-1 flex items-center text-cafe dark:text-nude text-center">
-            <div className="flex flex-col w-[clamp(213px,37.578125vw,481px)] h-[clamp(127px,22.265625vw,285px)]">
+            <div className="relative flex flex-col w-[clamp(213px,37.578125vw,481px)] h-[clamp(127px,22.265625vw,285px)]">
+              {/* Image */}
+              <img
+                src={PaperBackground}
+                alt="Imagen de fondo papel"
+                className="absolute -z-10 inset-0 w-full h-full object-cover overflow-visible transition-opacity delay-50 dark:opacity-0"
+              />
+
+              {/* Dirección */}
               <div className="flex-1">
                 <h3 className="text-contact-title font-baskerville">
                   Dirección
                 </h3>
                 <p className="text-paragraph">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et
+                  Lorem ipsum dolor sit amet, <br /> consectetur adipiscing
+                  elit, sed do <br /> eiusmod tempor incididunt ut labore et
                 </p>
               </div>
 
+              {/* Horario */}
               <div className="flex-1">
                 <h3 className="text-contact-title font-baskerville">Horario</h3>
                 <p className="text-paragraph">
