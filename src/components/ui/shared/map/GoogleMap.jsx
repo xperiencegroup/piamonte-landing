@@ -13,7 +13,6 @@ export default function GoogleMap() {
           mapTypeId="satellite"
           gestureHandling="none"
           disableDefaultUI
-          defaultZoom={MAP_CONFIG.zoom}
           defaultCenter={MAP_CONFIG.center}
           heading={MAP_CONFIG.heading}
           zoomControl={false}

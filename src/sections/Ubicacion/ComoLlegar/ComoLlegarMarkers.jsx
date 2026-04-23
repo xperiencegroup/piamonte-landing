@@ -1,5 +1,6 @@
 import AdvanceMarker from "@/components/ui/shared/map/AdvanceMarker";
 import PaperTitle from "@/assets/images/Nosotros/paperTitle.png";
+import Vialidades from "./Vialidades";
 
 const VIALIDADES_NAMES = [
   {
@@ -24,18 +25,22 @@ export default function ComoLlegarMarkers() {
     <>
       {VIALIDADES_NAMES.map((vialidad) => {
         return (
-          <AdvanceMarker key={vialidad.id} position={vialidad.coordinates}>
-            <div className="relative z-10 flex w-fit h-[clamp(23px,4.0625vw,52px)] justify-center items-center">
-              <img
-                src={PaperTitle}
-                alt="Imagen de papel de fondo"
-                className="absolute inset-0 w-full h-full"
-              />
-              <p className="relative z-10 text-[clamp(6px,1.015625vw,13px)] p-[clamp(5px,0.9375vw,12px)] font-dmsans font-bold uppercase">
-                {vialidad.label}
-              </p>
-            </div>
-          </AdvanceMarker>
+          <>
+            <AdvanceMarker key={vialidad.id} position={vialidad.coordinates}>
+              <div className="relative z-10 flex w-fit h-[clamp(23px,4.0625vw,52px)] justify-center items-center">
+                <img
+                  src={PaperTitle}
+                  alt="Imagen de papel de fondo"
+                  className="absolute inset-0 w-full h-full"
+                />
+                <p className="relative z-10 text-[clamp(6px,1.015625vw,13px)] p-[clamp(5px,0.9375vw,12px)] font-dmsans font-bold uppercase">
+                  {vialidad.label}
+                </p>
+              </div>
+            </AdvanceMarker>
+
+            <Vialidades />
+          </>
         );
       })}
     </>
