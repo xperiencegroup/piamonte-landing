@@ -1,5 +1,6 @@
 import { useSearchParams } from "react-router";
 import GoogleMap from "@/components/ui/shared/map/GoogleMap";
+import Actividades from "@/sections/Ubicacion/Actividades/Actividades";
 
 const SUBMENU_BUTTON = [
   {
@@ -19,7 +20,9 @@ const SUBMENU_BUTTON = [
 export default function Ubicacion() {
   const [params, setSearchParams] = useSearchParams();
 
-  const isActive = (path) => params.get("filter") === path;
+  const activeParam = params.get("filter");
+  const isActive = (path) => activeParam === path;
+
   return (
     <main className="flex flex-col w-full h-dvh">
       {/* MAP */}
@@ -39,10 +42,6 @@ export default function Ubicacion() {
                   : ""
               }`}
             >
-              {item.icon === "return" && (
-                <ReturnIcon className="w-[clamp(9px,1.523438vw,19.5px)] h-[clamp(7px,1.289063vw,16.5px)] text-gris dark:text-nude" />
-              )}
-
               <span
                 className={`text-boton-normal uppercase ${isActive(item.id) ? "text-cafe dark:text-amarillo font-semibold" : "text-gris dark:text-nude"}`}
               >
@@ -52,6 +51,8 @@ export default function Ubicacion() {
           );
         })}
       </div>
+
+      {activeParam === "actividades" && <Actividades />}
     </main>
   );
 }
