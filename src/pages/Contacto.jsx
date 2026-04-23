@@ -2,7 +2,7 @@ import InstagramIcon from "@/assets/icons/contact/InstagramIcon";
 import LinkedinIcon from "@/assets/icons/contact/LinkedinIcon";
 import SendIcon from "@/assets/icons/contact/SendIcon";
 import XIcon from "@/assets/icons/contact/XIcon";
-import PaperBackground from "@/assets/images/Contacto/PaperBackground.svg";
+import PaperBackground from "@/assets/images/Contacto/paperBackground.svg";
 
 const SOCIAL_LINKS = [
   {
