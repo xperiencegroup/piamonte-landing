@@ -1,11 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  motion,
-  cubicBezier,
-  useScroll,
-  useTransform,
-  useMotionValueEvent,
-} from "motion/react";
+import { motion, cubicBezier, useScroll, useTransform } from "motion/react";
 import LogoPiamonte from "@/assets/logos/main/LogoPiamonte";
 import { useOutletContext } from "react-router";
 import useDarkMode from "@/hooks/useDarkMode";
@@ -65,10 +59,6 @@ export default function SplashScreen() {
     !isDark ? ["#ffffff", "#ffffff"] : ["#ffffff", "#33302b"],
     { clamp: false },
   );
-
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log("scrollYProgress:", latest);
-  });
 
   return (
     <>
