@@ -12,22 +12,22 @@ importers:
         specifier: 4.2.2
         version: 4.2.2(vite@8.0.0(jiti@2.6.1))
       '@vis.gl/react-google-maps':
-        specifier: ^1.8.0
+        specifier: 1.8.0
         version: 1.8.0(jiti@2.6.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       embla-carousel:
-        specifier: ^8.6.0
+        specifier: 8.6.0
         version: 8.6.0
       embla-carousel-auto-scroll:
-        specifier: ^8.6.0
+        specifier: 8.6.0
         version: 8.6.0(embla-carousel@8.6.0)
       embla-carousel-autoplay:
-        specifier: ^8.6.0
+        specifier: 8.6.0
         version: 8.6.0(embla-carousel@8.6.0)
       embla-carousel-react:
         specifier: 8.6.0
         version: 8.6.0(react@19.2.4)
       motion:
-        specifier: ^12.38.0
+        specifier: 12.38.0
         version: 12.38.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       react:
         specifier: 19.2.4
