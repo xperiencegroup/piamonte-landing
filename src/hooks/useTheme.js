@@ -1,14 +1,20 @@
 import { useEffect, useState } from "react";
 
+const lightModeStart = 7;
+const darkModeStart = 19;
+
+function getTimeTheme() {
+  const hour = new Date().getHours();
+  return hour >= lightModeStart && hour < darkModeStart ? "light" : "dark";
+}
+
 function getInitialTheme() {
   if (typeof window === "undefined") return "light";
 
   const saved = localStorage.getItem("theme");
   if (saved === "dark" || saved === "light") return saved;
 
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
+  return getTimeTheme();
 }
 
 export function useTheme() {
