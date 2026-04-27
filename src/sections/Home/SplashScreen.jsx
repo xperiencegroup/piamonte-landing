@@ -56,7 +56,7 @@ export default function SplashScreen() {
   const logoColor = useTransform(
     scrollYProgress,
     [0.0, 0.2],
-    !isDark ? ["#ffffff", "#ffffff"] : ["#ffffff", "#33302b"],
+    !isDark ? ["#ffffff", "#ffffff"] : ["#33302b", "#33302b"],
     { clamp: false },
   );
 
@@ -64,13 +64,13 @@ export default function SplashScreen() {
     <>
       {/* Background */}
       <motion.div
-        className="relative w-full h-dvh pointer-events-none"
+        className="relative w-full h-dvh"
         style={{ zIndex: splashZIndex }}
       >
-        <motion.div className="relative w-full h-dvh bg-verde pointer-events-none">
+        <motion.div className="relative w-full h-dvh bg-verde dark:bg-nude pointer-events-none">
           {/* Linea decortativa */}
           <motion.div
-            className="w-[clamp(1px,0.15625vw,2px)] h-[clamp(40px,11vw,200px)] lg:h-[clamp(107px,18.75vw,240px)] bg-nude"
+            className="w-[clamp(1px,0.15625vw,2px)] h-[clamp(40px,11vw,200px)] lg:h-[clamp(107px,18.75vw,240px)] bg-nude dark:bg-verde"
             style={{
               position: "absolute",
               bottom: 0,
