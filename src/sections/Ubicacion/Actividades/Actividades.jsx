@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import useEmblaCarousel from "embla-carousel-react";
+import AutoScroll from "embla-carousel-auto-scroll";
+import useIsShortHeight from "@/hooks/useIsShortHeight";
 import useResponsiveScale from "@/hooks/useResponsiveScale";
-import Gallery from "@/components/ui/shared/gallery/Gallery";
 import PaperTear from "@/assets/images/Masterplan/AmenidadesInformacion/Papeles/paperTear.png";
 import seria_cedros from "@/assets/images/Ubicación/actividades/seria_cedros.jpg";
 import monterreal from "@/assets/images/Ubicación/actividades/monterreal.jpg";
@@ -13,16 +15,6 @@ import saltillo from "@/assets/images/Ubicación/actividades/saltillo.jpg";
 import san_antonio from "@/assets/images/Ubicación/actividades/san-antonio.jpeg";
 import sierra_marta from "@/assets/images/Ubicación/actividades/sierra_marta.webp";
 import ClickIcon from "@/assets/icons/home/clickIcon";
-
-import ubicacionImage from "@/assets/images/Nosotros/ventajas/ubicacion.jpg";
-import seguridadImage from "@/assets/images/Nosotros/ventajas/seguridad.jpg";
-import tiemposImage from "@/assets/images/Nosotros/ventajas/tiempos.jpg";
-import conceptoImage from "@/assets/images/Nosotros/ventajas/concepto.jpg";
-import vialidadesImage from "@/assets/images/Nosotros/ventajas/vialidades.jpg";
-import useEmblaCarousel from "embla-carousel-react";
-import AutoScroll from "embla-carousel-auto-scroll";
-import { useEffect } from "react";
-import useIsShortHeight from "@/hooks/useIsShortHeight";
 
 const ACTIVITIES = [
   {
@@ -96,35 +88,8 @@ const ACTIVITIES = [
     image: monterrey,
   },
 ];
-const VENTAJAS = [
-  {
-    label: "Residencial campestre a pie de carretera.",
-    title: "Ubicación",
-    image: ubicacionImage,
-  },
-  {
-    label: "Régimen de propiedad en condominio.",
-    title: "Seguridad",
-    image: seguridadImage,
-  },
-  {
-    label: "80 minutos de Monterrey y 30 de Saltillo.",
-    title: "Tiempos",
-    image: tiemposImage,
-  },
-  {
-    label: "Concepto 100% Slow life/Wellness..",
-    title: "Concepto",
-    image: conceptoImage,
-  },
-  {
-    label: "Carretera interserrana lista 2027.",
-    title: "Vialidades",
-    image: vialidadesImage,
-  },
-];
 
-const ROTATIONS = [10, -5, 2, 14, -16];
+const ROTATIONS = [10, -5, 2, 14, -16, -18, 20];
 
 export default function Actividades() {
   const [isOpen, setIsOpen] = useState(false);
@@ -215,7 +180,7 @@ export default function Actividades() {
                       ? "relative gallery_slide select-none"
                       : "absolute top-1/2 -translate-y-1/2"
                   }`}
-                  style={{ zIndex: VENTAJAS.length - index }}
+                  style={{ zIndex: ACTIVITIES.length - index }}
                 >
                   {/* Content */}
                   <motion.div

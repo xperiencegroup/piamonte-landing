@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import useResponsiveScale from "@/hooks/useResponsiveScale";
 import ubicacionImage from "@/assets/images/Nosotros/ventajas/ubicacion.jpg";
 import seguridadImage from "@/assets/images/Nosotros/ventajas/seguridad.jpg";
 import tiemposImage from "@/assets/images/Nosotros/ventajas/tiempos.jpg";
@@ -7,7 +8,6 @@ import conceptoImage from "@/assets/images/Nosotros/ventajas/concepto.jpg";
 import vialidadesImage from "@/assets/images/Nosotros/ventajas/vialidades.jpg";
 import PaperTear from "../../assets/images/Masterplan/AmenidadesInformacion/Papeles/paperTear.png";
 import ClickIcon from "@/assets/icons/home/clickIcon";
-import { useEffect } from "react";
 
 const VENTAJAS = [
   {
@@ -38,28 +38,6 @@ const VENTAJAS = [
 ];
 
 const ROTATIONS = [10, -5, 2, 14, -16];
-
-function useResponsiveScale() {
-  const [scale, setScale] = useState(1);
-
-  useEffect(() => {
-    const update = () => {
-      const width = window.innerWidth;
-
-      if (width >= 1280) setScale(1);
-      else if (width >= 1024) setScale(0.75);
-      else if (width >= 800) setScale(0.6);
-      else if (width >= 568) setScale(0.45);
-      else setScale(0.4);
-    };
-
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
-
-  return scale;
-}
 
 export default function Ventajas() {
   const [isOpen, setIsOpen] = useState(false);
