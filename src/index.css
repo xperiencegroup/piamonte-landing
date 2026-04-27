@@ -90,6 +90,6 @@ body {
 
 .gallery_slide {
   transform: translate3d(0, 0, 0);
-  flex: 0 0 20%;
+  flex: 0 0 18%;
   min-width: 0;
 }
