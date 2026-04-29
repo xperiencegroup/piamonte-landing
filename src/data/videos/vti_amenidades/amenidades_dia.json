@@ -1,0 +1,168 @@
+{
+  "type": "sequence",
+  "navigation": "unidirectional",
+  "loop": true,
+  "autoplay": true,
+  "videos": [
+    {
+      "type": "idle",
+      "id": "position_1",
+      "position": 1,
+      "src": "/videos/vti_amenidades/dia/6D PRC VTI AMENIDADES ACCESO.mp4"
+    },
+    {
+      "type": "transition",
+      "next": "/videos/vti_amenidades/dia/7D PRC VTI AMENIDADES TRANSICION ACCESO A CASA CLUB.mp4"
+    },
+    {
+      "type": "idle",
+      "id": "position_2",
+      "position": 2,
+      "src": "/videos/vti_amenidades/dia/8D PRC VTI AMENIDADES CASA CLUB.mp4"
+    },
+    {
+      "type": "transition",
+      "next": "/videos/vti_amenidades/dia/9D PRC VTI AMENIDADES TRANSICION CASA CLUB A BAR EXTERIOR.mp4"
+    },
+    {
+      "type": "idle",
+      "id": "position_3",
+      "position": 3,
+      "src": "/videos/vti_amenidades/dia/10D PRC VTI AMENIDADES BAR EXTERIOR.mp4"
+    },
+    {
+      "type": "transition",
+      "next": "/videos/vti_amenidades/dia/11D PRC VTI AMENIDADES TRANSICION BAR EXTERIOR A TERRAZA.mp4"
+    },
+    {
+      "type": "idle",
+      "id": "position_4",
+      "position": 4,
+      "src": "/videos/vti_amenidades/dia/12D PRC VTI AMENIDADES TERRAZA.mp4"
+    },
+    {
+      "type": "transition",
+      "next": "/videos/vti_amenidades/dia/13D PRC VTI AMENIDADES TRANSICION TERRAZA A BAR INTERIOR.mp4"
+    },
+    {
+      "type": "idle",
+      "id": "position_5",
+      "position": 5,
+      "src": "/videos/vti_amenidades/dia/14D PRC VTI AMENIDADES BAR INTERIOR.mp4"
+    },
+    {
+      "type": "transition",
+      "next": "/videos/vti_amenidades/dia/15D PRC VTI AMENIDADES TRANSICION BAR INTERIOR A SALA.mp4"
+    },
+    {
+      "type": "idle",
+      "id": "position_6",
+      "position": 6,
+      "src": "/videos/vti_amenidades/dia/16D PRC VTI AMENIDADES SALA.mp4"
+    },
+    {
+      "type": "transition",
+      "next": "/videos/vti_amenidades/dia/17D PRC VTI AMENIDADES TRANSICION SALA A LAGO.mp4"
+    },
+    {
+      "type": "idle",
+      "id": "position_7",
+      "position": 7,
+      "src": "/videos/vti_amenidades/dia/18D PRC VTI AMENIDADES LAGO.mp4"
+    },
+    {
+      "type": "transition",
+      "next": "/videos/vti_amenidades/dia/19D PRC VTI AMENIDADES TRANSICION LAGO A ZONA MEDITACION.mp4"
+    },
+    {
+      "type": "idle",
+      "id": "position_8",
+      "position": 8,
+      "src": "/videos/vti_amenidades/dia/20D PRC VTI AMENIDADES ZONA MEDITACION.mp4"
+    },
+    {
+      "type": "transition",
+      "next": "/videos/vti_amenidades/dia/21D PRC VTI AMENIDADES TRANSICION ZONA MEDITACION A ALBERCA.mp4"
+    },
+    {
+      "type": "idle",
+      "id": "position_9",
+      "position": 9,
+      "src": "/videos/vti_amenidades/dia/22D PRC VTI AMENIDADES ALBERCA.mp4"
+    },
+    {
+      "type": "transition",
+      "next": "/videos/vti_amenidades/dia/23D PRC VTI AMENIDADES TRANSICION ALBERCA A JUEGOS INFANTILES.mp4"
+    },
+    {
+      "type": "idle",
+      "id": "position_10",
+      "position": 10,
+      "src": "/videos/vti_amenidades/dia/24D PRC VTI AMENIDADES JUEGOS INFANTILES.mp4"
+    },
+    {
+      "type": "transition",
+      "next": "/videos/vti_amenidades/dia/25D PRC VTI AMENIDADES TRANSICION JUEGOS INFANTILES A PET PARK.mp4"
+    },
+    {
+      "type": "idle",
+      "id": "position_11",
+      "position": 11,
+      "src": "/videos/vti_amenidades/dia/26D PRC VTI AMENIDADES PET PARK.mp4"
+    },
+    {
+      "type": "transition",
+      "next": "/videos/vti_amenidades/dia/27D PRC VTI AMENIDADES TRANSICION PET PARK A GIMNASIO.mp4"
+    },
+    {
+      "type": "idle",
+      "id": "position_12",
+      "position": 12,
+      "src": "/videos/vti_amenidades/dia/28D PRC VTI AMENIDADES GIMNASIO.mp4"
+    },
+    {
+      "type": "transition",
+      "next": "/videos/vti_amenidades/dia/29D PRC VTI AMENIDADES TRANSICION GIMNASIO A CANCHA PADEL.mp4"
+    },
+    {
+      "type": "idle",
+      "id": "position_13",
+      "position": 13,
+      "src": "/videos/vti_amenidades/dia/30D PRC VTI AMENIDADES CANCHA PADEL.mp4"
+    },
+    {
+      "type": "transition",
+      "next": "/videos/vti_amenidades/dia/31D PRC VTI AMENIDADES TRANSICION CANCHA PADEL A CANCHA BASKET.mp4"
+    },
+    {
+      "type": "idle",
+      "id": "position_14",
+      "position": 14,
+      "src": "/videos/vti_amenidades/dia/32D PRC VTI AMENIDADES CANCHA BASKET.mp4"
+    },
+    {
+      "type": "transition",
+      "next": "/videos/vti_amenidades/dia/33D PRC VTI AMENIDADES TRANSICION CANCHA BASKET A FOGATEROS.mp4"
+    },
+    {
+      "type": "idle",
+      "id": "position_15",
+      "position": 15,
+      "src": "/videos/vti_amenidades/dia/34D PRC VTI AMENIDADES FOGATEROS.mp4"
+    },
+    {
+      "type": "transition",
+      "next": "/videos/vti_amenidades/dia/35D PRC VTI AMENIDADES TRANSICION FOGATEROS A HUERTO.mp4"
+    },
+    {
+      "type": "idle",
+      "id": "position_16",
+      "position": 16,
+      "src": "/videos/vti_amenidades/dia/36D PRC VTI AMENIDADES HUERTO.mp4"
+    },
+    {
+      "type": "transition",
+      "next": "/videos/vti_amenidades/dia/37D PRC VTI AMENIDADES TRANSICION HUERTO A ACCESO.mp4"
+    }
+  ]
+}

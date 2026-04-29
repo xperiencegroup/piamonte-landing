@@ -1,5 +1,9 @@
+import { useContext } from "react";
 import { useSearchParams } from "react-router";
 import { AnimatePresence, motion } from "motion/react";
+import useIsShortHeight from "@/hooks/useIsShortHeight";
+import { VideoPlayerContext } from "@/Video/context/VideoPlayerContext";
+import { MODE } from "@/Video/const/Videos";
 import AlbercaIcon from "@/assets/icons/home/amenidades/albercaIcon";
 import BarIcon from "@/assets/icons/home/amenidades/barIcon";
 import BasketballIcon from "@/assets/icons/home/amenidades/basketballIcon";
@@ -16,7 +20,6 @@ import SalaIcon from "@/assets/icons/home/amenidades/salaIcon";
 import SalonSocialIcon from "@/assets/icons/home/amenidades/salonSocialIcon";
 import TerrazaIcon from "@/assets/icons/home/amenidades/terrazaIcon";
 import YogaIcon from "@/assets/icons/home/amenidades/yogaIcon";
-import useIsShortHeight from "@/hooks/useIsShortHeight";
 
 const VIDEO_TOUR_BUTTONS = [
   {
@@ -102,6 +105,8 @@ const VIDEO_TOUR_BUTTONS = [
 ];
 
 export default function AmenidadesVideoTour() {
+  const { mode } = useContext(VideoPlayerContext);
+
   const [params, setSearchParams] = useSearchParams();
   const activeParam = params.get("section");
 
@@ -124,7 +129,8 @@ export default function AmenidadesVideoTour() {
               <motion.button
                 key={item.id}
                 onClick={() => setSearchParams({ section: item.id })}
-                className={`relative flex items-center h-[clamp(21px,3.75vw,48px)] w-fit p-[clamp(5px,0.9375vw,12px)] gap-[clamp(4px,0.625vw,8px)] hover:cursor-pointer`}
+                disabled={mode === MODE.TRANSITIONING}
+                className={`relative flex items-center h-[clamp(21px,3.75vw,48px)] w-fit p-[clamp(5px,0.9375vw,12px)] gap-[clamp(4px,0.625vw,8px)] ${mode === MODE.TRANSITIONING ? "" : "hover:cursor-pointer"}`}
               >
                 {/* Icon */}
                 <div className="flex items-center justify-center size-[clamp(11px,1.875vw,24px)]">
