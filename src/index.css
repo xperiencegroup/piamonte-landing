@@ -21,6 +21,8 @@
   --text-boton-grande: clamp(9px, 1.5625vw, 20px);
   --text-boton-normal: clamp(8px, 1.40625vw, 18px);
   --text-paper: clamp(8px, 1.40625vw, 18px);
+  --text-phone-rotation: clamp(14px, 3.733333vw, 47.79px);
+  --text-selinea-rotation: clamp(64px, 17.066667vw, 218.45px);
   --text-frase: clamp(28px, 5vw, 64px);
   --text-contact-title: clamp(12px, 2.1875vw, 28px);
   --text-caption: clamp(7px, 1.25vw, 16px);
@@ -48,6 +50,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  /* outline: 1px solid red; */
 }
 
 body {
@@ -60,6 +63,10 @@ body {
 
 .gradient-inicio {
   @apply absolute inset-0 -z-10 bg-linear-to-b from-nude/85 via-nude/75 via-30% to-nude/55 dark:from-gris/95 dark:via-gris/90 dark:to-gris/65;
+}
+
+.gradient-inicio-phone-rotation {
+  @apply absolute inset-0 bg-linear-to-b from-nude/85 via-nude/75 via-30% to-nude/55 dark:from-gris/95 dark:via-gris/90 dark:to-gris/65;
 }
 
 /* EMBLA Carousel */

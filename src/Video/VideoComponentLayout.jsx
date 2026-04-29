@@ -101,7 +101,7 @@ export default function VideoComponentLayout() {
         ref={videoRefA}
         muted
         playsInline
-        className={`fixed w-full max-w-full h-dvh object-cover top-0 left-0 ${
+        className={`fixed w-full max-w-full h-full object-cover top-0 left-0 ${
           activePlayer === PLAYER.A ? "z-10" : "z-0"
         }`}
       ></video>
@@ -110,7 +110,7 @@ export default function VideoComponentLayout() {
         ref={videoRefB}
         muted
         playsInline
-        className={`fixed w-full max-w-full h-dvh object-cover top-0 left-0 ${
+        className={`fixed w-full max-w-full h-full object-cover top-0 left-0 ${
           activePlayer === PLAYER.B ? "z-10" : "z-0"
         }`}
       ></video>

@@ -7,8 +7,8 @@ import LogoPiamonte from "@/assets/logos/main/LogoPiamonte";
 
 export default function Footer() {
   return (
-    <footer className="relative w-full h-auto">
-      <Cerro className="w-full text-nude dark:text-gris" />
+    <footer className="relative z-15 w-full h-auto">
+      <Cerro className="w-full text-nude dark:text-gris max-[722px]:h-[160px]" />
 
       <div className="absolute inset-0 left-1/2 -translate-x-1/2 flex flex-col gap-[clamp(8.16px,1.40625vw,18px)] justify-end w-full max-w-7xl h-full pb-[clamp(5.89px,1.015625vw,13px)]">
         <div className="self-center flex justify-between items-center w-full max-w-[1212px] h-fit">

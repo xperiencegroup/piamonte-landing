@@ -1,15 +1,16 @@
+import { useRef } from "react";
+import { useLocation, Outlet } from "react-router";
 import Footer from "@/components/layouts/components/MainLayout/Footer";
 import MobileMenu from "@/components/layouts/components/MainLayout/MobileMenu";
 import Navbar from "@/components/layouts/components/MainLayout/Navbar";
 import ToggleTheme from "@/components/layouts/components/MainLayout/ToggleTheme";
 import useIsPortrait from "@/hooks/useIsPortrait";
-import React from "react";
-import { useRef } from "react";
-import { useLocation } from "react-router";
-import { Outlet } from "react-router";
+import RotationMessage from "@/components/layouts/components/MainLayout/RotationMessage";
+import WhatsappButton from "@/components/layouts/components/MainLayout/WhatsappButton";
 
 const routesToHideNavbar = ["/masterplan/amenidades/video-tour", "/playground"];
 const routesToShowFooter = ["/", "/nosotros"];
+const routesAvailableMobile = ["/nosotros", "/contacto"];
 
 export default function MainLayout() {
   const navRef = useRef(null);
@@ -22,17 +23,27 @@ export default function MainLayout() {
 
   const showFooter = routesToShowFooter.some((route) => pathname === route);
 
+  const showRotationMessage =
+    isPortrait &&
+    !routesAvailableMobile.some((route) => pathname.startsWith(route));
+
   return (
-    <div className="flex flex-col w-full h-dvh">
+    <div className="relative flex flex-col w-full min-h-screen">
       {!hideNavbar && !isPortrait && <Navbar navRef={navRef} />}
 
       {isPortrait && <MobileMenu />}
 
+      {showRotationMessage ? (
+        <RotationMessage />
+      ) : (
+        <>
+          <Outlet context={{ navRef }} />
+          {showFooter && <Footer />}
+        </>
+      )}
+
       <ToggleTheme />
-
-      <Outlet context={{ navRef }} />
-
-      {showFooter && <Footer />}
+      <WhatsappButton />
     </div>
   );
 }

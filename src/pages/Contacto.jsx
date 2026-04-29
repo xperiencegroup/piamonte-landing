@@ -24,12 +24,12 @@ const SOCIAL_LINKS = [
 
 export default function Contacto() {
   return (
-    <div className="relative w-full h-dvh flex justify-center items-center">
+    <div className="relative w-full min-h-dvh h-full flex justify-center items-center">
       {/* Overlay gradiente */}
       <div className="gradient-inicio" />
 
-      <div className="flex flex-col w-full max-w-[1280px] h-full max-h-[476px] flex justify-center items-center px-[clamp(13px,2.34375vw,30px)] lg:gap-[clamp(7px,1.25vw,16px)]">
-        <div className="flex w-full">
+      <div className="flex flex-col w-full max-w-[1280px] h-full max-h-[476px] flex justify-center items-center px-[clamp(13px,2.34375vw,30px)] lg:gap-[clamp(7px,1.25vw,16px)] portrait:gap-[6vh]">
+        <div className="flex w-full portrait:flex-col-reverse portrait:items-center portrait:gap-[6vh]">
           {/* CONTENT */}
           <div className="flex-1 flex items-center text-cafe dark:text-nude text-center">
             <div className="relative flex flex-col w-[clamp(213px,37.578125vw,481px)] h-[clamp(127px,22.265625vw,285px)]">
@@ -66,7 +66,7 @@ export default function Contacto() {
           <div className="flex-1 flex h-full justify-end">
             <form className="flex flex-col w-[clamp(213px,37.578125vw,481px)] text-center gap-3 lg:gap-[clamp(11px,1.875vw,24px)]">
               {/* Nombre */}
-              <div className="flex flex-col lg:gap-[clamp(9px,1.5625vw,20px)]">
+              <div className="flex flex-col lg:gap-[clamp(9px,1.5625vw,20px)] portrait:gap-1.5">
                 <p className="text-contact-title font-baskerville text-cafe dark:text-nude">
                   Nombre completo
                 </p>
@@ -88,7 +88,7 @@ export default function Contacto() {
               </div>
 
               {/* Correo Electrónico */}
-              <div className="flex flex-col lg:gap-[clamp(9px,1.5625vw,20px)]">
+              <div className="flex flex-col lg:gap-[clamp(9px,1.5625vw,20px)] portrait:gap-1.5">
                 <p className="text-contact-title font-baskerville text-cafe dark:text-nude">
                   Correo electrónico
                 </p>
@@ -103,7 +103,7 @@ export default function Contacto() {
               </div>
 
               {/* Número de teléfono */}
-              <div className="flex flex-col lg:gap-[clamp(9px,1.5625vw,20px)]">
+              <div className="flex flex-col lg:gap-[clamp(9px,1.5625vw,20px)] portrait:gap-1.5">
                 <p className="text-contact-title font-baskerville text-cafe dark:text-nude">
                   Número de teléfono
                 </p>
