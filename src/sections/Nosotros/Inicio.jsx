@@ -1,6 +1,6 @@
 import letterImage from "@/assets/images/Nosotros/letters.png";
 import PaperBody from "@/assets/images/Nosotros/PaperBody.png";
-import PaperBackground from "@/assets/images/nosotros/paperBackground.svg";
+import PaperBackground from "@/assets/images/Nosotros/paperBackground.svg";
 
 export default function NosotrosInicio() {
   return (

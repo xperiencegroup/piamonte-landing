@@ -1,6 +1,6 @@
 import PaperBody from "@/assets/images/Nosotros/PaperBody.png";
 import PaperTitle from "@/assets/images/Nosotros/paperTitle.png";
-import PaperBackground from "@/assets/images/nosotros/paperBackground.svg";
+import PaperBackground from "@/assets/images/Nosotros/paperBackground.svg";
 
 export default function Wellness() {
   return (
