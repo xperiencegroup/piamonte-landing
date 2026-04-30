@@ -5,6 +5,22 @@ export const useVideoPlayer = ({ json, onPositionChange }) => {
   const { videos, navigation, loop } = json;
   const isPortada = json?.type === "portada";
 
+  // Detectar si son cambios de json mediante id (para mantener transición al cambiar de dia <-> noche)
+  const prevJsonIdRef = useRef(null);
+
+  const jsonHasChanged = () => {
+    if (prevJsonIdRef.current === null) {
+      prevJsonIdRef.current = json.id;
+      return false;
+    }
+
+    const changed = prevJsonIdRef.current !== json.id;
+    prevJsonIdRef.current = json.id;
+    return changed;
+  };
+
+  /* ---------------------------------------- */
+
   const videoRefA = useRef(null);
   const videoRefB = useRef(null);
 
@@ -178,6 +194,11 @@ export const useVideoPlayer = ({ json, onPositionChange }) => {
       !currentPositionRef.current ||
       currentPositionRef.current === position
     ) {
+      return loadDirect(position);
+    }
+
+    // Cuando los json son diferentes
+    if (jsonHasChanged()) {
       return loadDirect(position);
     }
 

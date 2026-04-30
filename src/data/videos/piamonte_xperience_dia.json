@@ -1,4 +1,5 @@
 {
+  "id": "piamonte_xperience",
   "type": "sequence",
   "navigation": "bidirectional",
   "loop": false,
