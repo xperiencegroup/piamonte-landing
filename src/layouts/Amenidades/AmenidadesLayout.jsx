@@ -69,7 +69,7 @@ export default function AmenidadesLayout() {
                   to={item.to}
                   className={`relative flex w-fit justify-center items-center gap-[clamp(4px,0.78125vw,10px)] p-[clamp(7px,1.25vw,16px)] ${
                     isActive(item.to)
-                      ? "after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-cafe dark:after:bg-amarillo"
+                      ? "after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-cafe dark:after:bg-amarillo pointer-events-none"
                       : ""
                   }`}
                 >
