@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 import loteBackground from "@/assets/images/Masterplan/Lotes/loteInfoBackgound.jpg";
-import loteMainImage from "@/assets/images/Masterplan/Lotes/loteInfoMain.jpg";
+import "@/assets/images/Masterplan/Lotes/lotes_vista_cenital/LOTE-01.jpg";
 import { LOTES } from "@/data/lotes";
 
 export default function LoteInformacion() {
@@ -27,7 +27,8 @@ export default function LoteInformacion() {
           <div className="bg-nude dark:bg-verde relative z-0 flex justify-center items-center [@media(min-height:755px)]:flex-col w-fit h-full max-h-[600px] p-[clamp(7px,1.25vw,16px)] gap-4">
             <div className="relative w-[clamp(140px,52.65vw,558px)] lg:w-[clamp(442px,77.734375vw,995px)] h-full max-h-[534px]">
               <img
-                src={loteMainImage}
+                src={lote.imageSrc}
+                draggable={false}
                 alt="Imagen informativa"
                 className="absolute inset-0 w-full h-full object-cover"
               />

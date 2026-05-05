@@ -1,6 +1,24 @@
+const images = import.meta.glob(
+  "@/assets/images/Masterplan/Lotes/lotes_vista_cenital/*.jpg",
+  { eager: true },
+);
+
+const getImageById = (id) => {
+  const key = `/src/assets/images/Masterplan/Lotes/lotes_vista_cenital/LOTE-${String(
+    id,
+  ).padStart(2, "0")}.jpg`;
+
+  return images[key]?.default;
+};
+
 export const LOTES = [
-  { id: 1, metros: "180", precio: "---,---" },
-  { id: 2, metros: "195", precio: "---,---" },
+  {
+    id: 1,
+    metros: "180",
+    imageSrc: getImageById(1),
+    precio: "---,---",
+  },
+  { id: 2, metros: "195", imageSrc: getImageById(2), precio: "---,---" },
   { id: 3, metros: "210", precio: "---,---" },
   { id: 4, metros: "175", precio: "---,---" },
   { id: 5, metros: "220", precio: "---,---" },
