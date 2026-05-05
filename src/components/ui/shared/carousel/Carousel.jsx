@@ -1,10 +1,16 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import RowIcon from "@/assets/icons/shared/rowIcon";
 
-export function Carousel({ slides = [], variant, arrows }) {
+export function Carousel({
+  slides = [],
+  variant,
+  arrows,
+  arrowOffset = "130%",
+}) {
   const autoplay = useRef(Autoplay({ delay: 10000, stopOnInteraction: true }));
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     autoplay.current,
@@ -16,8 +22,29 @@ export function Carousel({ slides = [], variant, arrows }) {
   useEffect(() => {
     if (!emblaApi) return;
 
+    const onSelect = () => {
+      setCurrentIndex(emblaApi.selectedScrollSnap());
+    };
+
+    emblaApi.on("select", onSelect);
+
     autoplay.current.play();
+
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
   }, [emblaApi]);
+
+  // Útil en carousel con imagens dinámicas basado en dark/light mode, si en light existen mas fotos que en dark o viceversa, el index se reinicia si este pasa del tamaño del array
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const maxIndex = slides.length - 1;
+
+    if (currentIndex > maxIndex) {
+      emblaApi.scrollTo(0, true);
+    }
+  }, [slides, emblaApi, currentIndex]);
 
   return (
     <div className="relative embla flex flex-col justify-center w-full h-full">
@@ -53,14 +80,16 @@ export function Carousel({ slides = [], variant, arrows }) {
         <>
           <button
             onClick={scrollPrev}
-            className="group absolute -translate-x-[130%] rotate-180 hover:cursor-pointer"
+            className="group absolute rotate-180 hover:cursor-pointer"
+            style={{ transform: `translateX(${arrowOffset})` }}
           >
             <RowIcon className="size-[clamp(12px,2.158594vw,27.63px)] text-gris dark:text-nude group-hover:text-cafe-claro dark:group-hover:text-amarillo" />
           </button>
 
           <button
             onClick={scrollNext}
-            className="group absolute right-0 translate-x-[130%] hover:cursor-pointer"
+            className="group absolute right-0 hover:cursor-pointer"
+            style={{ transform: `translateX(${arrowOffset})` }}
           >
             <RowIcon className="size-[clamp(12px,2.158594vw,27.63px)] text-gris dark:text-nude group-hover:text-cafe-claro dark:group-hover:text-amarillo" />
           </button>
