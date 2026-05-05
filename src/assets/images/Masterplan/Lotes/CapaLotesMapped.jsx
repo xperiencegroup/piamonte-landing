@@ -37,6 +37,7 @@ export default function CapaLotesMapped({ className = "", handleSelectLote }) {
                       strokeWidth="3"
                       strokeMiterlimit="10"
                       strokeLinejoin="round"
+                      style={{ fillOpacity: 0.5 }}
                       className="fill-nude stroke-verde group-hover:stroke-cafe-claro active:fill-verde active:stroke-amarillo"
                     />
                   );

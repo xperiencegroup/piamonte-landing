@@ -11,7 +11,7 @@ export default function LoteInformacion() {
     <>
       <>
         {/* Background */}
-        <div className="absolute -z-10 inset-0 w-full h-dvh">
+        <div className="absolute -z-10 inset-0 w-full h-full">
           {/* Image */}
           <img
             src={loteBackground}

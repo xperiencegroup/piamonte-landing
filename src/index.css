@@ -61,6 +61,10 @@ body {
   @apply absolute inset-0 -z-10 bg-linear-to-b from-[#C1BDAC]/85 from-20% via-[#DDDACC]/0 via-40% to-[#E9E6D7] dark:from-[#33302B]/85 dark:via-[#2D2B28]/0 dark:to-[#2D2B28];
 }
 
+.linear-gradient-normal {
+  @apply absolute bg-linear-to-b from-[#C1BDAC]/85 from-20% via-[#DDDACC]/0 via-40% to-[#E9E6D7] dark:from-[#33302B]/85 dark:via-[#2D2B28]/0 dark:to-[#2D2B28];
+}
+
 .gradient-inicio {
   @apply absolute inset-0 -z-10 bg-linear-to-b from-nude/85 via-nude/75 via-30% to-nude/55 dark:from-gris/95 dark:via-gris/90 dark:to-gris/65;
 }
