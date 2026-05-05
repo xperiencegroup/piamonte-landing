@@ -8,7 +8,11 @@ import useIsPortrait from "@/hooks/useIsPortrait";
 import RotationMessage from "@/components/layouts/components/MainLayout/RotationMessage";
 import WhatsappButton from "@/components/layouts/components/MainLayout/WhatsappButton";
 
-const routesToHideNavbar = ["/masterplan/amenidades/video-tour", "/playground"];
+const routesToHideNavbar = [
+  "/masterplan/amenidades/video-tour",
+  "/playground",
+  "/masterplan/amenidades/recorridos-virtuales",
+];
 const routesToShowFooter = ["/", "/nosotros"];
 const routesAvailableMobile = ["/nosotros", "/contacto"];
 
