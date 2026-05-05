@@ -13,10 +13,10 @@ export default function VerProyectos() {
         to="masterplan"
         aria-disabled={mode === MODE.TRANSITIONING}
         tabIndex={mode === MODE.TRANSITIONING ? -1 : 0}
-        className={`flex justify-center items-center gap-[clamp(4px,0.78125vw,10px)] p-[clamp(7px,1.25vw,16px)] border-b border-gris dark:border-nude ${mode === MODE.TRANSITIONING ? "pointer-events-none" : ""}`}
+        className={`flex justify-center items-center gap-[clamp(4px,0.78125vw,10px)] p-[clamp(7px,1.25vw,16px)] bg-verde ${mode === MODE.TRANSITIONING ? "pointer-events-none" : ""}`}
       >
-        <ClickIcon className="w-[clamp(7px,1.25vw,16px)] h-[clamp(9px,1.640625vw,21px)] text-gris dark:text-nude" />
-        <span className="text-boton-grande text-gris dark:text-nude uppercase">
+        <ClickIcon className="w-[clamp(7px,1.25vw,16px)] h-[clamp(9px,1.640625vw,21px)] text-nude" />
+        <span className="text-boton-grande text-nude uppercase">
           Ver Proyecto
         </span>
       </Link>
