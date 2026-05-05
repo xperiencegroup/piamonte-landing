@@ -11,26 +11,31 @@ import ClickIcon from "@/assets/icons/home/clickIcon";
 
 const VENTAJAS = [
   {
+    id: 1,
     label: "Residencial campestre a pie de carretera.",
     title: "Ubicación",
     image: ubicacionImage,
   },
   {
+    id: 2,
     label: "Régimen de propiedad en condominio.",
     title: "Seguridad",
     image: seguridadImage,
   },
   {
+    id: 3,
     label: "80 minutos de Monterrey y 30 de Saltillo.",
     title: "Tiempos",
     image: tiemposImage,
   },
   {
+    id: 4,
     label: "Concepto 100% Slow life/Wellness..",
     title: "Concepto",
     image: conceptoImage,
   },
   {
+    id: 5,
     label: "Carretera interserrana lista 2027.",
     title: "Vialidades",
     image: vialidadesImage,
@@ -41,13 +46,16 @@ const ROTATIONS = [10, -5, 2, 14, -16];
 
 export default function Ventajas() {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedCard, setSelectedCard] = useState(1);
   const scale = useResponsiveScale();
 
   return (
     <div className="relative flex w-full h-dvh justify-center items-center">
       <div
-        onClick={() => setIsOpen(!isOpen)}
-        className={`flex w-full justify-center items-center px-[clamp(13px,2.34375vw,30px)] ${isOpen ? "lg:max-w-[1280px] lg:h-[389px]" : "h-fit"} hover:cursor-pointer`}
+        onClick={() => {
+          if (!isOpen) setIsOpen(true);
+        }}
+        className={`flex w-full justify-center items-center px-[clamp(13px,2.34375vw,30px)] ${isOpen ? "lg:max-w-[1280px] lg:h-[389px]" : "h-fit hover:cursor-pointer"}`}
         style={{
           height: isOpen ? 389 * scale : "auto",
         }}
@@ -72,12 +80,23 @@ export default function Ventajas() {
                   height: { type: "spring", stiffness: 200, damping: 25 },
                   rotate: { duration: 0.5 },
                 }}
+                onClick={() => {
+                  if (isOpen) {
+                    setSelectedCard(item.id);
+                    setIsOpen(false);
+                  }
+                }}
                 className={`flex flex-col p-[clamp(7px,1.25vw,16px)] gap-[clamp(7px,1.25vw,16px)] bg-nude dark:bg-verde ${
                   isOpen
-                    ? "relative pb-[clamp(26px,4.53125vw,58px)]"
+                    ? "relative pb-[clamp(26px,4.53125vw,58px)] hover:cursor-pointer"
                     : "absolute top-1/2 -translate-y-1/2"
                 }`}
-                style={{ zIndex: VENTAJAS.length - index }}
+                style={{
+                  zIndex:
+                    selectedCard === item.id
+                      ? VENTAJAS.length + 1
+                      : VENTAJAS.length - index,
+                }}
               >
                 {/* Content */}
                 <motion.div
