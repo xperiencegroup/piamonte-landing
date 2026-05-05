@@ -23,6 +23,8 @@ const ACTIVITIES = [
     tiempo: "42",
     distancia: "43.3",
     image: seria_cedros,
+    description:
+      "La residencia destaca por su diseño de estilo hacienda contemporánea, que combina elementos coloniales con acabados modernos. El residencial ofrece áreas verdes, una casa club con salón de eventos, gimnasio y bar, además de seguridad privada y acceso controlado.",
   },
   {
     id: 2,
@@ -30,6 +32,8 @@ const ACTIVITIES = [
     tiempo: "42",
     distancia: "43.3",
     image: monterreal,
+    description:
+      "Un exclusivo desarrollo turístico y centro de esquí en la Sierra de Arteaga, Coahuila, famoso por ser el único lugar en México con pistas de esquí y snowboard funcionales los 365 días del año El complejo es un destino popular todo el año, ideal para familias y amantes de la naturaleza, siendo un punto clave para el turismo en la región.",
   },
   {
     id: 3,
@@ -37,6 +41,8 @@ const ACTIVITIES = [
     tiempo: "16",
     distancia: "14.1",
     image: bodega_vientos,
+    description:
+      "Un viñedo boutique ubicado en la Sierra de Arteaga, Coahuila, a más de 2,100 metros de altura, lo que le permite producir vinos de clima frío poco comunes en México, con uva propia y una producción limitada, ofreciendo recorridos, degustaciones y una experiencia tranquila rodeada de paisaje montañoso.",
   },
   {
     id: 4,
@@ -44,6 +50,8 @@ const ACTIVITIES = [
     tiempo: "25",
     distancia: "26",
     image: areteaga,
+    description:
+      "Un pueblo de montaña ubicado a unos 20-30 minutos de Saltillo, conocido como la “Suiza de México” por su clima fresco, paisajes boscosos y cercanía con la Sierra Madre Oriental; es un destino popular para escapadas de fin de semana, con cabañas, actividades al aire libre, vinos de altura y lugares como Bosques de Monterreal para disfrutar nieve artificial, senderismo y naturaleza.",
   },
   {
     id: 5,
@@ -51,6 +59,8 @@ const ACTIVITIES = [
     tiempo: "1 hr 18",
     distancia: "55.9",
     image: sierra_marta,
+    description:
+      "Zona montañosa dentro de la Sierra Madre Oriental. Conocida por su biodiversidad, bosques de pino y encino, y por ser hábitat de especies como el oso negro y el puma. Además, forma parte de un área natural protegida, lo que la convierte en un lugar ideal para actividades como senderismo, observación de fauna y exploración en contacto con la naturaleza.",
   },
   {
     id: 6,
@@ -58,34 +68,35 @@ const ACTIVITIES = [
     tiempo: "14",
     distancia: "15.3",
     image: huachichil,
+    description:
+      "Una pequeña comunidad ubicada en la Sierra de Arteaga, conocida por su entorno natural de bosque y clima fresco. Es un punto clave dentro de la ruta de viñedos de la región, ya que ahí se encuentran proyectos como Bodegas del Viento, además de cabañas, ranchos y espacios para ecoturismo; es ideal para escapadas tranquilas, contacto con la naturaleza y experiencias como degustaciones de vino y senderismo.",
   },
   {
     id: 7,
-    label: "Próximamente",
-    tiempo: "",
-    distancia: "",
-    image: "",
-  },
-  {
-    id: 8,
     label: "San Antonio de las alazanas",
     tiempo: "26",
     distancia: "30.9",
     image: san_antonio,
+    description:
+      "Un exclusivo desarrollo turístico y centro de esquí en la Sierra de Arteaga, Coahuila, famoso por ser el único lugar en México con pistas de esquí y snowboard funcionales los 365 días del año. El complejo es un destino popular todo el año, ideal para familias y amantes de la naturaleza, siendo un punto clave para el turismo en la región.",
   },
   {
-    id: 9,
+    id: 8,
     label: "Saltillo",
     tiempo: "36",
     distancia: "38.9",
     image: saltillo,
+    description:
+      "Es la capital del estado y una de las ciudades más antiguas del norte de México, conocida por su industria, su clima más fresco que el promedio de la región y su cercanía con la Sierra de Arteaga. Tiene una mezcla interesante entre tradición y modernidad, con atractivos como el centro histórico, museos como el del Desierto y el de las Aves, además de ser un punto clave para turismo de naturaleza, vino y escapadas de montaña.",
   },
   {
-    id: 10,
+    id: 9,
     label: "Monterrey",
     tiempo: "1 hr 40",
     distancia: "105",
     image: monterrey,
+    description:
+      "La principal ciudad del norte de México y un importante centro industrial y financiero, conocida por su desarrollo moderno y su entorno natural rodeado de montañas como el Cerro de la Silla. Combina vida urbana activa con atractivos como el Parque Fundidora, el Paseo Santa Lucía y una fuerte oferta gastronómica, cultural y de entretenimiento, además de ser punto de partida para explorar la Sierra Madre y destinos cercanos como Arteaga.",
   },
 ];
 
@@ -93,6 +104,14 @@ const ROTATIONS = [10, -5, 2, 14, -16, -18, 20];
 
 export default function Actividades() {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedCardId, setSelectedCardId] = useState(1);
+  const [selectedCard, setSelectedCard] = useState(ACTIVITIES[0]);
+
+  const handleSelectCard = (id) => {
+    const selected = ACTIVITIES.find((activitie) => activitie.id === id);
+    setSelectedCard(selected);
+  };
+
   const isShort = useIsShortHeight();
   const [emblaRef, emblaApi] = useEmblaCarousel(
     isOpen ? { loop: true, dragFree: true, startIndex: 2 } : undefined,
@@ -116,7 +135,7 @@ export default function Actividades() {
   const scale = useResponsiveScale();
 
   // Medidas
-  const ClosedCardWidth = isShort ? 300 : 532;
+  const ClosedCardWidth = isShort ? 300 : 500;
   const OpenedCardWidth = isShort ? 180 : 229;
   const CARD = {
     open: {
@@ -133,10 +152,15 @@ export default function Actividades() {
   const imageHeight = cardHeight * IMAGE_RATIO;
 
   return (
-    <div className="absolute top-0 left-0 z-5 w-full h-dvh flex justify-center items-center overflow-hidden">
+    <div className="absolute top-0 left-0 z-5 w-full h-full flex justify-center items-center pb-[clamp(36.25px,6.25vw,80px)] overflow-hidden">
+      {/* Overlay */}
+      <div className="absolute w-full h-full gradient-inicio" />
+
       <div
-        onClick={() => setIsOpen(!isOpen)}
-        className={`flex w-full justify-center items-center ${isOpen ? "lg:max-w-[1280px] lg:h-[470px] m-auto" : "h-fit"} hover:cursor-pointer`}
+        onClick={() => {
+          if (!isOpen) setIsOpen(true);
+        }}
+        className={`flex w-full justify-center items-center ${isOpen ? "lg:max-w-[1280px] lg:h-[470px] m-auto" : "h-fit hover:cursor-pointer"}`}
         style={{
           height: isOpen ? 470 * scale : "auto",
         }}
@@ -175,12 +199,24 @@ export default function Actividades() {
                     height: { type: "spring", stiffness: 200, damping: 25 },
                     rotate: { duration: 0.5 },
                   }}
+                  onClick={() => {
+                    if (isOpen) {
+                      setSelectedCardId(item.id);
+                      handleSelectCard(item.id);
+                      setIsOpen(false);
+                    }
+                  }}
                   className={`flex shrink-0 flex-col p-[clamp(7px,1.25vw,16px)] gap-[clamp(7px,1.25vw,16px)] bg-nude dark:bg-verde ${
                     isOpen
-                      ? "relative gallery_slide select-none"
+                      ? "relative gallery_slide select-none hover:cursor-pointer"
                       : "absolute top-1/2 -translate-y-1/2"
                   }`}
-                  style={{ zIndex: ACTIVITIES.length - index }}
+                  style={{
+                    zIndex:
+                      selectedCardId === item.id
+                        ? ACTIVITIES.length + 1
+                        : ACTIVITIES.length - index,
+                  }}
                 >
                   {/* Content */}
                   <motion.div
@@ -307,6 +343,34 @@ export default function Actividades() {
           </div>
         </div>
 
+        {/* Texto Ubicación */}
+        <AnimatePresence mode="popLayout">
+          {!isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{
+                opacity: 0,
+                y: 10,
+                scale: 0.95,
+                transition: { duration: 0.2 },
+              }}
+              transition={{
+                duration: 0.5,
+                ease: [0.32, 0, 0.67, 0],
+              }}
+              className="w-[clamp(158.03px,27.265625vw,349px)] h-full text-center"
+            >
+              <h3 className="text-frase text-cafe dark:text-verde-claro font-selinea">
+                {selectedCard.label}
+              </h3>
+              <p className="text-paragraph text-gris dark:text-nude leading-[125%]">
+                {selectedCard.description}
+              </p>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* click icon */}
         <AnimatePresence mode="wait">
           {!isOpen && (
@@ -323,9 +387,9 @@ export default function Actividades() {
                 duration: 0.5,
                 ease: [0.32, 0, 0.67, 0],
               }}
-              className="absolute z-50 left-1/2 -translate-x-1/2 flex justify-center items-center size-[clamp(30px,3.28125vw,42px)]"
+              className="absolute bottom-[clamp(80.59px,16.4117647vh,150px)] left-1/2 -translate-x-1/2 flex justify-center items-center size-[clamp(30px,3.28125vw,42px)]"
             >
-              <ClickIcon className="w-[clamp(12px,2.138281vw,27.37px)] h-[clamp(16px,2.871094vw,36.75px)] text-nude" />
+              <ClickIcon className="w-[clamp(12px,2.138281vw,27.37px)] h-[clamp(16px,2.871094vw,36.75px)] text-verde dark:text-nude" />
             </motion.div>
           )}
         </AnimatePresence>
