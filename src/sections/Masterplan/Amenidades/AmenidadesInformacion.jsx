@@ -62,11 +62,11 @@ export default function AmenidadesInformacion() {
   return (
     <>
       {/* Background */}
-      <div className="absolute inset-0 w-full h-dvh">
+      <div className="absolute inset-0 w-full h-full">
         <img
           src={amenidades_info}
           alt="Fondo principal"
-          className="absolute inset-0 w-full h-dvh -z-10 object-cover"
+          className="absolute inset-0 w-full h-full -z-10 object-cover"
         />
 
         {/* Overlay */}
