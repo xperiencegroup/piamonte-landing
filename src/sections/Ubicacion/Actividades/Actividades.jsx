@@ -19,12 +19,12 @@ import ClickIcon from "@/assets/icons/home/clickIcon";
 const ACTIVITIES = [
   {
     id: 1,
-    label: "Seria los cedros",
+    label: "Los cedros",
     tiempo: "42",
     distancia: "43.3",
     image: seria_cedros,
     description:
-      "La residencia destaca por su diseño de estilo hacienda contemporánea, que combina elementos coloniales con acabados modernos. El residencial ofrece áreas verdes, una casa club con salón de eventos, gimnasio y bar, además de seguridad privada y acceso controlado.",
+      "La residencia destaca por su diseño de estilo hacienda contemporánea, que combina elementos coloniales con acabados modernos.\n\nEl residencial ofrece áreas verdes, una casa club con salón de eventos, gimnasio y bar, además de seguridad privada y acceso controlado.",
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ const ACTIVITIES = [
     distancia: "43.3",
     image: monterreal,
     description:
-      "Un exclusivo desarrollo turístico y centro de esquí en la Sierra de Arteaga, Coahuila, famoso por ser el único lugar en México con pistas de esquí y snowboard funcionales los 365 días del año El complejo es un destino popular todo el año, ideal para familias y amantes de la naturaleza, siendo un punto clave para el turismo en la región.",
+      "Un exclusivo desarrollo turístico y centro de esquí en la Sierra de Arteaga, Coahuila, famoso por ser el único lugar en México con pistas de esquí y snowboard funcionales los 365 días del año.\n\nEl complejo es un destino popular todo el año, ideal para familias y amantes de la naturaleza, siendo un punto clave para el turismo en la región.",
   },
   {
     id: 3,
@@ -60,7 +60,7 @@ const ACTIVITIES = [
     distancia: "55.9",
     image: sierra_marta,
     description:
-      "Zona montañosa dentro de la Sierra Madre Oriental. Conocida por su biodiversidad, bosques de pino y encino, y por ser hábitat de especies como el oso negro y el puma. Además, forma parte de un área natural protegida, lo que la convierte en un lugar ideal para actividades como senderismo, observación de fauna y exploración en contacto con la naturaleza.",
+      "Zona montañosa dentro de la Sierra Madre Oriental. Conocida por su biodiversidad, bosques de pino y encino, y por ser hábitat de especies como el oso negro y el puma.\n\nAdemás, forma parte de un área natural protegida, lo que la convierte en un lugar ideal para actividades como senderismo, observación de fauna y exploración en contacto con la naturaleza.",
   },
   {
     id: 6,
@@ -78,7 +78,7 @@ const ACTIVITIES = [
     distancia: "30.9",
     image: san_antonio,
     description:
-      "Un exclusivo desarrollo turístico y centro de esquí en la Sierra de Arteaga, Coahuila, famoso por ser el único lugar en México con pistas de esquí y snowboard funcionales los 365 días del año. El complejo es un destino popular todo el año, ideal para familias y amantes de la naturaleza, siendo un punto clave para el turismo en la región.",
+      "Un exclusivo desarrollo turístico y centro de esquí en la Sierra de Arteaga, Coahuila, famoso por ser el único lugar en México con pistas de esquí y snowboard funcionales los 365 días del año.\n\nEl complejo es un destino popular todo el año, ideal para familias y amantes de la naturaleza, siendo un punto clave para el turismo en la región.",
   },
   {
     id: 8,
@@ -87,7 +87,7 @@ const ACTIVITIES = [
     distancia: "38.9",
     image: saltillo,
     description:
-      "Es la capital del estado y una de las ciudades más antiguas del norte de México, conocida por su industria, su clima más fresco que el promedio de la región y su cercanía con la Sierra de Arteaga. Tiene una mezcla interesante entre tradición y modernidad, con atractivos como el centro histórico, museos como el del Desierto y el de las Aves, además de ser un punto clave para turismo de naturaleza, vino y escapadas de montaña.",
+      "Es la capital del estado y una de las ciudades más antiguas del norte de México, conocida por su industria, su clima más fresco que el promedio de la región y su cercanía con la Sierra de Arteaga.\n\nTiene una mezcla interesante entre tradición y modernidad, con atractivos como el centro histórico, museos como el del Desierto y el de las Aves, además de ser un punto clave para turismo de naturaleza, vino y escapadas de montaña.",
   },
   {
     id: 9,
@@ -96,11 +96,12 @@ const ACTIVITIES = [
     distancia: "105",
     image: monterrey,
     description:
-      "La principal ciudad del norte de México y un importante centro industrial y financiero, conocida por su desarrollo moderno y su entorno natural rodeado de montañas como el Cerro de la Silla. Combina vida urbana activa con atractivos como el Parque Fundidora, el Paseo Santa Lucía y una fuerte oferta gastronómica, cultural y de entretenimiento, además de ser punto de partida para explorar la Sierra Madre y destinos cercanos como Arteaga.",
+      "La principal ciudad del norte de México y un importante centro industrial y financiero, conocida por su desarrollo moderno y su entorno natural rodeado de montañas como el Cerro de la Silla.\n\nCombina vida urbana activa con atractivos como el Parque Fundidora, el Paseo Santa Lucía y una fuerte oferta gastronómica, cultural y de entretenimiento, además de ser punto de partida para explorar la Sierra Madre y destinos cercanos como Arteaga.",
   },
 ];
 
-const ROTATIONS = [10, -5, 2, 14, -16, -18, 20];
+const ROTATIONS = [10, -5, 12];
+const TRANSLATIONS = [-0, -10, -25];
 
 export default function Actividades() {
   const [isOpen, setIsOpen] = useState(false);
@@ -135,7 +136,7 @@ export default function Actividades() {
   const scale = useResponsiveScale();
 
   // Medidas
-  const ClosedCardWidth = isShort ? 300 : 500;
+  const ClosedCardWidth = isShort ? 320 : 500;
   const OpenedCardWidth = isShort ? 180 : 229;
   const CARD = {
     open: {
@@ -170,13 +171,13 @@ export default function Actividades() {
           className={
             isOpen
               ? "w-full h-full overflow-hidden"
-              : "flex relative w-[clamp(327px,57.578125vw,737px)] h-[clamp(257px,45.15625vw,578px)] justify-center items-center"
+              : "flex relative max-lg:w-[clamp(220px,40vw,500px)] max-lg:h-[clamp(170px,32vh,400px)] w-[clamp(327px,57.578125vw,737px)] h-[clamp(257px,45.15625vw,578px)] justify-center items-center"
           }
         >
           <div
             className={
               isOpen
-                ? "flex gap-[clamp(8.61px,1.484375vw,19px)] h-full items-center px-[clamp(8.61px,1.484375vw,19px)]"
+                ? "flex gap-[clamp(8.61px,1.484375vw,19px)] h-full items-center px-[clamp(8.61px,1.484375vw,19px)] max-lg:pt-8"
                 : "flex relative justify-center items-center"
             }
           >
@@ -191,7 +192,9 @@ export default function Actividades() {
                       (isOpen ? CARD.open.width : CARD.closed.width) * scale,
                     height:
                       (isOpen ? CARD.open.height : CARD.closed.height) * scale,
-                    rotate: isOpen ? 0 : ROTATIONS[index],
+                    rotate: isOpen ? 0 : (ROTATIONS[index] ?? 10),
+                    x: isOpen ? 0 : (TRANSLATIONS[index] ?? 0),
+                    y: isOpen ? 0 : (TRANSLATIONS[index] ?? 0),
                   }}
                   transition={{
                     layout: { type: "spring", stiffness: 200, damping: 25 },
@@ -359,12 +362,12 @@ export default function Actividades() {
                 duration: 0.5,
                 ease: [0.32, 0, 0.67, 0],
               }}
-              className="w-[clamp(158.03px,27.265625vw,349px)] h-full text-center"
+              className="w-[clamp(158.03px,27.265625vw,459px)] h-full text-center"
             >
               <h3 className="text-frase text-cafe dark:text-verde-claro font-selinea">
                 {selectedCard.label}
               </h3>
-              <p className="text-paragraph text-gris dark:text-nude leading-[125%]">
+              <p className="text-paragraph whitespace-pre-line text-gris dark:text-nude leading-[125%]">
                 {selectedCard.description}
               </p>
             </motion.div>
