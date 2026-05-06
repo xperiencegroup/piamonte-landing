@@ -7,6 +7,7 @@ import ToggleTheme from "@/components/layouts/components/MainLayout/ToggleTheme"
 import useIsPortrait from "@/hooks/useIsPortrait";
 import RotationMessage from "@/components/layouts/components/MainLayout/RotationMessage";
 import WhatsappButton from "@/components/layouts/components/MainLayout/WhatsappButton";
+import FullScreenButton from "@/components/layouts/components/MainLayout/FullScreenButton";
 
 const routesToHideNavbar = [
   "/masterplan/amenidades/video-tour",
@@ -46,6 +47,7 @@ export default function MainLayout() {
         </>
       )}
 
+      {!isPortrait && <FullScreenButton />}
       <ToggleTheme />
       <WhatsappButton />
     </div>
