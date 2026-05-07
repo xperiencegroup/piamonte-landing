@@ -5,7 +5,7 @@ import PaperBackground from "@/assets/images/Nosotros/paperBackground.svg";
 export default function Wellness() {
   return (
     <div className="relative flex flex-col w-full h-dvh justify-center items-center overflow-hidden">
-      <div className="relative portrait:w-full portrait:h-[clamp(422px,70.78vh,1323.65px)] w-[clamp(478px,84.0625vw,1076px)] h-[clamp(140px,28.5vw,387px)] lg:h-[clamp(176px,31.015625vw,397px)]">
+      <div className="relative portrait:w-full portrait:h-[clamp(422px,70.78vh,1323.65px)] w-[clamp(478px,84.0625vw,1076px)] h-fit lg:h-[clamp(140px,28.5vw,387px)] lg:h-[clamp(176px,31.015625vw,397px)]">
         {/* Image */}
         <img
           src={PaperBody}
@@ -20,38 +20,41 @@ export default function Wellness() {
         />
 
         {/* Content */}
-        <div className="relative flex flex-col w-full h-full justify-center items-center gap-[clamp(7px,1.25vw,16px)] portrait:gap-[4vh]">
+        <div className="relative flex flex-col w-full h-full justify-center items-center gap-1.5 lg:gap-[clamp(7px,1.25vw,16px)] max-lg:py-3">
           {/* Title */}
-          <div className="flex absolute top-0 -translate-y-5/8 w-[clamp(73px,12.890625vw,165px)] h-[clamp(29px,5.078125vw,65px)] justify-center items-center portrait:w-[clamp(140px,12.65625vw,162px)] portrait:h-[clamp(55px,5vw,64px)]">
+          <div className="flex absolute top-0 -translate-y-[85%] w-[clamp(249.22px,42.96875vw,550px)] h-fit justify-center items-center portrait:w-[clamp(140px,12.65625vw,162px)] portrait:h-[clamp(55px,5vw,64px)]">
             <img
               src={PaperTitle}
               alt="Imagen de titulo de carta"
               className="absolute inset-0 w-full h-full"
             />
-            <p className="relative text-frase portrait:text-[clamp(36.2px,16vw,60px)] font-selinea text-verde-claro">
-              Wellness
+            <p className="relative text-frase portrait:text-[clamp(36.2px,16vw,60px)] font-selinea text-verde-claro whitespace-nowrap">
+              Bienestar y equilibrio como forma de vida
             </p>
           </div>
 
           {/* Body */}
-          <p className="w-[clamp(355px,62.5vw,800px)] portrait:w-full max-lg:pt-5 portrait:px-[clamp(37.55px,11.733333vw,44px)] text-paragraph portrait:text-[clamp(12.07px,4.433333vw,20px)] text-center leading-[120%] text-cafe">
-            La vida wellness es elegir bajar el ritmo y volver a lo esencial. Es
-            despertar con calma, respirar profundo y permitir que la naturaleza
-            marque el compás de tus días.
+          <p className="w-[clamp(355px,62.5vw,860px)] text-paragraph text-center leading-[120%] text-cafe">
+            La vida wellness es elegir bajar el ritmo y volver a lo esencial.
             <br />
             <br />
-            En <span className="font-bold">Piamonte Residencial</span>, creamos
-            un entorno donde el bienestar no es un concepto, sino una
-            experiencia cotidiana: espacios que invitan a la pausa, al
-            equilibrio y a la reconexión personal.
+            Es despertar sin prisa, respirar profundo y dejar que la naturaleza
+            marque el compás de cada día.
+            <br />
+            <br />
+            En Piamonte Residencial Campestre, concebimos un entorno donde el
+            bienestar no se explica, se vive: espacios que invitan a la pausa,
+            al equilibrio y a una reconexión genuina.
+            <br />
             <br />
             Porque cuando encuentras armonía entre mente, cuerpo y entorno,
-            descubres que estás a un instante de transformar tu manera de vivir.
+            descubres que tu vida en equilibrio está a un instante.
           </p>
 
-          <p className="text-frase portrait:text-[clamp(36.2px,16vw,60px)] text-center font-selinea leading-[50%] text-verde">
-            Tu vida a un instante <br className="landscape:hidden" /> de
-            serenidad.
+          <br />
+
+          <p className="text-frase text-center font-selinea leading-[50%] text-verde">
+            Un entorno diseñado para conectar y florecer en comunidad
           </p>
         </div>
       </div>

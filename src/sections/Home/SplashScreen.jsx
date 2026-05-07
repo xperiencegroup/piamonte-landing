@@ -1,5 +1,11 @@
 import { useState, useEffect } from "react";
-import { motion, cubicBezier, useScroll, useTransform } from "motion/react";
+import {
+  motion,
+  cubicBezier,
+  useScroll,
+  useTransform,
+  // useMotionValueEvent,
+} from "motion/react";
 import LogoPiamonte from "@/assets/logos/main/LogoPiamonte";
 import { useOutletContext } from "react-router";
 import useDarkMode from "@/hooks/useDarkMode";
@@ -12,14 +18,14 @@ export default function SplashScreen() {
   const ease = cubicBezier(0.22, 0.3, 0.36, 1);
 
   // SplashScreen Animation
-  const splashZIndex = useTransform(scrollYProgress, [0.2499, 0.25], [20, 0], {
+  const splashZIndex = useTransform(scrollYProgress, [0.1869, 0.187], [20, 0], {
     clamp: false,
     ease,
   });
-  const lineScaleY = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
+  const lineScaleY = useTransform(scrollYProgress, [0, 0.187], [1, 0]);
 
-  // Floating logo
-  const scale = useTransform(scrollYProgress, [0.015, 0.25], [1, 0.32], {
+  // Floating logo scale
+  const scale = useTransform(scrollYProgress, [0.02, 0.187], [1, 0.32], {
     ease,
   });
 
@@ -39,7 +45,7 @@ export default function SplashScreen() {
 
   const top = useTransform(
     scrollYProgress,
-    [0.015, 0.25],
+    [0.02, 0.187],
     ["50%", `${centerY}%`],
     {
       ease,
@@ -47,18 +53,22 @@ export default function SplashScreen() {
   );
   const floatingOpacity = useTransform(
     scrollYProgress,
-    [0.25, 0.2501],
+    [0.1869, 0.187],
     [1, 0],
     { clamp: false },
   );
 
-  // Animation when is light theme (nude to gris)
+  // Animation when is light theme (nude to gris) (modified, there is no color transition)
   const logoColor = useTransform(
     scrollYProgress,
     [0.0, 0.2],
     !isDark ? ["#ffffff", "#ffffff"] : ["#33302b", "#33302b"],
     { clamp: false },
   );
+
+  // useMotionValueEvent(scrollYProgress, "change", (value) => {
+  //   console.log("scrollYProgress:", value);
+  // });
 
   return (
     <>

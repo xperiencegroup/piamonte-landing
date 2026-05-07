@@ -1,3 +1,5 @@
+import AmenidadesPins from "@/layouts/Amenidades/AmenidadesPins";
+
 export default function MasterplanAmenidades() {
   return (
     <div className="relative z-0 w-full">
@@ -6,6 +8,9 @@ export default function MasterplanAmenidades() {
         {/* Overlay */}
         <div className="linear-gradient-shadow" />
       </div>
+
+      {/* Pines */}
+      <AmenidadesPins />
     </div>
   );
 }

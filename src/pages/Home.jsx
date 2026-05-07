@@ -2,6 +2,7 @@ import Inicio from "@/sections/Home/Inicio";
 import Ventajas from "@/sections/Home/Ventajas";
 import VerProyectos from "@/sections/Home/VerProyectos";
 import SplashScreen from "@/sections/Home/SplashScreen";
+import Wellness from "@/sections/Nosotros/Wellness";
 
 export default function Home() {
   return (
@@ -14,6 +15,9 @@ export default function Home() {
 
       {/* Inicio */}
       <Inicio />
+
+      {/* Wellness */}
+      <Wellness />
 
       {/* Ventajas Wellness */}
       <Ventajas />

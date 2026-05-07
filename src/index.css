@@ -17,7 +17,9 @@
   --text-boton: clamp(8px, 1.40625vw, 18px);
   --text-boton-active: clamp(6.8px, 1.171875vw, 15px);
   --text-paragraph: clamp(8px, 1.484375vw, 19px);
+  --text-body-md: clamp(9.28px, 1.71875vw, 22px);
   --text-letter-title: clamp(27px, 5vw, 64px);
+  --text-letter-title-bigger: clamp(33.75px, 6.25vw, 80px);
   --text-boton-grande: clamp(9px, 1.5625vw, 20px);
   --text-boton-normal: clamp(8px, 1.40625vw, 18px);
   --text-paper: clamp(8px, 1.40625vw, 18px);
@@ -51,6 +53,14 @@
   box-sizing: border-box;
   margin: 0;
   /* outline: 1px solid red; */
+}
+
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 body {

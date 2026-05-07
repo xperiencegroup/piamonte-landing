@@ -1,44 +1,44 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import useResponsiveScale from "@/hooks/useResponsiveScale";
+
 import ubicacionImage from "@/assets/images/Nosotros/ventajas/ubicacion.jpg";
-import seguridadImage from "@/assets/images/Nosotros/ventajas/seguridad.jpg";
+import estructuraImage from "@/assets/images/Nosotros/ventajas/estructura_legal.jpg";
 import tiemposImage from "@/assets/images/Nosotros/ventajas/tiempos.jpg";
-import conceptoImage from "@/assets/images/Nosotros/ventajas/concepto.jpg";
-import vialidadesImage from "@/assets/images/Nosotros/ventajas/vialidades.jpg";
+import conceptoImage from "@/assets/images/Nosotros/ventajas/vialidades.jpg";
 import PaperTear from "../../assets/images/Masterplan/AmenidadesInformacion/Papeles/paperTear.png";
 import ClickIcon from "@/assets/icons/home/clickIcon";
 
 const VENTAJAS = [
   {
     id: 1,
-    label: "Residencial campestre a pie de carretera.",
+    specialLabel: (
+      <span>
+        Pinares de Rancho Viejo, <strong>Arteaga, Coahuila, México</strong>
+      </span>
+    ),
+    label: "Pinares de Rancho Viejo, Arteaga, Coahuila, México",
     title: "Ubicación",
     image: ubicacionImage,
   },
   {
     id: 2,
-    label: "Régimen de propiedad en condominio.",
-    title: "Seguridad",
-    image: seguridadImage,
-  },
-  {
-    id: 3,
-    label: "80 minutos de Monterrey y 30 de Saltillo.",
-    title: "Tiempos",
+    label: "A 80 minutos de Monterrey y a 30 minutos de Saltillo",
+    title: "Conectividad",
     image: tiemposImage,
   },
   {
-    id: 4,
-    label: "Concepto 100% Slow life/Wellness..",
-    title: "Concepto",
+    id: 3,
+    label: "77 lotes campestres y más de 8 amenidades",
+    title: "Proyecto",
     image: conceptoImage,
   },
   {
-    id: 5,
-    label: "Carretera interserrana lista 2027.",
-    title: "Vialidades",
-    image: vialidadesImage,
+    id: 4,
+    label: "Régimen de Propiedad en Condominio.",
+    title: "Estrcutura Legal",
+    titleWidth: "lg",
+    image: estructuraImage,
   },
 ];
 
@@ -46,7 +46,8 @@ const ROTATIONS = [10, -5, 2, 14, -16];
 
 export default function Ventajas() {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedCard, setSelectedCard] = useState(1);
+  const [selectedCardId, setSelectedCardId] = useState(1);
+  const [selectedCard, setSelectedCard] = useState(VENTAJAS[0]);
   const scale = useResponsiveScale();
 
   return (
@@ -61,7 +62,7 @@ export default function Ventajas() {
         }}
       >
         <div
-          className={`${isOpen ? "flex w-full h-full justify-between" : "flex relative w-[clamp(327px,57.578125vw,737px)] h-[clamp(257px,45.15625vw,578px)] justify-center items-center"}`}
+          className={`${isOpen ? "flex w-full h-full justify-center gap-[clamp(8.61px,1.484375vw,19px)]" : "flex relative w-[clamp(327px,57.578125vw,737px)] h-[clamp(257px,45.15625vw,578px)] justify-center items-center"}`}
         >
           {VENTAJAS.map((item, index) => {
             return (
@@ -82,7 +83,8 @@ export default function Ventajas() {
                 }}
                 onClick={() => {
                   if (isOpen) {
-                    setSelectedCard(item.id);
+                    setSelectedCardId(item.id);
+                    setSelectedCard(item);
                     setIsOpen(false);
                   }
                 }}
@@ -93,7 +95,7 @@ export default function Ventajas() {
                 }`}
                 style={{
                   zIndex:
-                    selectedCard === item.id
+                    selectedCardId === item.id
                       ? VENTAJAS.length + 1
                       : VENTAJAS.length - index,
                 }}
@@ -117,7 +119,7 @@ export default function Ventajas() {
                     alt={item.label}
                     layout
                     draggable={false}
-                    className="w-full h-full object-cover object-bottom select-none pointer-events-none"
+                    className="w-full h-full object-cover object-bottom select-none pointer-events-none translate-0.5"
                   />
                 </motion.div>
 
@@ -142,14 +144,16 @@ export default function Ventajas() {
                 {/* Title */}
                 <AnimatePresence>
                   {isOpen && (
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-5/8 w-[clamp(72px,12.65625vw,162px)] h-[clamp(28px,4.84375vw,62px)]">
+                    <div
+                      className={`absolute top-0 left-1/2 -translate-x-1/2 -translate-y-5/8 h-[clamp(28px,4.84375vw,62px)] ${item.titleWidth === "lg" ? "w-full" : "w-[clamp(72px,12.65625vw,162px)]"}`}
+                    >
                       <div className="absolute w-full h-full flex justify-center items-center">
                         <img
                           src={PaperTear}
                           alt="Imagen de fondo de textura de papel"
                           className="absolute inset-0 w-full h-full"
                         />
-                        <p className="relative z-10 text-frase font-selinea text-cafe dark:text-verde-claro">
+                        <p className="relative z-10 text-frase font-selinea whitespace-nowrap text-cafe dark:text-verde-claro">
                           {item.title}
                         </p>
                       </div>
@@ -177,13 +181,13 @@ export default function Ventajas() {
                 duration: 0.5,
                 ease: [0.32, 0, 0.67, 0],
               }}
-              className="w-[clamp(85px,16vw,200px)] h-full text-center"
+              className="w-[clamp(122.77px,21.171875vw,271px)] h-full text-center"
             >
-              <h3 className="text-frase text-cafe dark:text-verde-claro font-selinea">
-                Ubicación
+              <h3 className="text-frase text-cafe dark:text-verde-claro font-selinea leading-[100%]">
+                {selectedCard.title}
               </h3>
-              <p className="text-paragraph text-gris dark:text-nude">
-                Residencial campestre a pie de carretera.
+              <p className="text-paragraph font-medium text-gris dark:text-nude">
+                {selectedCard.specialLabel ?? selectedCard.label}
               </p>
             </motion.div>
           )}

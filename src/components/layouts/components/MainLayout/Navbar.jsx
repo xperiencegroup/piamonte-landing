@@ -38,19 +38,19 @@ export default function Navbar({ navRef }) {
   // Navbar Animation when is home => "/"
   const navbarLogoOpacity = useTransform(
     scrollYProgress,
-    [0.25, 0.2501],
+    [0.1869, 0.187],
     isHome ? [0, 1] : [1, 1],
     { clamp: false },
   );
   const navbarPointer = useTransform(
     scrollYProgress,
-    [0.26, 0.262],
+    [0.2, 0.201],
     isHome ? ["none", "auto"] : ["auto", "auto"],
   );
 
   const buttonsOpacity = useTransform(
     scrollYProgress,
-    [0.25, 0.27],
+    [0.2, 0.22],
     isHome ? [0, 1] : [1, 1],
     { clamp: false },
   );
