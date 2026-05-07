@@ -2,10 +2,10 @@ import PaperBody from "@/assets/images/Nosotros/PaperBody.png";
 import PaperTitle from "@/assets/images/Nosotros/paperTitle.png";
 import PaperBackground from "@/assets/images/Nosotros/paperBackground.svg";
 
-export default function NosotrosInicio() {
+export default function Socios() {
   return (
     <div className="relative flex flex-col w-full h-dvh justify-center items-center overflow-hidden">
-      <div className="relative portrait:w-[80%] portrait:h-[320px] w-[clamp(478px,84.0625vw,1076px)] h-fit lg:h-[clamp(163.13px,28.125vw,360px)]">
+      <div className="relative portrait:w-[80%] portrait:h-[320px] w-[clamp(478px,84.0625vw,1076px)] h-fit lg:h-[clamp(163.13px,22.125vw,360px)]">
         {/* Image */}
         <img
           src={PaperBody}
@@ -29,22 +29,21 @@ export default function NosotrosInicio() {
               className="absolute inset-0 w-full h-full"
             />
             <p className="relative text-frase portrait:text-[clamp(36.2px,16vw,60px)] font-selinea text-cafe whitespace-nowrap">
-              Nosotros
+              Socios
             </p>
           </div>
 
           {/* Body */}
           <p className="portrait:w-full portrait:px-4 portrait:text-[13px] w-[clamp(355px,62.5vw,760px)] text-paragraph text-center leading-[120%] text-cafe">
-            Somos un grupo desarrollador formado por personas que crecimos y
-            hemos desarrollado nuestra vida entre Saltillo y Monterrey. Desde
-            distintas disciplinas, compartimos una misma visión: crear espacios
-            que trasciendan lo funcional y generen valor real en la forma de
-            vivir.
+            Piamonte es impulsado por cinco socios que comparten no solo una
+            trayectoria profesional, sino una manera similar de entender el
+            desarrollo: con visión a largo plazo, atención al detalle y un
+            compromiso genuino con lo que se construye.
             <br />
             <br />
-            Piamonte Residencial Campestre nace desde esa perspectiva: un
-            proyecto concebido con intención, donde la comunidad, la conexión
-            con la naturaleza y el bienestar cotidiano son el punto de partida.
+            Cada uno aporta su experiencia y enfoque, dando forma a un proyecto
+            que busca ser coherente desde su origen hasta la vida que sucederá
+            dentro de él.
           </p>
         </div>
 

@@ -2,7 +2,7 @@ import Inicio from "@/sections/Home/Inicio";
 import Ventajas from "@/sections/Home/Ventajas";
 import VerProyectos from "@/sections/Home/VerProyectos";
 import SplashScreen from "@/sections/Home/SplashScreen";
-import Wellness from "@/sections/Nosotros/Wellness";
+import Wellness from "@/sections/Home/Wellness";
 
 export default function Home() {
   return (
