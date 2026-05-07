@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useLocation, Outlet } from "react-router";
 import Footer from "@/components/layouts/components/MainLayout/Footer";
 import MobileMenu from "@/components/layouts/components/MainLayout/MobileMenu";
@@ -9,11 +9,7 @@ import RotationMessage from "@/components/layouts/components/MainLayout/Rotation
 import WhatsappButton from "@/components/layouts/components/MainLayout/WhatsappButton";
 import FullScreenButton from "@/components/layouts/components/MainLayout/FullScreenButton";
 
-const routesToHideNavbar = [
-  "/masterplan/amenidades/video-tour",
-  "/playground",
-  "/masterplan/amenidades/recorridos-virtuales",
-];
+const routesToHideNavbar = ["/masterplan/amenidades/video-tour", "/playground"];
 const routesToShowFooter = ["/", "/nosotros"];
 const routesAvailableMobile = ["/nosotros", "/contacto"];
 
@@ -21,10 +17,11 @@ export default function MainLayout() {
   const navRef = useRef(null);
   const { pathname } = useLocation();
   const { isPortrait } = useIsPortrait();
+  const [forceHideNavbar, setForceHideNavbar] = useState(false);
 
-  const hideNavbar = routesToHideNavbar.some((route) =>
-    pathname.startsWith(route),
-  );
+  const hideNavbar =
+    forceHideNavbar ||
+    routesToHideNavbar.some((route) => pathname.startsWith(route));
 
   const showFooter = routesToShowFooter.some((route) => pathname === route);
 
@@ -42,7 +39,7 @@ export default function MainLayout() {
         <RotationMessage />
       ) : (
         <>
-          <Outlet context={{ navRef }} />
+          <Outlet context={{ navRef, setForceHideNavbar }} />
           {showFooter && <Footer />}
         </>
       )}
