@@ -3,14 +3,14 @@ import frase from "@/assets/logos/main/FraseInicio.svg";
 
 export default function Inicio() {
   return (
-    <div className="flex justify-center items-center w-full h-dvh border">
+    <div className="flex justify-center items-center w-full h-dvh">
       <div className="flex lg:flex-col lg:items-center gap-[clamp(14px,2.5vw,32px)]">
         <div className="flex flex-col items-center gap-[clamp(11.33px,1.953125vw,25px)]">
           {/* Frase */}
           <img
             src={frase}
             alt="Tu vida en equilibrio a un instante"
-            className="w-[clamp(120px,32vw,360px)] h-[clamp(18px,4.8vw,54px)] lg:w-[clamp(244.69px,42.1875vw,540px)] lg:h-[clamp(36.7px,6.328125vw,81px)]"
+            className="w-[clamp(120px,32vw,360px)] h-[clamp(18px,4.8vw,54px)] lg:w-[clamp(244.69px,42.1875vw,540px)] lg:h-[clamp(36.7px,6.328125vw,81px)] dark:invert dark:brightness-0"
           />
 
           {/* Text */}
