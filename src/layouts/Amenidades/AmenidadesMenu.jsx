@@ -12,7 +12,7 @@ const AMENIDADES_MENU = [
   },
   {
     to: "/masterplan/amenidades/informacion",
-    label: "Información",
+    label: "Amenidades",
   },
   {
     to: "/masterplan/amenidades/video-tour?section=caseta",
