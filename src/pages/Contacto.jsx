@@ -2,8 +2,12 @@ import InstagramIcon from "@/assets/icons/contact/InstagramIcon";
 import SendIcon from "@/assets/icons/contact/SendIcon";
 import PaperBackground from "@/assets/images/Contacto/paperBackground.svg";
 import XperienceLogo from "../assets/icons/xperienceGroup/logo.svg";
+import { useSearchParams } from "react-router";
 
 export default function Contacto() {
+  const [searchParams] = useSearchParams();
+  const loteId = searchParams.get("lote");
+
   return (
     <div className="relative w-full min-h-dvh h-full flex justify-center items-center">
       {/* Overlay gradiente */}
@@ -72,9 +76,9 @@ export default function Contacto() {
 
           {/* FORM */}
           <div className="flex-1 flex h-full justify-end">
-            <form className="flex flex-col w-[clamp(213px,37.578125vw,481px)] text-center gap-3 lg:gap-[clamp(11px,1.875vw,24px)]">
+            <form className="flex flex-col w-[clamp(213px,37.578125vw,481px)] text-center gap-3 lg:gap-[clamp(7px,1vh,10px)]">
               {/* Nombre */}
-              <div className="flex flex-col lg:gap-[clamp(9px,1.5625vw,20px)] portrait:gap-1.5">
+              <div className="flex flex-col lg:gap-[clamp(4px,1vh,8px)] portrait:gap-1.5">
                 <p className="text-contact-title font-baskerville text-cafe dark:text-nude">
                   Nombre completo
                 </p>
@@ -96,7 +100,7 @@ export default function Contacto() {
               </div>
 
               {/* Correo Electrónico */}
-              <div className="flex flex-col lg:gap-[clamp(9px,1.5625vw,20px)] portrait:gap-1.5">
+              <div className="flex flex-col lg:gap-[clamp(4px,1vh,8px)] portrait:gap-1.5">
                 <p className="text-contact-title font-baskerville text-cafe dark:text-nude">
                   Correo electrónico
                 </p>
@@ -111,7 +115,7 @@ export default function Contacto() {
               </div>
 
               {/* Número de teléfono */}
-              <div className="flex flex-col lg:gap-[clamp(9px,1.5625vw,20px)] portrait:gap-1.5">
+              <div className="flex flex-col lg:gap-[clamp(4px,1vh,8px)] portrait:gap-1.5">
                 <p className="text-contact-title font-baskerville text-cafe dark:text-nude">
                   Número de teléfono
                 </p>
@@ -128,6 +132,26 @@ export default function Contacto() {
                   className="w-full p-[clamp(7px,1.25vw,16px)] bg-gris placeholder:text-nude placeholder:text-caption text-caption text-nude"
                 />
               </div>
+
+              {/* Lote de interés */}
+              {loteId && (
+                <>
+                  <div className="flex flex-col lg:gap-[clamp(4px,1vh,8px)] portrait:gap-1.5">
+                    <p className="text-contact-title font-baskerville text-cafe dark:text-nude">
+                      Lote de Interés
+                    </p>
+                    <input
+                      readOnly
+                      type="number"
+                      name="lote"
+                      id="lote"
+                      value={loteId}
+                      inputMode="numeric"
+                      className="w-full p-[clamp(7px,1.25vw,16px)] bg-gris placeholder:text-nude placeholder:text-caption text-center text-amarillo text-caption"
+                    />
+                  </div>
+                </>
+              )}
 
               <button
                 type="submit"

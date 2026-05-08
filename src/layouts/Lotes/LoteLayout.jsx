@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router";
+import { Link, useLocation, useParams } from "react-router";
 import { Outlet } from "react-router";
 import HandIcon from "@/assets/icons/home/lotes/handIcon";
 import ReturnIcon from "@/assets/icons/shared/returnIcon";
@@ -27,6 +27,7 @@ const LOTE_MENU = [
 
 export default function LoteLayout() {
   const { pathname } = useLocation();
+  const { id } = useParams();
 
   const isActive = (slug) => pathname.includes(slug);
 
@@ -47,10 +48,15 @@ export default function LoteLayout() {
             {LOTE_MENU.map((item) => {
               const Icon = item.icon;
 
+              const finalTo =
+                item.label === "Me interesa"
+                  ? `${item.to}?lote=${id}`
+                  : item.to;
+
               return (
                 <Link
                   key={item.to}
-                  to={item.to}
+                  to={finalTo}
                   className={`relative flex w-fit justify-center items-center gap-[clamp(4px,0.78125vw,10px)] p-[clamp(7px,1.25vw,16px)] ${
                     isActive(item.to) && item.type !== "return"
                       ? "after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-cafe dark:after:bg-amarillo"
