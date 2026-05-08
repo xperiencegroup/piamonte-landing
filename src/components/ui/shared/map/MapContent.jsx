@@ -50,7 +50,7 @@ export default function MapContent() {
       <PiamonteMarker />
 
       {ComponentsToRender && <ComponentsToRender />}
-      {IS_DEVELOPMENT && <MapDebugger />}
+      {/* {IS_DEVELOPMENT && <MapDebugger />} */}
     </div>
   );
 }
