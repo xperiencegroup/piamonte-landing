@@ -14,12 +14,18 @@ const COMPONENTS_FROM_FILTER = {
   accesos: Accesos,
 };
 
+const SALTILLO_COORDINATES = {
+  lat: 25.400707138566503,
+  lng: -100.84605371021395,
+};
+
 export default function MapContent() {
   const [params] = useSearchParams();
   const map = useMap();
   const isShort = useIsShortHeight();
 
   const activeFilter = params.get("filter");
+  const activeOrigen = params.get("origen");
   const ComponentsToRender = COMPONENTS_FROM_FILTER[activeFilter];
 
   useEffect(() => {
@@ -34,13 +40,21 @@ export default function MapContent() {
         // Zoom de 15 en mobile, 16 en laptops
         zoom: isShort ? 15 : 16,
       });
+    } else if (activeOrigen === "saltillo") {
+      map.moveCamera({
+        center: {
+          lat: SALTILLO_COORDINATES.lat,
+          lng: SALTILLO_COORDINATES.lng,
+        },
+        zoom: 11,
+      });
     } else {
       map.moveCamera({
         center: MAP_CONFIG.center,
         zoom: isShort ? 9 : MAP_CONFIG.zoom,
       });
     }
-  }, [map, activeFilter, isShort]);
+  }, [map, activeFilter, isShort, activeOrigen]);
 
   return (
     <div>

@@ -9,7 +9,7 @@ const MENU = [
     label: "Piamonte Xperience",
   },
   {
-    to: "/ubicacion?filter=como-llegar",
+    to: "/ubicacion?filter=como-llegar&origen=monterrey",
     label: "Ubicación",
   },
   {

@@ -16,6 +16,7 @@
   /* Font sizes */
   --text-boton: clamp(8px, 1.40625vw, 18px);
   --text-boton-active: clamp(6.8px, 1.171875vw, 15px);
+  --text-direcciones: clamp(9.36px, 1.647059vh, 14px);
   --text-paragraph: clamp(8px, 1.484375vw, 19px);
   --text-body-md: clamp(9.28px, 1.71875vw, 22px);
   --text-letter-title: clamp(27px, 5vw, 64px);
@@ -23,6 +24,7 @@
   --text-boton-grande: clamp(9px, 1.5625vw, 20px);
   --text-boton-normal: clamp(8px, 1.40625vw, 18px);
   --text-paper: clamp(8px, 1.40625vw, 18px);
+  --text-paper-height: clamp(8px, 1.8vh, 18px);
   --text-phone-rotation: clamp(14px, 3.733333vw, 47.79px);
   --text-selinea-rotation: clamp(64px, 17.066667vw, 218.45px);
   --text-frase: clamp(28px, 5vw, 64px);

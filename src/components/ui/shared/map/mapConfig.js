@@ -4,7 +4,7 @@ export const MAP_CONFIG = {
   id: MAP_ID,
   zoom: 10,
   heading: 0,
-  center: { lat: 25.55759431053995, lng: -100.739157148278821 },
+  center: { lat: 25.55759431053995, lng: -100.629157148278821 },
 };
 
 export const PiamonteData = {
