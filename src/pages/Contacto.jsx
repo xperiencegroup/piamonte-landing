@@ -8,6 +8,35 @@ export default function Contacto() {
   const [searchParams] = useSearchParams();
   const loteId = searchParams.get("lote");
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch(
+        "https://piamonte-backend.vercel.app/send-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        },
+      );
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert("Correo enviado");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className="relative w-full min-h-dvh h-full flex justify-center items-center">
       {/* Overlay gradiente */}
@@ -76,7 +105,10 @@ export default function Contacto() {
 
           {/* FORM */}
           <div className="flex-1 flex h-full justify-end">
-            <form className="flex flex-col w-[clamp(213px,37.578125vw,481px)] text-center gap-1 lg:gap-[clamp(7px,1vh,10px)]">
+            <form
+              onSubmit={(e) => handleSubmit(e)}
+              className="flex flex-col w-[clamp(213px,37.578125vw,481px)] text-center gap-1 lg:gap-[clamp(7px,1vh,10px)]"
+            >
               {/* Nombre */}
               <div className="flex flex-col lg:gap-[clamp(4px,1vh,8px)] portrait:gap-1">
                 <p className="text-contact-title font-baskerville text-cafe dark:text-nude">
