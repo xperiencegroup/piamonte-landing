@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from "motion/react";
 import useResponsiveScale from "@/hooks/useResponsiveScale";
 
 import ubicacionImage from "@/assets/images/Nosotros/ventajas/ubicacion.jpg";
-import estructuraImage from "@/assets/images/Nosotros/ventajas/estructura_legal.jpg";
-import tiemposImage from "@/assets/images/Nosotros/ventajas/tiempos.jpg";
-import conceptoImage from "@/assets/images/Nosotros/ventajas/vialidades.jpg";
+import legalImage from "@/assets/images/Nosotros/ventajas/legal.jpg";
+import conectividadImage from "@/assets/images/Nosotros/ventajas/conectividad.jpg";
+import proyectoImage from "@/assets/images/Nosotros/ventajas/proyecto.jpg";
 import PaperTear from "../../assets/images/Masterplan/AmenidadesInformacion/Papeles/paperTear.png";
 import ClickIcon from "@/assets/icons/home/clickIcon";
 
@@ -25,20 +25,20 @@ const VENTAJAS = [
     id: 2,
     label: "A 80 minutos de Monterrey y a 30 minutos de Saltillo",
     title: "Conectividad",
-    image: tiemposImage,
+    image: conectividadImage,
   },
   {
     id: 3,
     label: "77 lotes campestres y más de 8 amenidades",
     title: "Proyecto",
-    image: conceptoImage,
+    image: proyectoImage,
   },
   {
     id: 4,
     label: "Régimen de Propiedad en Condominio.",
     title: "Estrcutura Legal",
     titleWidth: "lg",
-    image: estructuraImage,
+    image: legalImage,
   },
 ];
 
@@ -71,7 +71,7 @@ export default function Ventajas() {
                 layout
                 initial={false}
                 animate={{
-                  width: (isOpen ? 229 : 532) * scale,
+                  width: (isOpen ? 240 : 532) * scale,
                   height: (isOpen ? 389 : 373) * scale,
                   rotate: isOpen ? 0 : ROTATIONS[index],
                 }}

@@ -1,20 +1,20 @@
 // Imagenes
-import caseta from "@/assets/images/Masterplan/AmenidadesInformacion/caseta.webp";
-import casaClub from "@/assets/images/Masterplan/AmenidadesInformacion/casa_club.webp";
-import bar from "@/assets/images/Masterplan/AmenidadesInformacion/bar.webp";
-import terraza from "@/assets/images/Masterplan/AmenidadesInformacion/terraza.webp";
-import salonSocial from "@/assets/images/Masterplan/AmenidadesInformacion/salon_social.webp";
-import sala from "@/assets/images/Masterplan/AmenidadesInformacion/sala.webp";
-import lago from "@/assets/images/Masterplan/AmenidadesInformacion/lago.webp";
-import zonaYoga from "@/assets/images/Masterplan/AmenidadesInformacion/yoga.webp";
-import alberca from "@/assets/images/Masterplan/AmenidadesInformacion/alberca.webp";
-import juegosInfantiles from "@/assets/images/Masterplan/AmenidadesInformacion/juegos_infantiles.webp";
-import petPark from "@/assets/images/Masterplan/AmenidadesInformacion/pet_park.webp";
-import gimnasio from "@/assets/images/Masterplan/AmenidadesInformacion/gym.webp";
-import canchaPadel from "@/assets/images/Masterplan/AmenidadesInformacion/padel.webp";
-import canchaBasket from "@/assets/images/Masterplan/AmenidadesInformacion/basket.webp";
-import fogateros from "@/assets/images/Masterplan/AmenidadesInformacion/fogateros.webp";
-import huerto from "@/assets/images/Masterplan/AmenidadesInformacion/huertos.webp";
+import caseta from "@/assets/images/Masterplan/AmenidadesInformacion/caseta.jpg";
+import casaClub from "@/assets/images/Masterplan/AmenidadesInformacion/casa_club.jpg";
+import bar from "@/assets/images/Masterplan/AmenidadesInformacion/bar.jpg";
+import terraza from "@/assets/images/Masterplan/AmenidadesInformacion/terraza.jpg";
+import salonSocial from "@/assets/images/Masterplan/AmenidadesInformacion/salon_social.jpg";
+import sala from "@/assets/images/Masterplan/AmenidadesInformacion/sala.jpg";
+import lago from "@/assets/images/Masterplan/AmenidadesInformacion/lago.jpg";
+import zonaYoga from "@/assets/images/Masterplan/AmenidadesInformacion/yoga.jpg";
+import alberca from "@/assets/images/Masterplan/AmenidadesInformacion/alberca.jpg";
+import juegosInfantiles from "@/assets/images/Masterplan/AmenidadesInformacion/juegos_infantiles.jpg";
+import petPark from "@/assets/images/Masterplan/AmenidadesInformacion/pet_park.jpg";
+import gimnasio from "@/assets/images/Masterplan/AmenidadesInformacion/gym.jpg";
+import canchaPadel from "@/assets/images/Masterplan/AmenidadesInformacion/padel.jpg";
+import canchaBasket from "@/assets/images/Masterplan/AmenidadesInformacion/basket.jpg";
+import fogateros from "@/assets/images/Masterplan/AmenidadesInformacion/fogateros.jpg";
+import huerto from "@/assets/images/Masterplan/AmenidadesInformacion/huerto.jpg";
 
 // Papers
 import PaperTearBottom from "@/assets/images/Masterplan/AmenidadesInformacion/Papeles/paperTearBottom.png";
