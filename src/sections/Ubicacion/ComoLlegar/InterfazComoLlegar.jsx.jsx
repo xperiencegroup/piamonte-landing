@@ -117,7 +117,11 @@ export default function InterfazComoLlegar() {
             );
           })}
 
-          <img src={paperLarge} className="absolute inset-0 w-full h-full" />
+          <img
+            src={paperLarge}
+            draggable={false}
+            className="absolute inset-0 w-full h-full object-fill pointer-events-none"
+          />
         </div>
       </div>
 

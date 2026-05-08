@@ -14,8 +14,8 @@ export default function Inicio() {
           />
 
           {/* Text */}
-          <div className="relative w-[clamp(366px,64.453125vw,660px)] lg:w-[clamp(375px,65.9375vw,844px)] h-[clamp(72px,20vw,256px)] lg:h-[clamp(159px,27.96875vw,358px)]">
-            <div className="relative z-5 w-[67%] h-full place-self-center flex flex-col justify-center items-center gap-[clamp(15px,2.65625vw,34px)]">
+          <div className="relative flex w-[clamp(366px,64.453125vw,660px)] lg:w-[clamp(375px,65.9375vw,844px)] h-[clamp(72px,20vw,256px)] lg:h-[clamp(159px,27.96875vw,358px)] justify-center">
+            <div className="relative z-5 w-[67%] h-full flex flex-col justify-center items-center gap-[clamp(15px,2.65625vw,34px)]">
               <p className="text-body-md text-center text-cafe leading-[125%] tracking-tight">
                 Piamonte Residencial Campestre es un refugio de bienestar
                 integral, donde la serenidad del entorno natural y la vida en

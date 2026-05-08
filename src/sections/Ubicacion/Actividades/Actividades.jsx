@@ -148,7 +148,7 @@ export default function Actividades() {
       height: ClosedCardWidth * 0.7,
     },
   };
-  const IMAGE_RATIO = isOpen ? (isShort ? 0.7 : 0.77) : isShort ? 0.85 : 0.91;
+  const IMAGE_RATIO = isOpen ? (isShort ? 0.68 : 0.77) : isShort ? 0.85 : 0.91;
   const cardHeight = (isOpen ? CARD.open.height : CARD.closed.height) * scale;
   const imageHeight = cardHeight * IMAGE_RATIO;
 
@@ -367,7 +367,7 @@ export default function Actividades() {
               <h3 className="text-frase text-cafe dark:text-verde-claro font-selinea">
                 {selectedCard.label}
               </h3>
-              <p className="text-paragraph whitespace-pre-line text-gris dark:text-nude leading-[125%]">
+              <p className="text-[9px] font-medium md:text-paragraph whitespace-pre-line text-gris dark:text-nude leading-[125%]">
                 {selectedCard.description}
               </p>
             </motion.div>

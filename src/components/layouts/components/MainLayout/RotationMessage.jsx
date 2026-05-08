@@ -3,7 +3,7 @@ import PhoneRotation from "@/assets/icons/shared/phoneRotation";
 
 export default function RotationMessage() {
   return (
-    <div className="absolute inset-0 top-0 left-0 z-5 w-full h-full">
+    <div className="absolute inset-0 top-0 left-0 z-5 w-full h-dvh">
       {/* Overlay */}
       <div className="relative z-10 gradient-inicio-phone-rotation" />
 

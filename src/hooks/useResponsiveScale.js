@@ -11,7 +11,7 @@ export default function useResponsiveScale() {
       if (width >= 1280) setScale(1);
       else if (width >= 1024) setScale(0.75);
       else if (width >= 800) setScale(0.6);
-      else if (width >= 568) setScale(0.45);
+      else if (width >= 568) setScale(0.52);
       else setScale(0.4);
     };
 

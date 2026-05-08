@@ -38,7 +38,7 @@ export default function Contacto() {
   };
 
   return (
-    <div className="relative w-full min-h-dvh h-full flex justify-center items-center">
+    <div className="relative w-full h-dvh flex justify-center items-center">
       {/* Overlay gradiente */}
       <div className="gradient-inicio" />
 
@@ -46,7 +46,7 @@ export default function Contacto() {
         <div className="flex w-full portrait:flex-col-reverse portrait:items-center portrait:gap-[2vh]">
           {/* CONTENT */}
           <div className="flex-1 flex items-center text-cafe dark:text-nude text-center portrait:w-full portrait:justify-center">
-            <div className="relative portrait:w-full portrait:max-w-[248px] portrait:py-8 w-[95%] h-[90%] lg:h-full lg:max-h-[430px] flex flex-col justify-center items-center gap-2 pb-2 lg:gap-[clamp(10.88px,1.875vw,24px)]">
+            <div className="relative portrait:w-full portrait:max-w-[248px] portrait:py-8 w-[95%] h-[90%] lg:h-full lg:max-h-[430px] flex flex-col justify-center items-center gap-1 pb-2 lg:gap-[clamp(10.88px,1.875vw,24px)]">
               {/* Image */}
               <img
                 src={PaperBackground}

@@ -14,7 +14,7 @@ export default function MasterplanLotes() {
       {/* Background and button */}
       <div className="absolute inset-0 w-full h-dvh pointer-events-none">
         {/* Click Icon */}
-        <div className="absolute z-10 bottom-0 left-1/2 -translate-x-1/2 pb-[clamp(77.03px,11.28125vw,170px)] pointer-events-auto">
+        <div className="absolute z-10 bottom-0 left-1/2 -translate-x-1/2 pb-3 lg:pb-[clamp(77.03px,11.28125vw,170px)] pointer-events-auto">
           <ClickIcon className="w-[clamp(12.23px,2.109375vw,27px)] h-fit text-verde dark:text-nude" />
         </div>
 

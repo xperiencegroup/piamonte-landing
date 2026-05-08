@@ -71,7 +71,7 @@ export default function Ventajas() {
                 layout
                 initial={false}
                 animate={{
-                  width: (isOpen ? 240 : 532) * scale,
+                  width: (isOpen ? 260 : 532) * scale,
                   height: (isOpen ? 389 : 373) * scale,
                   rotate: isOpen ? 0 : ROTATIONS[index],
                 }}
@@ -134,7 +134,7 @@ export default function Ventajas() {
                         duration: 0.4,
                         delay: index * 0.15,
                       }}
-                      className="grow flex justify-center items-center text-card text-center font-regular text-gris dark:text-nude leading-[130%]"
+                      className="grow flex justify-center items-center text-[7px] md:text-card text-center font-regular text-gris dark:text-nude leading-[130%]"
                     >
                       {item.label}
                     </motion.p>

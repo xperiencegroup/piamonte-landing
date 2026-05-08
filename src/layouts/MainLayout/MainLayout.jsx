@@ -30,7 +30,7 @@ export default function MainLayout() {
     !routesAvailableMobile.some((route) => pathname.startsWith(route));
 
   return (
-    <div className="relative flex flex-col w-full min-h-screen">
+    <div className="relative flex flex-col w-full min-h-full">
       {!hideNavbar && !isPortrait && <Navbar navRef={navRef} />}
 
       {isPortrait && <MobileMenu />}
