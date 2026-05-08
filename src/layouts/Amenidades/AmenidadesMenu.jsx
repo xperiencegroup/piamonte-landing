@@ -3,6 +3,7 @@ import { useLocation, Link } from "react-router";
 import { VideoPlayerContext } from "@/Video/context/VideoPlayerContext";
 import { MODE } from "@/Video/const/Videos";
 import ReturnIcon from "@/assets/icons/shared/returnIcon";
+import { useAmenidadesStore } from "@/store/useAmenidadesStore";
 
 const AMENIDADES_MENU = [
   {
@@ -48,6 +49,11 @@ export default function AmenidadesMenu() {
   const isVideoTourMenu = pathname.startsWith(
     "/masterplan/amenidades/video-tour",
   );
+
+  const clearSelectedScene = useAmenidadesStore(
+    (state) => state.clearSelectedScene,
+  );
+
   return (
     <div className="shrink-0 flex flex-col w-full items-center pb-[clamp(31px,5.46875vw,70px)] px-[clamp(14px,2.5vw,32px)]">
       {isVideoTourMenu ? (
@@ -85,6 +91,13 @@ export default function AmenidadesMenu() {
               <Link
                 key={item.to}
                 to={item.to}
+                onClick={() => {
+                  if (
+                    pathname === "/masterplan/amenidades/recorridos-virtuales"
+                  ) {
+                    clearSelectedScene();
+                  }
+                }}
                 className={`relative flex w-fit justify-center items-center gap-[clamp(4px,0.78125vw,10px)] p-[clamp(7px,1.25vw,16px)] ${
                   isActive(item.to)
                     ? "after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-cafe dark:after:bg-amarillo"

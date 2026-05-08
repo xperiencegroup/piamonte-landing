@@ -1,55 +1,70 @@
+import useDarkMode from "@/hooks/useDarkMode";
+import { useAmenidadesStore } from "@/store/useAmenidadesStore";
+
 const PINS_DATA = [
   {
-    id: "LlFms",
+    dayId: "LlFms",
+    nightId: "LYkK0",
     name: "terraza",
     x: 510,
     y: 360,
   },
   {
-    id: "LlFmC",
+    dayId: "LlFmC",
+    nightId: "LYkKm",
     name: "salon_social",
     x: 690,
     y: 395,
   },
   {
-    id: "LlFmV",
+    dayId: "LlFmV",
+    nightId: "LYkKp",
     name: "sala",
     x: 575,
     y: 455,
   },
   {
-    id: "LlFmx",
+    dayId: "LlFmx",
+    nightId: "LYkKL",
     name: "bar",
     x: 780,
     y: 415,
   },
   {
-    id: "LlFmz",
+    dayId: "LlFmz",
+    nightId: "LYkKP",
     name: "alberca",
     x: 900,
     y: 590,
   },
   {
-    id: "LlFmy",
+    dayId: "LlFmy",
+    nightId: "LYkKl",
     name: "juegos_infantiles",
     x: 1265,
     y: 620,
   },
   {
-    id: "LlFm2",
+    dayId: "LlFm2",
+    nightId: "LYkKG",
     name: "basket",
     x: 1150,
     y: 375,
   },
   {
-    id: "LlFmR",
+    dayId: "LlFmR",
+    nightId: "LYkKf",
     name: "gym_padel",
     x: 1490,
     y: 385,
   },
 ];
 
-export default function AmenidadesPins({ handleSelectScene }) {
+export default function AmenidadesPins() {
+  const isDark = useDarkMode();
+  const setSelectedScene = useAmenidadesStore(
+    (state) => state.setSelectedScene,
+  );
   return (
     <div className="fixed inset-0 z-20 pointer-events-none">
       <svg
@@ -59,10 +74,10 @@ export default function AmenidadesPins({ handleSelectScene }) {
       >
         {PINS_DATA.map((item) => (
           <g
-            key={item.id}
+            key={item.name}
             transform={`translate(${item.x},${item.y}) scale(1.258)`}
             className="hover:cursor-pointer pointer-events-auto"
-            onClick={() => handleSelectScene(item.id)}
+            onClick={() => setSelectedScene(isDark ? item.nightId : item.dayId)}
           >
             <path
               d="M20.2044 0C9.06428 0 0 9.06326 0 20.2034C0 24.5421 1.35482 28.6776 3.91922 32.1632C6.29269 35.3898 9.50099 37.8018 13.2293 39.1709L18.7785 51.091C19.0365 51.6456 19.5931 52 20.2044 52C20.8158 52 21.3724 51.6456 21.6304 51.091L27.1796 39.1709C30.9079 37.8018 34.1162 35.3898 36.4897 32.1632C39.0531 28.6776 40.4089 24.5421 40.4089 20.2034C40.4089 9.06326 31.3446 0 20.2044 0Z"

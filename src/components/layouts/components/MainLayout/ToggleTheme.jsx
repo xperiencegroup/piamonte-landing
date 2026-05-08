@@ -7,10 +7,12 @@ import sunIcon from "@/assets/icons/theme/sunIcon.svg";
 import moonIcon from "@/assets/icons/theme/moonIcon.svg";
 import SpeakerHighIcon from "@/assets/icons/audio/SpeakerHighIcon";
 import SpeakerLowIcon from "@/assets/icons/audio/SpeakerLowIcon";
+import { useAmenidadesStore } from "@/store/useAmenidadesStore";
 
 export default function ToggleTheme() {
   const { theme, toggleTheme } = useTheme();
   const { mode } = useContext(VideoPlayerContext);
+  const selectedScene = useAmenidadesStore((state) => state.selectedScene);
 
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -45,8 +47,8 @@ export default function ToggleTheme() {
         <div className="size-[clamp(19px,3.28125vw,42px)] portrait:size-[38px] flex justify-center items-center">
           <button
             onClick={toggleTheme}
-            disabled={mode === MODE.TRANSITIONING}
-            className={`size-[clamp(11px,2.007813vw,25.7px)] portrait:size-[24px] flex justify-center items-center ${mode === MODE.TRANSITIONING ? "" : "hover:cursor-pointer"}`}
+            disabled={mode === MODE.TRANSITIONING || selectedScene}
+            className={`size-[clamp(11px,2.007813vw,25.7px)] portrait:size-[24px] flex justify-center items-center ${mode === MODE.TRANSITIONING || selectedScene ? "" : "hover:cursor-pointer"}`}
           >
             <img
               src={theme === "light" ? sunIcon : moonIcon}
