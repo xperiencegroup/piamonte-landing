@@ -4,6 +4,7 @@ import KuulaComponent from "@/components/ui/shared/kuula/KuulaComponent";
 import AmenidadesPins from "@/layouts/Amenidades/AmenidadesPins";
 import useDarkMode from "@/hooks/useDarkMode";
 import { useAmenidadesStore } from "@/store/useAmenidadesStore";
+import X from "@/assets/icons/shared/X";
 
 const KUULA_NIGHT_ID = "7Mwbm";
 const KUULA_DAY_ID = "7M6Wh";
@@ -12,6 +13,9 @@ export default function AmenidadesRecorridos() {
   const { setForceHideNavbar } = useOutletContext();
 
   const selectedScene = useAmenidadesStore((state) => state.selectedScene);
+  const clearSelectedScene = useAmenidadesStore(
+    (state) => state.clearSelectedScene,
+  );
   const isDark = useDarkMode();
 
   const collectionId = isDark ? KUULA_NIGHT_ID : KUULA_DAY_ID;
@@ -41,6 +45,13 @@ export default function AmenidadesRecorridos() {
               <div className="relative w-full h-full">
                 {/* Overlay */}
                 <div className="absolute inset-0 z-10 w-full h-full linear-gradient-normal pointer-events-none opacity-80" />
+
+                <button
+                  onClick={clearSelectedScene}
+                  className="absolute top-[clamp(14px,2vw,32px)] right-[clamp(14px,2vw,32px)] z-30 flex justify-center items-center w-[clamp(32px,3vw,48px)] h-[clamp(32px,3vw,48px)] rounded-full bg-verde dark:bg-nude pointer-events-auto hover:cursor-pointer"
+                >
+                  <X className="w-[60%] h-[60%] text-white dark:text-verde" />
+                </button>
 
                 <KuulaComponent src={src} />
               </div>
