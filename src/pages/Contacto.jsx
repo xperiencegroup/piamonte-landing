@@ -1,26 +1,7 @@
 import InstagramIcon from "@/assets/icons/contact/InstagramIcon";
-import LinkedinIcon from "@/assets/icons/contact/LinkedinIcon";
 import SendIcon from "@/assets/icons/contact/SendIcon";
-import XIcon from "@/assets/icons/contact/XIcon";
 import PaperBackground from "@/assets/images/Contacto/paperBackground.svg";
-
-const SOCIAL_LINKS = [
-  {
-    id: "instagram",
-    icon: InstagramIcon,
-    href: "#",
-  },
-  {
-    id: "linkedin",
-    icon: LinkedinIcon,
-    href: "#",
-  },
-  {
-    id: "x_twitter",
-    icon: XIcon,
-    href: "#",
-  },
-];
+import XperienceLogo from "../assets/icons/xperienceGroup/logo.svg";
 
 export default function Contacto() {
   return (
@@ -28,36 +9,63 @@ export default function Contacto() {
       {/* Overlay gradiente */}
       <div className="gradient-inicio" />
 
-      <div className="flex flex-col w-full max-w-[1280px] h-full max-h-[476px] flex justify-center items-center px-[clamp(13px,2.34375vw,30px)] lg:gap-[clamp(7px,1.25vw,16px)] portrait:gap-[6vh]">
-        <div className="flex w-full portrait:flex-col-reverse portrait:items-center portrait:gap-[6vh]">
+      <div className="flex flex-col w-full max-w-[1280px] h-full max-h-[776px] justify-center items-center px-[clamp(13px,2.34375vw,30px)] lg:gap-[clamp(7px,1.25vw,16px)] portrait:gap-[1vh]">
+        <div className="flex w-full portrait:flex-col-reverse portrait:items-center portrait:gap-[2vh]">
           {/* CONTENT */}
-          <div className="flex-1 flex items-center text-cafe dark:text-nude text-center">
-            <div className="relative flex flex-col w-[clamp(213px,37.578125vw,481px)] h-[clamp(127px,22.265625vw,285px)]">
+          <div className="flex-1 flex items-center text-cafe dark:text-nude text-center portrait:w-full portrait:justify-center">
+            <div className="relative portrait:w-full portrait:max-w-[248px] portrait:py-8 w-[95%] h-[90%] lg:h-full lg:max-h-[430px] flex flex-col justify-center items-center gap-2 pb-2 lg:gap-[clamp(10.88px,1.875vw,24px)]">
               {/* Image */}
               <img
                 src={PaperBackground}
                 alt="Imagen de fondo papel"
-                className="absolute -z-10 inset-0 w-full h-full object-cover overflow-visible transition-opacity delay-50 dark:opacity-0"
+                className="absolute -z-10 inset-0 w-full h-full object-fill overflow-visible transition-opacity delay-50 dark:opacity-0"
               />
 
               {/* Dirección */}
-              <div className="flex-1">
+              <div className="flex flex-col justify-center gap-0">
                 <h3 className="text-contact-title font-baskerville">
                   Dirección
                 </h3>
-                <p className="text-paragraph">
-                  Lorem ipsum dolor sit amet, <br /> consectetur adipiscing
-                  elit, sed do <br /> eiusmod tempor incididunt ut labore et
+                <p className="text-paragraph leading-[130%]">
+                  86J3+P86,
+                  <br />
+                  Pinares de Rancho Viejo, Arteaga,
+                  <br />
+                  Coahuila, México
                 </p>
               </div>
 
               {/* Horario */}
-              <div className="flex-1">
-                <h3 className="text-contact-title font-baskerville">Horario</h3>
-                <p className="text-paragraph">
-                  Lorem ipsum dolor sit <br /> amet consectetur <br />{" "}
-                  adipiscing elit
+              <div className="flex flex-col justify-center">
+                <h3 className="text-contact-title font-baskerville">
+                  Correo Electrónico
+                </h3>
+                <p className="text-paragraph leading-[130%]">
+                  admin@piamonte.mx
+                  <br />
+                  ventas@piamonte.mx
                 </p>
+              </div>
+
+              {/* Redes sociales */}
+              <div className="flex flex-col justify-center">
+                <h3 className="text-contact-title font-baskerville">
+                  Redes Sociales
+                </h3>
+
+                <div className="flex gap-2">
+                  <a
+                    href={"https://www.instagram.com/piamonteresidencial"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="size-[clamp(12px,2.03125vw,26px)]"
+                  >
+                    <InstagramIcon className="w-full h-full text-verde dark:text-amarillo" />
+                  </a>
+                  <p className="text-paragraph leading-[130%]">
+                    @piamonteresidencial
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -138,25 +146,20 @@ export default function Contacto() {
 
         {/* Caption and social links */}
         <div className="w-full h-fit flex max-lg:flex-col max-lg:gap-2">
-          <div className="flex-1 max-lg:self-center">
+          <div className="flex-1 self-center flex flex-col justify-center items-center gap-1 lg:gap-[clamp(7.25px,1.25vw,16px)]">
             <p className="text-caption text-gris dark:text-amarillo">
               © Piamonte residencial. All rights reserved
             </p>
-          </div>
-          <div className="flex-1 max-lg:self-center flex justify-end">
-            <div className="flex w-[clamp(213px,37.578125vw,481px)] justify-between">
-              {SOCIAL_LINKS.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <a
-                    key={item.id}
-                    href={item.href}
-                    className="size-[clamp(12px,2.03125vw,26px)]"
-                  >
-                    <Icon className="w-full h-full text-verde dark:text-amarillo" />
-                  </a>
-                );
-              })}
+
+            <div className="flex gap-[clamp(10.88px,1.875vw,21px)]">
+              <p className="text-body-md text-center text-gris dark:text-amarillo">
+                Desarrollo web por:
+              </p>
+              <img
+                src={XperienceLogo}
+                alt="Logo Xperience Group Creative Company"
+                className="w-[clamp(57.52px,9.921875vw,127px)] h-[clamp(14.95px,2.578125vw,33px)]"
+              />
             </div>
           </div>
         </div>
