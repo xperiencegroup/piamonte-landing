@@ -76,9 +76,9 @@ export default function Contacto() {
 
           {/* FORM */}
           <div className="flex-1 flex h-full justify-end">
-            <form className="flex flex-col w-[clamp(213px,37.578125vw,481px)] text-center gap-3 lg:gap-[clamp(7px,1vh,10px)]">
+            <form className="flex flex-col w-[clamp(213px,37.578125vw,481px)] text-center gap-1 lg:gap-[clamp(7px,1vh,10px)]">
               {/* Nombre */}
-              <div className="flex flex-col lg:gap-[clamp(4px,1vh,8px)] portrait:gap-1.5">
+              <div className="flex flex-col lg:gap-[clamp(4px,1vh,8px)] portrait:gap-1">
                 <p className="text-contact-title font-baskerville text-cafe dark:text-nude">
                   Nombre completo
                 </p>
@@ -100,7 +100,7 @@ export default function Contacto() {
               </div>
 
               {/* Correo Electrónico */}
-              <div className="flex flex-col lg:gap-[clamp(4px,1vh,8px)] portrait:gap-1.5">
+              <div className="flex flex-col lg:gap-[clamp(4px,1vh,8px)] portrait:gap-1">
                 <p className="text-contact-title font-baskerville text-cafe dark:text-nude">
                   Correo electrónico
                 </p>
@@ -115,7 +115,7 @@ export default function Contacto() {
               </div>
 
               {/* Número de teléfono */}
-              <div className="flex flex-col lg:gap-[clamp(4px,1vh,8px)] portrait:gap-1.5">
+              <div className="flex flex-col lg:gap-[clamp(4px,1vh,8px)] portrait:gap-1">
                 <p className="text-contact-title font-baskerville text-cafe dark:text-nude">
                   Número de teléfono
                 </p>
@@ -136,7 +136,7 @@ export default function Contacto() {
               {/* Lote de interés */}
               {loteId && (
                 <>
-                  <div className="flex flex-col lg:gap-[clamp(4px,1vh,8px)] portrait:gap-1.5">
+                  <div className="flex flex-col lg:gap-[clamp(4px,1vh,8px)] portrait:gap-1">
                     <p className="text-contact-title font-baskerville text-cafe dark:text-nude">
                       Lote de Interés
                     </p>
