@@ -27,18 +27,28 @@ export default function Footer() {
           {/* Datos */}
           <div className="self-center flex justify-between items-start w-full max-w-[1212px] h-fit text-gris dark:text-nude">
             {/* Dirección */}
-            <p className="w-[clamp(113.28px,19.53125vw,250px)] text-center text-paper font-bold">
+            <a
+              href="https://maps.google.com/?q=25.32980262256113,-100.79694551307698"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-[clamp(113.28px,19.53125vw,250px)] text-center text-paper font-bold"
+            >
               86J3+P86,
               <br />
               Pinares de Rancho Viejo,
               <br />
               Arteaga, Coahuila, México
-            </p>
+            </a>
 
             {/* Coordernadas */}
-            <p className="w-[clamp(113.28px,19.53125vw,250px)] text-center text-paper font-bold">
+            <a
+              href="https://maps.google.com/?q=25.32980262256113,-100.79694551307698"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-[clamp(113.28px,19.53125vw,250px)] text-center text-paper font-bold"
+            >
               25°19'54.5"N 100°47'48.3"W
-            </p>
+            </a>
 
             {/* Número */}
             <p className="w-[clamp(113.28px,19.53125vw,250px)] text-center text-paper font-bold">
@@ -54,10 +64,22 @@ export default function Footer() {
 
             <div className="flex gap-[clamp(8.16px,1.40625vw,18px)]">
               <div className="size-[clamp(24.47px,4.21875vw,54px)] flex justify-center items-center">
-                <WhatsappIcon className="size-[clamp(12.02px,2.0703125vw,26.5px)] text-whatsapp" />
+                <a
+                  href="https://wa.me/528145933236"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <WhatsappIcon className="size-[clamp(12.02px,2.0703125vw,26.5px)] text-whatsapp" />
+                </a>
               </div>
               <div className="size-[clamp(24.47px,4.21875vw,54px)] flex justify-center items-center">
-                <InstagramIcon className="size-[clamp(12.02px,2.0703125vw,26.5px)] text-gris dark:text-nude" />
+                <a
+                  href={"https://www.instagram.com/piamonteresidencial"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <InstagramIcon className="size-[clamp(12.02px,2.0703125vw,26.5px)] text-gris dark:text-nude" />
+                </a>
               </div>
             </div>
           </div>
