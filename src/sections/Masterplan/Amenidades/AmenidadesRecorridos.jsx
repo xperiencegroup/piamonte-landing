@@ -35,7 +35,7 @@ export default function AmenidadesRecorridos() {
       {/* Background */}
       <div className="absolute -z-10 inset-0 w-full h-full">
         {/* Overlay */}
-        <div className="linear-gradient-shadow" />
+        <div className="linear-gradient-bottom-amenidades inset-0" />
       </div>
 
       {selectedScene ? (
@@ -44,7 +44,7 @@ export default function AmenidadesRecorridos() {
             <div className="flex relative w-full h-full">
               <div className="relative w-full h-full">
                 {/* Overlay */}
-                <div className="absolute inset-0 z-10 w-full h-full linear-gradient-normal pointer-events-none opacity-80" />
+                <div className="absolute inset-0 z-10 w-full h-full linear-gradient-bottom-amenidades pointer-events-none opacity-80" />
 
                 <button
                   onClick={clearSelectedScene}

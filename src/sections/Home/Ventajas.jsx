@@ -9,6 +9,12 @@ import proyectoImage from "@/assets/images/Nosotros/ventajas/proyecto.jpg";
 import PaperTear from "../../assets/images/Masterplan/AmenidadesInformacion/Papeles/paperTear.png";
 import ClickIcon from "@/assets/icons/home/clickIcon";
 
+// Titulos
+import Ubicacion from "@/assets/texts/home/ubicacion.jsx";
+import Conectividad from "@/assets/texts/home/conectividad";
+import Proyecto from "@/assets/texts/home/proyecto";
+import Legal from "@/assets/texts/home/legal";
+
 const VENTAJAS = [
   {
     id: 1,
@@ -19,24 +25,30 @@ const VENTAJAS = [
     ),
     label: "Pinares de Rancho Viejo, Arteaga, Coahuila, México",
     title: "Ubicación",
+    titleImage: Ubicacion,
     image: ubicacionImage,
   },
   {
     id: 2,
     label: "A 80 minutos de Monterrey y a 30 minutos de Saltillo",
     title: "Conectividad",
+    titleImage: Conectividad,
+    titleWidth: "lg",
     image: conectividadImage,
   },
   {
     id: 3,
     label: "77 lotes campestres y más de 8 amenidades",
     title: "Proyecto",
+    titleImage: Proyecto,
+    titleWidth: "lg",
     image: proyectoImage,
   },
   {
     id: 4,
     label: "Régimen de Propiedad en Condominio.",
     title: "Estrcutura Legal",
+    titleImage: Legal,
     titleWidth: "lg",
     image: legalImage,
   },
@@ -50,6 +62,7 @@ export default function Ventajas() {
   const [selectedCard, setSelectedCard] = useState(VENTAJAS[0]);
   const scale = useResponsiveScale();
 
+  const SelectedTitleImage = selectedCard.titleImage;
   return (
     <div className="relative flex w-full h-dvh justify-center items-center">
       <div
@@ -65,6 +78,7 @@ export default function Ventajas() {
           className={`${isOpen ? "flex w-full h-full justify-center gap-[clamp(8.61px,1.484375vw,19px)]" : "flex relative w-[clamp(327px,57.578125vw,737px)] h-[clamp(257px,45.15625vw,578px)] justify-center items-center"}`}
         >
           {VENTAJAS.map((item, index) => {
+            const TitleImage = item.titleImage;
             return (
               <motion.div
                 key={item.label}
@@ -153,9 +167,10 @@ export default function Ventajas() {
                           alt="Imagen de fondo de textura de papel"
                           className="absolute inset-0 w-full h-full"
                         />
-                        <p className="relative z-10 text-frase font-selinea whitespace-nowrap text-cafe dark:text-verde-claro">
-                          {item.title}
-                        </p>
+
+                        <TitleImage
+                          className={`relative z-0 w-full px-[clamp(7.25px,1.25vw,16px)] text-cafe ${item.id === 1 ? "h-[clamp(12.23px,2.109375vw,27px)]" : "h-[clamp(7.7px,1.328125vw,17px)]"}`}
+                        />
                       </div>
                     </div>
                   )}
@@ -181,11 +196,12 @@ export default function Ventajas() {
                 duration: 0.5,
                 ease: [0.32, 0, 0.67, 0],
               }}
-              className="w-[clamp(122.77px,21.171875vw,271px)] h-full text-center"
+              className="flex flex-col w-[clamp(122.77px,21.171875vw,271px)] h-full text-center gap-[clamp(9.06px,1.5625vw,20px)]"
             >
-              <h3 className="text-frase text-cafe dark:text-verde-claro font-selinea leading-[100%]">
-                {selectedCard.title}
-              </h3>
+              <SelectedTitleImage
+                className={`text-gris dark:text-nude ${selectedCard.id === 1 ? "h-[clamp(12.23px,2.109375vw,27px)]" : "h-[clamp(7.7px,1.328125vw,17px)]"}`}
+              />
+
               <p className="text-paragraph font-medium text-gris dark:text-nude">
                 {selectedCard.specialLabel ?? selectedCard.label}
               </p>

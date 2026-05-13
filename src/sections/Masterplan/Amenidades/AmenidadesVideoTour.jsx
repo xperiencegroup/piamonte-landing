@@ -117,7 +117,7 @@ export default function AmenidadesVideoTour() {
       {/* Background */}
       <div className="absolute inset-0 w-full h-dvh">
         {/* Overlay */}
-        <div className="linear-gradient-shadow" />
+        <div className="linear-gradient-bottom-vti inset-0" />
       </div>
 
       {/* Video Tour Buttons */}

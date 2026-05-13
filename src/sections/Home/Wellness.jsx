@@ -1,6 +1,7 @@
 import PaperBody from "@/assets/images/Nosotros/PaperBody.png";
 import PaperTitle from "@/assets/images/Nosotros/paperTitle.png";
 import PaperBackground from "@/assets/images/Nosotros/paperBackground.svg";
+import wellnessTitle from "@/assets/texts/home/wellnessTitle.svg";
 
 export default function Wellness() {
   return (
@@ -22,15 +23,17 @@ export default function Wellness() {
         {/* Content */}
         <div className="relative flex flex-col w-full h-full justify-center items-center gap-1.5 lg:gap-[clamp(7px,1.25vw,16px)] max-lg:py-3">
           {/* Title */}
-          <div className="flex absolute top-0 -translate-y-[85%] w-[clamp(249.22px,42.96875vw,550px)] h-fit justify-center items-center portrait:w-[clamp(140px,12.65625vw,162px)] portrait:h-[clamp(55px,5vw,64px)]">
+          <div className="flex absolute top-0 -translate-y-[85%] w-[clamp(249.22px,42.96875vw,550px)] h-[clamp(41.22px,7.109375vw,91px)] justify-center items-center portrait:w-[clamp(140px,12.65625vw,162px)] portrait:h-[clamp(55px,5vw,64px)]">
             <img
               src={PaperTitle}
               alt="Imagen de titulo de carta"
-              className="absolute inset-0 w-full h-full"
+              className="absolute inset-0 w-full h-full rotate-2"
             />
-            <p className="relative text-frase portrait:text-[clamp(36.2px,16vw,60px)] font-selinea text-verde-claro whitespace-nowrap">
-              Bienestar y equilibrio como forma de vida
-            </p>
+            <img
+              src={wellnessTitle}
+              alt="Bienestar y equilibrio como forma de vida"
+              className="relative z-50 w-full px-[clamp(18.13px,3.125vw,40px)]"
+            />
           </div>
 
           {/* Body */}

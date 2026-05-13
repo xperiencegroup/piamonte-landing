@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useMap } from "@vis.gl/react-google-maps";
-import primerAcceso from "@/assets/images/Ubicación/accesos/primer_acceso.svg";
+import acceso from "@/assets/images/Ubicación/accesos/acceso.svg";
 import PaperTitle from "@/assets/images/Nosotros/paperTitle.png";
 import AdvanceMarker from "@/components/ui/shared/map/AdvanceMarker";
 
@@ -20,7 +20,7 @@ export default function Accesos() {
     const gmaps = window.google?.maps;
     if (!gmaps) return;
 
-    const overlay = new gmaps.GroundOverlay(primerAcceso, imageBounds);
+    const overlay = new gmaps.GroundOverlay(acceso, imageBounds);
     overlay.setMap(map);
 
     return () => overlay.setMap(null);

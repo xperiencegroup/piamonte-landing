@@ -69,11 +69,23 @@ body {
 }
 
 .linear-gradient-shadow {
-  @apply absolute inset-0 -z-10 bg-linear-to-b from-[#C1BDAC]/85 from-20% via-[#DDDACC]/0 via-40% to-[#E9E6D7] dark:from-[#33302B]/85 dark:via-[#2D2B28]/0 dark:to-[#2D2B28];
+  @apply absolute inset-0 -z-10 bg-linear-to-b from-[#C1BDAC]/85 from-20% via-[#DDDACC]/0 via-40% to-[#E9E6D7] dark:from-[#33302B]/85 dark:via-[#2D2B28]/0 dark:to-[#2D2B28] pointer-events-none;
 }
 
 .linear-gradient-normal {
-  @apply absolute bg-linear-to-b from-[#C1BDAC]/85 from-20% via-[#DDDACC]/0 via-40% to-[#E9E6D7] dark:from-[#33302B]/85 dark:via-[#2D2B28]/0 dark:to-[#2D2B28];
+  @apply absolute bg-linear-to-b from-[#C1BDAC]/85 from-20% via-[#DDDACC]/0 via-40% to-[#E9E6D7] dark:from-[#33302B]/85 dark:via-[#2D2B28]/0 dark:to-[#2D2B28] pointer-events-none;
+}
+
+.linear-gradient-bottom {
+  @apply absolute bg-linear-to-b from-transparent from-20% via-[#DDDACC]/0 via-40% to-[#C1BDAC]/85 dark:from-transparent dark:via-[#2D2B28]/0 dark:to-[#2D2B28]/85 pointer-events-none;
+}
+
+.linear-gradient-bottom-amenidades {
+  @apply absolute bg-linear-to-b from-transparent via-[#DDDACC]/0 via-50% to-[#E9E6D7] dark:from-transparent dark:via-[#2D2B28]/0 dark:to-[#2D2B28]/85 pointer-events-none;
+}
+
+.linear-gradient-bottom-vti {
+  @apply absolute inset-0 -z-10 bg-linear-to-b from-[#C1BDAC]/85 from-10% via-transparent via-55% to-[#E9E6D7]/80 dark:from-[#33302B]/85 dark:via-[#2D2B28]/0 dark:to-[#2D2B28] pointer-events-none;
 }
 
 .gradient-inicio {

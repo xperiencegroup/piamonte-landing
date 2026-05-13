@@ -364,7 +364,7 @@ export default function Actividades() {
               }}
               className="w-[clamp(158.03px,27.265625vw,459px)] h-full text-center"
             >
-              <h3 className="text-frase text-cafe dark:text-verde-claro font-selinea">
+              <h3 className="text-frase text-cafe dark:text-amarillo font-selinea">
                 {selectedCard.label}
               </h3>
               <p className="text-[9px] font-medium md:text-paragraph whitespace-pre-line text-gris dark:text-nude leading-[125%]">

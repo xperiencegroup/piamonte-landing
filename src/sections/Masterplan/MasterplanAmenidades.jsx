@@ -4,7 +4,7 @@ export default function MasterplanAmenidades() {
       {/* Background */}
       <div className="absolute inset-0 w-full h-dvh">
         {/* Overlay */}
-        <div className="linear-gradient-shadow" />
+        <div className="linear-gradient-bottom-amenidades inset-0" />
       </div>
     </div>
   );
