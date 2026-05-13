@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useOutletContext } from "react-router";
+import { useLocation, useOutletContext } from "react-router";
 import KuulaComponent from "@/components/ui/shared/kuula/KuulaComponent";
 import AmenidadesPins from "@/layouts/Amenidades/AmenidadesPins";
 import useDarkMode from "@/hooks/useDarkMode";
@@ -30,6 +30,12 @@ export default function AmenidadesRecorridos() {
     return () => setForceHideNavbar(false);
   }, [selectedScene]);
 
+  useEffect(() => {
+    return () => {
+      clearSelectedScene();
+    };
+  }, []);
+
   return (
     <>
       {/* Background */}
@@ -48,9 +54,9 @@ export default function AmenidadesRecorridos() {
 
                 <button
                   onClick={clearSelectedScene}
-                  className="absolute top-[clamp(14px,2vw,32px)] right-[clamp(14px,2vw,32px)] z-30 flex justify-center items-center w-[clamp(32px,3vw,48px)] h-[clamp(32px,3vw,48px)] rounded-full bg-verde dark:bg-nude pointer-events-auto hover:cursor-pointer"
+                  className="absolute top-0 right-0 z-30 flex justify-center items-center size-[clamp(23.56px,4.0625vw,52px)] bg-verde dark:bg-nude pointer-events-auto hover:cursor-pointer"
                 >
-                  <X className="w-[60%] h-[60%] text-white dark:text-verde" />
+                  <X className="size-[clamp(14.73px,2.5390625vw,32.5px)] text-white dark:text-verde" />
                 </button>
 
                 <KuulaComponent src={src} />
