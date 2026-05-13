@@ -39,3 +39,30 @@
   font-style: normal;
   font-display: swap;
 }
+
+/* Lavolta */
+
+@font-face {
+  font-family: "Lavolta";
+  src: url("/src/assets/fonts/Lavolta/Lavolta.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lavolta Swash";
+  src: url("/src/assets/fonts/Lavolta/LavoltaSwash.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lavolta Swash";
+  src: url("/src/assets/fonts/Lavolta/LavoltaSwashItalic.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}

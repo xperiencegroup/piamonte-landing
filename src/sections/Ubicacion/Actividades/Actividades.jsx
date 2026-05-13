@@ -14,13 +14,15 @@ import monterrey from "@/assets/images/Ubicación/actividades/monterrey.jpeg";
 import saltillo from "@/assets/images/Ubicación/actividades/saltillo.jpg";
 import san_antonio from "@/assets/images/Ubicación/actividades/san-antonio.jpeg";
 import sierra_marta from "@/assets/images/Ubicación/actividades/sierra_marta.webp";
+import terra_serena from "@/assets/images/Ubicación/actividades/terra_serena.jpg";
 import ClickIcon from "@/assets/icons/home/clickIcon";
 
 const ACTIVITIES = [
   {
     id: 1,
     label: "Los cedros",
-    tiempo: "42",
+    titleSVG: "",
+    tiempo: "25",
     distancia: "43.3",
     image: seria_cedros,
     description:
@@ -28,6 +30,34 @@ const ACTIVITIES = [
   },
   {
     id: 2,
+    label: "Bodega del viento",
+    tiempo: "16",
+    distancia: "14.1",
+    image: bodega_vientos,
+    description:
+      "Un viñedo boutique ubicado en la Sierra de Arteaga, Coahuila, a más de 2,100 metros de altura, lo que le permite producir vinos de clima frío poco comunes en México, con uva propia y una producción limitada, ofreciendo recorridos, degustaciones y una experiencia tranquila rodeada de paisaje montañoso.",
+  },
+  {
+    id: 3,
+    label: "San Antonio de las alazanas",
+    tiempo: "20",
+    distancia: "30.9",
+    image: san_antonio,
+    description:
+      "Un exclusivo desarrollo turístico y centro de esquí en la Sierra de Arteaga, Coahuila, famoso por ser el único lugar en México con pistas de esquí y snowboard funcionales los 365 días del año.\n\nEl complejo es un destino popular todo el año, ideal para familias y amantes de la naturaleza, siendo un punto clave para el turismo en la región.",
+  },
+  {
+    id: 4,
+    label: "Huachichil",
+    tiempo: "14",
+    distancia: "15.3",
+    image: huachichil,
+    description:
+      "Una pequeña comunidad ubicada en la Sierra de Arteaga, conocida por su entorno natural de bosque y clima fresco. Es un punto clave dentro de la ruta de viñedos de la región, ya que ahí se encuentran proyectos como Bodegas del Viento, además de cabañas, ranchos y espacios para ecoturismo; es ideal para escapadas tranquilas, contacto con la naturaleza y experiencias como degustaciones de vino y senderismo.",
+  },
+
+  {
+    id: 5,
     label: "Monterreal",
     tiempo: "42",
     distancia: "43.3",
@@ -36,25 +66,16 @@ const ACTIVITIES = [
       "Un exclusivo desarrollo turístico y centro de esquí en la Sierra de Arteaga, Coahuila, famoso por ser el único lugar en México con pistas de esquí y snowboard funcionales los 365 días del año.\n\nEl complejo es un destino popular todo el año, ideal para familias y amantes de la naturaleza, siendo un punto clave para el turismo en la región.",
   },
   {
-    id: 3,
-    label: "Bodega de los vientos",
-    tiempo: "16",
-    distancia: "14.1",
-    image: bodega_vientos,
+    id: 6,
+    label: "Terra Serena",
+    tiempo: "40",
+    distancia: "31.7",
+    image: terra_serena,
     description:
-      "Un viñedo boutique ubicado en la Sierra de Arteaga, Coahuila, a más de 2,100 metros de altura, lo que le permite producir vinos de clima frío poco comunes en México, con uva propia y una producción limitada, ofreciendo recorridos, degustaciones y una experiencia tranquila rodeada de paisaje montañoso.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, soluta. Facilis nostrum iusto eum, natus fugit ipsam reprehenderit quam consequuntur ullam iure dicta doloremque debitis, est, voluptate distinctio provident quod! \n\n Voluptatem deleniti optio sapiente debitis illo cupiditate molestias minima in.",
   },
   {
-    id: 4,
-    label: "Arteaga",
-    tiempo: "25",
-    distancia: "26",
-    image: areteaga,
-    description:
-      "Un pueblo de montaña ubicado a unos 20-30 minutos de Saltillo, conocido como la “Suiza de México” por su clima fresco, paisajes boscosos y cercanía con la Sierra Madre Oriental; es un destino popular para escapadas de fin de semana, con cabañas, actividades al aire libre, vinos de altura y lugares como Bosques de Monterreal para disfrutar nieve artificial, senderismo y naturaleza.",
-  },
-  {
-    id: 5,
+    id: 7,
     label: "Sierra de la Marta",
     tiempo: "1 hr 18",
     distancia: "55.9",
@@ -63,25 +84,16 @@ const ACTIVITIES = [
       "Zona montañosa dentro de la Sierra Madre Oriental. Conocida por su biodiversidad, bosques de pino y encino, y por ser hábitat de especies como el oso negro y el puma.\n\nAdemás, forma parte de un área natural protegida, lo que la convierte en un lugar ideal para actividades como senderismo, observación de fauna y exploración en contacto con la naturaleza.",
   },
   {
-    id: 6,
-    label: "Huachichil",
-    tiempo: "14",
-    distancia: "15.3",
-    image: huachichil,
-    description:
-      "Una pequeña comunidad ubicada en la Sierra de Arteaga, conocida por su entorno natural de bosque y clima fresco. Es un punto clave dentro de la ruta de viñedos de la región, ya que ahí se encuentran proyectos como Bodegas del Viento, además de cabañas, ranchos y espacios para ecoturismo; es ideal para escapadas tranquilas, contacto con la naturaleza y experiencias como degustaciones de vino y senderismo.",
-  },
-  {
-    id: 7,
-    label: "San Antonio de las alazanas",
-    tiempo: "26",
-    distancia: "30.9",
-    image: san_antonio,
-    description:
-      "Un exclusivo desarrollo turístico y centro de esquí en la Sierra de Arteaga, Coahuila, famoso por ser el único lugar en México con pistas de esquí y snowboard funcionales los 365 días del año.\n\nEl complejo es un destino popular todo el año, ideal para familias y amantes de la naturaleza, siendo un punto clave para el turismo en la región.",
-  },
-  {
     id: 8,
+    label: "Arteaga",
+    tiempo: "15",
+    distancia: "19.8",
+    image: areteaga,
+    description:
+      "Un pueblo de montaña ubicado a unos 20-30 minutos de Saltillo, conocido como la “Suiza de México” por su clima fresco, paisajes boscosos y cercanía con la Sierra Madre Oriental; es un destino popular para escapadas de fin de semana, con cabañas, actividades al aire libre, vinos de altura y lugares como Bosques de Monterreal para disfrutar nieve artificial, senderismo y naturaleza.",
+  },
+  {
+    id: 9,
     label: "Saltillo",
     tiempo: "36",
     distancia: "38.9",
@@ -90,7 +102,7 @@ const ACTIVITIES = [
       "Es la capital del estado y una de las ciudades más antiguas del norte de México, conocida por su industria, su clima más fresco que el promedio de la región y su cercanía con la Sierra de Arteaga.\n\nTiene una mezcla interesante entre tradición y modernidad, con atractivos como el centro histórico, museos como el del Desierto y el de las Aves, además de ser un punto clave para turismo de naturaleza, vino y escapadas de montaña.",
   },
   {
-    id: 9,
+    id: 10,
     label: "Monterrey",
     tiempo: "1 hr 40",
     distancia: "105",
@@ -333,7 +345,7 @@ export default function Actividades() {
                             alt="Imagen de fondo de textura de papel"
                             className="absolute inset-0 w-full h-full"
                           />
-                          <p className="relative z-10 text-frase text-center font-selinea text-cafe dark:text-verde-claro leading-[45%] tracking-tight">
+                          <p className="relative z-10 text-activity-title text-center font-lavolta text-cafe dark:text-verde-claro leading-[100%] tracking-tight uppercase scale-85">
                             {item.label}
                           </p>
                         </div>
@@ -346,7 +358,7 @@ export default function Actividades() {
           </div>
         </div>
 
-        {/* Texto Ubicación */}
+        {/* Texto descriptivo */}
         <AnimatePresence mode="popLayout">
           {!isOpen && (
             <motion.div
@@ -362,9 +374,10 @@ export default function Actividades() {
                 duration: 0.5,
                 ease: [0.32, 0, 0.67, 0],
               }}
-              className="w-[clamp(158.03px,27.265625vw,459px)] h-full text-center"
+              className="flex flex-col w-[clamp(158.03px,27.265625vw,459px)] h-full text-center gap-[clamp(9.06px,1.5625vw,20px)]
+"
             >
-              <h3 className="text-frase text-cafe dark:text-amarillo font-selinea">
+              <h3 className="text-activity-title text-cafe dark:text-amarillo font-lavolta leading-[120%] uppercase drop-shadow-md">
                 {selectedCard.label}
               </h3>
               <p className="text-[9px] font-medium md:text-paragraph whitespace-pre-line text-gris dark:text-nude leading-[125%]">

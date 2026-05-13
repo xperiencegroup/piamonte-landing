@@ -5,6 +5,7 @@ import RutaMty from "@/assets/images/Ubicación/comoLlegar/RutaMty";
 import ReactBoundsOverlay from "@/components/ui/google/ReactOverlay";
 import Vialidades from "./Vialidades";
 import RutaSaltillo from "@/assets/images/Ubicación/comoLlegar/RutaSaltillo";
+import useIsShortHeight from "@/hooks/useIsShortHeight";
 
 const VIALIDADES_MONTERREY = [
   {
@@ -20,7 +21,7 @@ const VIALIDADES_MONTERREY = [
   {
     id: "salida_arteaga",
     label: "Salida hacia arteaga",
-    coordinates: { lat: 25.32744499567663, lng: -100.62644725440758 },
+    coordinates: { lat: 25.32744499567663, lng: -100.57644725440758 },
   },
 ];
 const VIALIDADES_SALTILLO = [
@@ -42,6 +43,7 @@ const VIALIDADES_SALTILLO = [
 ];
 
 export default function ComoLlegarMarkers() {
+  const isShort = useIsShortHeight();
   const [params] = useSearchParams();
   const activeOrigen = params.get("origen");
 
@@ -69,7 +71,9 @@ export default function ComoLlegarMarkers() {
       {VIALIDADES.map((vialidad) => {
         return (
           <AdvanceMarker key={vialidad.id} position={vialidad.coordinates}>
-            <div className="relative z-10 flex w-fit h-[clamp(23px,4.0625vw,52px)] justify-center items-center">
+            <div
+              className={`relative z-10 flex w-fit h-[clamp(23px,4.0625vw,52px)] justify-center items-center ${isShort ? "scale-70" : ""}`}
+            >
               <img
                 src={PaperTitle}
                 alt="Imagen de papel de fondo"
