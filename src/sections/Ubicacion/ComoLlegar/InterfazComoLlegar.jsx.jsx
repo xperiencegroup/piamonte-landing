@@ -123,7 +123,7 @@ export default function InterfazComoLlegar() {
 
         {/* Indicaciones desktop */}
         <div className="max-[845px]:hidden relative pointer-events-auto flex flex-col justify-center items-center gap-[clamp(4.53px,0.78125vw,10px)] w-[clamp(160.31px,24.734375vw,355px)] lg:w-[clamp(160.31px,27.734375vw,355px)] h-fit lg:h-full lg:max-h-[clamp(148.56px,28.625vw,358px)] max-lg:py-4 px-4 lg:px-[3%]">
-          <p className="relative z-10 text-center text-frase font-selinea leading-[40%]">
+          <p className="relative z-10 text-center text-activity-title font-lavolta leading-[40%] uppercase">
             Direcciones
           </p>
           {DIRECCIONES.map((item) => {
@@ -147,19 +147,19 @@ export default function InterfazComoLlegar() {
         </div>
       </div>
 
-      {/* Dirección mobile */}
+      {/* Indicaciones mobile */}
       <div
         className={`min-[845px]:hidden grow relative ${!showDirections && "hidden"} bg-nude/20 dark:bg-gris/20`}
       >
         {/* Content */}
         <div className="relative z-10 w-full h-full py-[2vh] px-[10vw]">
           <div className="relative w-full h-full">
-            <div className="flex flex-col justify-center relative z-10 w-full h-full gap-2">
-              <p className="text-lavolta-title font-lavolta uppercase text-center leading-[100%]">
-                Direcciones
-              </p>
-
+            <div className="flex flex-col justify-center relative z-10 w-full h-full gap-[4vh]">
               <div className="flex flex-col px-[12vw] gap-[clamp(8.88px,1.5625vh,12px)]">
+                <p className="text-lavolta-title font-lavolta uppercase text-center leading-[100%]">
+                  Direcciones
+                </p>
+
                 {DIRECCIONES.map((item) => {
                   return (
                     <p className="text-direcciones-mobile font-dmsans text-verde uppercase">
@@ -192,7 +192,7 @@ export default function InterfazComoLlegar() {
         </div>
       </div>
 
-      {/* Indicaciones Mobile */}
+      {/* Botón direcciones Mobile */}
       <button
         onClick={handleClickToShowRoute}
         className="min-[845px]:hidden absolute z-20 top-1/2 right-0 w-[clamp(99.84px,17.578125vw,135px)] flex justify-center items-center p-[clamp(7.25px,1.25vw,16px)] gap-[clamp(5.92px,1.0416667vw,8px)] bg-verde dark:bg-nude hover:cursor-pointer pointer-events-auto"

@@ -18,7 +18,7 @@
   --text-boton: clamp(8px, 1.40625vw, 18px);
   --text-boton-active: clamp(6.8px, 1.171875vw, 15px);
   --text-direcciones: clamp(9.36px, 1.647059vh, 14px);
-  --text-direcciones-mobile: clamp(11.09px, 3.53125vh, 15px);
+  --text-direcciones-mobile: clamp(9.09px, 3.03125vh, 15px);
   --text-paragraph: clamp(8px, 1.484375vw, 19px);
   --text-body-md: clamp(9.28px, 1.71875vw, 22px);
   --text-letter-title: clamp(27px, 5vw, 64px);
