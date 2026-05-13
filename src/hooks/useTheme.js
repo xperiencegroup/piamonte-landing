@@ -3,16 +3,24 @@ import { useEffect, useState } from "react";
 const lightModeStart = 7;
 const darkModeStart = 19;
 
+const STORAGE_KEY = "theme";
+
 function getTimeTheme() {
   const hour = new Date().getHours();
+
   return hour >= lightModeStart && hour < darkModeStart ? "light" : "dark";
 }
 
 function getInitialTheme() {
-  if (typeof window === "undefined") return "light";
+  if (typeof window === "undefined") {
+    return "light";
+  }
 
-  const saved = localStorage.getItem("theme");
-  if (saved === "dark" || saved === "light") return saved;
+  const saved = sessionStorage.getItem(STORAGE_KEY);
+
+  if (saved === "light" || saved === "dark") {
+    return saved;
+  }
 
   return getTimeTheme();
 }
@@ -22,11 +30,17 @@ export function useTheme() {
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
-    localStorage.setItem("theme", theme);
+
+    sessionStorage.setItem(STORAGE_KEY, theme);
   }, [theme]);
 
-  const toggleTheme = () =>
+  const toggleTheme = () => {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
 
-  return { theme, setTheme, toggleTheme };
+  return {
+    theme,
+    setTheme,
+    toggleTheme,
+  };
 }
