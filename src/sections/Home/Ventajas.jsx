@@ -10,10 +10,10 @@ import PaperTear from "../../assets/images/Masterplan/AmenidadesInformacion/Pape
 import ClickIcon from "@/assets/icons/home/clickIcon";
 
 // Titulos
-import Ubicacion from "@/assets/texts/home/ubicacion.jsx";
-import Conectividad from "@/assets/texts/home/conectividad";
-import Proyecto from "@/assets/texts/home/proyecto";
-import Legal from "@/assets/texts/home/legal";
+import Ubicacion from "@/assets/texts/home/Ubicacion.jsx";
+import Conectividad from "@/assets/texts/home/Conectividad.jsx";
+import Proyecto from "@/assets/texts/home/Proyecto.jsx";
+import Legal from "@/assets/texts/home/Legal.jsx";
 
 const VENTAJAS = [
   {
