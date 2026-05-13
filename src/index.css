@@ -18,6 +18,7 @@
   --text-boton: clamp(8px, 1.40625vw, 18px);
   --text-boton-active: clamp(6.8px, 1.171875vw, 15px);
   --text-direcciones: clamp(9.36px, 1.647059vh, 14px);
+  --text-direcciones-mobile: clamp(11.09px, 3.53125vh, 15px);
   --text-paragraph: clamp(8px, 1.484375vw, 19px);
   --text-body-md: clamp(9.28px, 1.71875vw, 22px);
   --text-letter-title: clamp(27px, 5vw, 64px);
@@ -34,7 +35,9 @@
   --text-footer-caption: clamp(6.8px, 1.171875vw, 15px);
   --text-card: clamp(5px, 1.1vw, 16px);
   --text-card-subtitle: clamp(5.44px, 0.9375vw, 12px);
+  --text-botton-ubicacion: clamp(8.88px, 1.5625vw, 12px);
   --text-activity-title: clamp(14.5px, 2.5vw, 32px);
+  --text-lavolta-title: clamp(17.22px, 2.96875vw, 38px);
 
   /* Colors */
   --color-nude: #eeece0;
@@ -92,6 +95,10 @@ body {
 
 .gradient-inicio {
   @apply absolute inset-0 -z-10 bg-linear-to-b from-nude/85 via-nude/75 via-30% to-nude/55 dark:from-gris/95 dark:via-gris/90 dark:to-gris/65;
+}
+
+.gradient-inicio-normal {
+  @apply absolute inset-0 bg-linear-to-b from-nude/85 via-nude/75 via-30% to-nude/55 dark:from-gris/95 dark:via-gris/90 dark:to-gris/65;
 }
 
 .gradient-inicio-phone-rotation {

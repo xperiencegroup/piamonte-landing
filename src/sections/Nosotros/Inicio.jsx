@@ -28,7 +28,7 @@ export default function NosotrosInicio() {
               alt="Imagen de titulo de carta"
               className="absolute inset-0 w-full h-full"
             />
-            <p className="relative text-frase portrait:text-[clamp(36.2px,16vw,60px)] font-selinea text-cafe whitespace-nowrap">
+            <p className="relative text-lavolta-title portrait:text-[clamp(19.31px,8.533333vw,32px)] font-lavolta text-cafe whitespace-nowrap">
               Nosotros
             </p>
           </div>
