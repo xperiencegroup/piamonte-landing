@@ -15,6 +15,11 @@ import san_antonio from "@/assets/images/Ubicación/actividades/san-antonio.jpeg
 import sierra_marta from "@/assets/images/Ubicación/actividades/sierra_marta.webp";
 import terra_serena from "@/assets/images/Ubicación/actividades/terra_serena.jpg";
 import RowIcon from "@/assets/icons/shared/rowIcon";
+import { Carousel } from "@/components/ui/shared/carousel/Carousel";
+import chunkArray from "@/utils/chunkArray";
+
+// Papers
+import PaperTearTop from "@/assets/images/Masterplan/AmenidadesInformacion/Papeles/paperTearTop.png";
 
 const ACTIVITIES = [
   {
@@ -171,7 +176,7 @@ export default function Actividades() {
 
   // Medidas
   const ClosedCardWidth = isShort ? 320 : 500;
-  const OpenedCardWidth = isShort ? 180 : 229;
+  const OpenedCardWidth = isShort ? 180 : 208;
   const CARD = {
     open: {
       width: OpenedCardWidth,
@@ -199,8 +204,6 @@ export default function Actividades() {
     const onSelect = () => {
       const previous = emblaApi.previousScrollSnap();
       const current = emblaApi.selectedScrollSnap();
-      console.log(previous);
-      console.log(current);
 
       setActiveSlide(current);
 
@@ -219,9 +222,6 @@ export default function Actividades() {
         isPrev = true;
       }
 
-      console.log("isPrev:", isPrev);
-      console.log("isNext:", isNext);
-
       if (isNext) {
         emblaNavApi.scrollNext();
       }
@@ -238,325 +238,404 @@ export default function Actividades() {
 
   const NAV_GROUPS = [...GROUPS, ...GROUPS];
 
+  // Slides para mobile
+  const cardsPerSlide = isShort ? 2 : 4;
+  const chunks = chunkArray(ACTIVITIES, cardsPerSlide);
+  const slides = chunks.map((chunk, i) => {
+    return (
+      <div
+        key={i}
+        className={`flex flex-col w-full h-full ${isShort ? "justify-center" : ""}`}
+      >
+        <div className="grid grid-cols-2 gap-[clamp(9px,1.5625vw,20px)] w-full h-fit place-items-center">
+          {chunk.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className="relative w-[clamp(232px,40.820313vw,522.5px)] h-[clamp(100px,17.578125vw,225px)] bg-nude dark:bg-verde"
+              >
+                <img
+                  src={item.image}
+                  alt="Imagen de la amenidad"
+                  className="absolute inset-0 w-full h-full object-cover p-[clamp(7px,1.25vw,16px)]"
+                />
+
+                <div
+                  className={`flex absolute bottom-0 z-10 w-[clamp(102px,17.96875vw,230px)] h-[clamp(23px,4.0625vw,52px)] justify-center items-center translate-y-[35%] left-0`}
+                >
+                  <img
+                    src={PaperTear}
+                    alt="Imagen de fondo textura papel"
+                    className={`absolute w-full h-[clamp(23px,4.0625vw,54px)]`}
+                  />
+
+                  <div
+                    className={`relative z-10 flex justify-center items-center gap-[clamp(4px,0.625vw,8px)]`}
+                  >
+                    <p className="text-paper text-center font-lavolta leading-[90%] text-cafe uppercase">
+                      {item.label}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  });
+
   return (
-    <div className="absolute top-0 left-0 z-5 w-full h-full flex justify-center items-center pb-[clamp(36.25px,6.25vw,80px)] overflow-hidden">
+    <div className="absolute top-0 left-0 z-5 w-full h-full flex flex-col overflow-hidden">
       {/* Overlay */}
       <div className="absolute w-full h-full gradient-inicio" />
 
-      <motion.div
-        onClick={() => {
-          if (!isOpen) setIsOpen(true);
-        }}
-        className={`flex w-full justify-center items-center relative ${isOpen ? "lg:max-w-[1280px] lg:h-[470px] m-auto" : "h-fit hover:cursor-pointer"}`}
-        style={{
-          height: isOpen ? 470 * scale : "auto",
-        }}
-      >
-        {/* Nav categorías — sincronizado con activeSlide */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.3 }}
-              className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full w-full h-fit"
-            >
-              <div ref={emblaNavRef} className="overflow-hidden w-full">
-                <div className="flex">
-                  {NAV_GROUPS.map((group, index) => (
-                    <button
-                      key={`${group.label}-${index}`}
-                      onClick={() => {
-                        emblaApi?.scrollTo(index);
-                        emblaNavApi?.scrollTo(index);
-                      }}
-                      className="relative flex-[0_0_33%] flex justify-center items-center"
-                    >
-                      <div className="relative flex w-[clamp(105.57px,18.203125vw,233px)] h-[clamp(29.45px,5.078125vw,65px)] justify-center items-center hover:cursor-pointer">
-                        <motion.p
-                          transition={{ duration: 0.3 }}
-                          className="relative z-10 text-center text-[26px] font-lavolta uppercase text-cafe drop-shadow-md"
-                        >
-                          {group.label}
-                        </motion.p>
+      {/* Fake navbar */}
+      <div className="shrink-0 w-full h-[clamp(38px,5.234vw,67px)]" />
 
-                        <img
-                          src={PaperTear}
-                          alt="Imagen de fondo de textura de papel"
-                          className="absolute inset-0 w-full h-full"
+      {/* Carrousel Desktop Wrapper*/}
+      <div className="[@media(max-height:640px)]:hidden w-full grow flex justify-center [@media(max-height:767px)]:items-end items-center pb-[3vh]">
+        <motion.div
+          onClick={() => {
+            if (!isOpen) setIsOpen(true);
+          }}
+          className={`flex w-full justify-center items-center relative ${isOpen ? "flex-col lg:max-w-[1280px]" : "h-fit hover:cursor-pointer"}`}
+          style={{
+            height: isOpen ? (isShort ? 426 * scale : 480 * scale) : "auto",
+          }}
+        >
+          {/* Nav categorías — sincronizado con activeSlide */}
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                className="w-full h-fit"
+              >
+                <div ref={emblaNavRef} className="overflow-hidden w-full">
+                  <div className="flex">
+                    {NAV_GROUPS.map((group, index) => (
+                      <button
+                        key={`${group.label}-${index}`}
+                        onClick={() => {
+                          emblaApi?.scrollTo(index);
+                          emblaNavApi?.scrollTo(index);
+                        }}
+                        className="relative flex-[0_0_33%] flex justify-center items-center"
+                      >
+                        <div
+                          className="relative flex w-[clamp(105.57px,18.203125vw,233px)] h-[clamp(29.45px,5.078125vw,65px)] justify-center items-center hover:cursor-pointer"
+                          style={{ scale: isShort ? 0.7 : 1 }}
+                        >
+                          <motion.p
+                            transition={{ duration: 0.3 }}
+                            className="relative z-10 text-center text-activity-category font-lavolta uppercase text-cafe drop-shadow-md"
+                          >
+                            {group.label}
+                          </motion.p>
+
+                          <img
+                            src={PaperTear}
+                            alt="Imagen de fondo de textura de papel"
+                            className="absolute inset-0 w-full h-full"
+                          />
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Contenido */}
+          <div
+            ref={isOpen ? emblaRef : null}
+            className={`${
+              isOpen
+                ? "flex flex-col justify-end w-full h-full overflow-hidden pb-4"
+                : "flex relative max-lg:w-[clamp(220px,40vw,500px)] max-lg:h-[clamp(170px,32vh,400px)] w-[clamp(327px,57.578125vw,737px)] h-[clamp(257px,45.15625vw,578px)] justify-center items-center"
+            }`}
+          >
+            <div
+              className={
+                isOpen
+                  ? "flex gap-[clamp(8.61px,1.484375vw,19px)] h-fit items-center px-[clamp(8.61px,1.484375vw,19px)] max-lg:pt-8"
+                  : "flex relative justify-center items-center"
+              }
+            >
+              {GROUPS.map((group, groupIndex) => (
+                <motion.div
+                  key={groupIndex}
+                  className={`${isOpen ? "flex gallery_slide_full w-full shrink-0 gap-10 px-10 justify-center items-center" : "flex justify-center items-center"}`}
+                >
+                  {group.activities.map((item, index) => (
+                    <motion.div
+                      key={item.label}
+                      layout
+                      initial={false}
+                      animate={{
+                        width:
+                          (isOpen ? CARD.open.width : CARD.closed.width) *
+                          scale,
+                        height:
+                          (isOpen ? CARD.open.height : CARD.closed.height) *
+                          scale,
+                        rotate: isOpen ? 0 : (ROTATIONS[index] ?? 10),
+                        x: isOpen ? 0 : (TRANSLATIONS[index] ?? 0),
+                        y: isOpen ? 0 : (TRANSLATIONS[index] ?? 0),
+                      }}
+                      transition={{
+                        layout: {
+                          type: "spring",
+                          stiffness: 200,
+                          damping: 25,
+                        },
+                        width: { type: "spring", stiffness: 200, damping: 25 },
+                        height: { type: "spring", stiffness: 200, damping: 25 },
+                        rotate: { duration: 0.5 },
+                      }}
+                      onClick={() => {
+                        setSelectedCardId(item.id);
+                        handleSelectCard(item.id);
+                        setIsOpen(false);
+                      }}
+                      className={`p-[clamp(4px,1.25vw,12px)] gap-[clamp(7px,1.25vw,14px)] bg-nude dark:bg-verde ${isOpen ? "relative flex shrink-0 flex-col justify-between select-none hover:cursor-pointer" : "absolute top-1/2 -translate-y-1/2"}`}
+                      style={{
+                        zIndex:
+                          selectedCardId === item.id
+                            ? ACTIVITIES.length + 1
+                            : ACTIVITIES.length - index,
+                      }}
+                    >
+                      {/* Imagen */}
+                      <motion.div
+                        layout
+                        initial={false}
+                        animate={{ height: imageHeight }}
+                        transition={{
+                          layout: {
+                            type: "spring",
+                            stiffness: 200,
+                            damping: 25,
+                          },
+                          height: {
+                            type: "spring",
+                            stiffness: 200,
+                            damping: 25,
+                          },
+                        }}
+                        className="shrink-0 relative w-full overflow-hidden"
+                      >
+                        <motion.img
+                          src={item.image}
+                          alt={item.label}
+                          layout
+                          draggable={false}
+                          className="w-full h-full object-cover object-bottom select-none pointer-events-none"
                         />
-                      </div>
-                    </button>
+                      </motion.div>
+
+                      {/* Tiempo / Distancia */}
+                      <AnimatePresence>
+                        {isOpen && (
+                          <div className="flex justify-center items-center gap-[clamp(7px,1.25vw,16px)]">
+                            <motion.div className="flex flex-col gap-[clamp(1.81px,0.3125vw,4px)]">
+                              <motion.p
+                                initial={{ opacity: 0, y: 8 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{
+                                  opacity: 0,
+                                  y: 6,
+                                  transition: { duration: 0 },
+                                }}
+                                transition={{
+                                  duration: 0.4,
+                                  delay: index * 0.2,
+                                }}
+                                className="flex justify-center items-center text-card-subtitle text-center font-regular text-cafe-claro dark:text-nude leading-[130%] uppercase"
+                              >
+                                Tiempo
+                              </motion.p>
+                              <motion.p
+                                initial={{ opacity: 0, y: 8 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{
+                                  opacity: 0,
+                                  y: 6,
+                                  transition: { duration: 0 },
+                                }}
+                                transition={{
+                                  duration: 0.4,
+                                  delay: index * 0.2,
+                                }}
+                                className="flex justify-center items-center text-activity-caption text-center font-regular text-gris dark:text-nude leading-[130%]"
+                              >
+                                {item.tiempo} min
+                              </motion.p>
+                            </motion.div>
+
+                            <div className="h-[clamp(19.03px,3.28125vw,42px)] border border-cafe-claro dark:border-nude" />
+
+                            <motion.div className="flex flex-col gap-[clamp(1.81px,0.3125vw,4px)]">
+                              <motion.p
+                                initial={{ opacity: 0, y: 8 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{
+                                  opacity: 0,
+                                  y: 6,
+                                  transition: { duration: 0 },
+                                }}
+                                transition={{
+                                  duration: 0.4,
+                                  delay: index * 0.2,
+                                }}
+                                className="flex justify-center items-center text-card-subtitle text-center font-regular text-cafe-claro dark:text-nude leading-[130%] uppercase"
+                              >
+                                Distancia
+                              </motion.p>
+                              <motion.p
+                                initial={{ opacity: 0, y: 8 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{
+                                  opacity: 0,
+                                  y: 6,
+                                  transition: { duration: 0 },
+                                }}
+                                transition={{
+                                  duration: 0.4,
+                                  delay: index * 0.2,
+                                }}
+                                className="flex justify-center items-center text-activity-caption text-center font-regular text-gris dark:text-nude leading-[130%] uppercase"
+                              >
+                                {item.distancia} KM
+                              </motion.p>
+                            </motion.div>
+                          </div>
+                        )}
+                      </AnimatePresence>
+
+                      {/* Paper tear title */}
+                      <AnimatePresence>
+                        {isOpen && (
+                          <div
+                            className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-4/8 w-[clamp(105.57px,18.203125vw,228px)] h-[clamp(32.63px,5.625vw,72px)]"
+                            style={{ scale: isShort ? 0.8 : 1 }}
+                          >
+                            <div className="absolute w-full h-full flex justify-center items-center">
+                              <img
+                                src={PaperTear}
+                                alt="Imagen de fondo de textura de papel"
+                                className="absolute inset-0 w-full h-full"
+                              />
+                              <p className="relative z-10 text-activity-title text-center font-lavolta text-cafe dark:text-verde-claro leading-[100%] tracking-tight uppercase scale-85">
+                                {item.label}
+                              </p>
+                            </div>
+                          </div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Flechas */}
+          <AnimatePresence>
+            {isOpen && (
+              <>
+                {/* Flecha izquierda */}
+                <button
+                  onClick={scrollPrev}
+                  className="group absolute rotate-180 hover:cursor-pointer left-0"
+                  style={{ transform: "translateX(130%)" }}
+                >
+                  <RowIcon className="size-[clamp(12px,2.158594vw,27.63px)] text-gris dark:text-nude group-hover:text-cafe-claro dark:group-hover:text-amarillo" />
+                </button>
+
+                {/* Flecha derecha */}
+                <button
+                  onClick={scrollNext}
+                  className="group absolute right-0 hover:cursor-pointer"
+                  style={{ transform: "translateX(130%)" }}
+                >
+                  <RowIcon className="size-[clamp(12px,2.158594vw,27.63px)] text-gris dark:text-nude group-hover:text-cafe-claro dark:group-hover:text-amarillo" />
+                </button>
+              </>
+            )}
+          </AnimatePresence>
+
+          {/* Dots */}
+          <AnimatePresence>
+            {isOpen && (
+              <div className="absolute bottom-0 translate-y-full">
+                <div className="flex items-center gap-[clamp(6px,0.625vw,8px)]">
+                  {GROUPS.map((_, index) => (
+                    <motion.button
+                      key={index}
+                      onClick={() => emblaApi?.scrollTo(index)}
+                      animate={{
+                        width:
+                          activeSlide === index
+                            ? "clamp(27.19px,4.6875vw,60px)" // pill cuando activo
+                            : "clamp(11.26px,1.94140625vw,24.85px)", // círculo cuando inactivo
+                        backgroundColor:
+                          activeSlide === index
+                            ? "var(--color-verde-claro)"
+                            : "var(--color-verde)",
+                      }}
+                      transition={{ duration: 0.3, ease: [0.32, 0, 0.67, 0] }}
+                      className="h-[clamp(14.05px,2.470588vh,21px)] rounded-full hover:cursor-pointer"
+                    />
                   ))}
                 </div>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+            )}
+          </AnimatePresence>
 
-        {/* Contenido */}
-        <div
-          ref={isOpen ? emblaRef : null}
-          className={
-            isOpen
-              ? "w-full h-full overflow-hidden"
-              : "flex relative max-lg:w-[clamp(220px,40vw,500px)] max-lg:h-[clamp(170px,32vh,400px)] w-[clamp(327px,57.578125vw,737px)] h-[clamp(257px,45.15625vw,578px)] justify-center items-center"
-          }
-        >
-          <div
-            className={
-              isOpen
-                ? "flex gap-[clamp(8.61px,1.484375vw,19px)] h-full items-center px-[clamp(8.61px,1.484375vw,19px)] max-lg:pt-8"
-                : "flex relative justify-center items-center"
-            }
-          >
-            {GROUPS.map((group, groupIndex) => (
+          {/* Texto descriptivo */}
+          <AnimatePresence mode="popLayout">
+            {!isOpen && (
               <motion.div
-                key={groupIndex}
-                className={`${isOpen ? "flex gallery_slide_full w-full shrink-0 gap-4 px-10 justify-center items-center" : "flex justify-center items-center"}`}
-              >
-                {group.activities.map((item, index) => (
-                  <motion.div
-                    key={item.label}
-                    layout
-                    initial={false}
-                    animate={{
-                      width:
-                        (isOpen ? CARD.open.width : CARD.closed.width) * scale,
-                      height:
-                        (isOpen ? CARD.open.height : CARD.closed.height) *
-                        scale,
-                      rotate: isOpen ? 0 : (ROTATIONS[index] ?? 10),
-                      x: isOpen ? 0 : (TRANSLATIONS[index] ?? 0),
-                      y: isOpen ? 0 : (TRANSLATIONS[index] ?? 0),
-                    }}
-                    transition={{
-                      layout: {
-                        type: "spring",
-                        stiffness: 200,
-                        damping: 25,
-                      },
-                      width: { type: "spring", stiffness: 200, damping: 25 },
-                      height: { type: "spring", stiffness: 200, damping: 25 },
-                      rotate: { duration: 0.5 },
-                    }}
-                    onClick={() => {
-                      setSelectedCardId(item.id);
-                      handleSelectCard(item.id);
-                      setIsOpen(false);
-                    }}
-                    className={`p-[clamp(7px,1.25vw,16px)] gap-[clamp(7px,1.25vw,16px)] bg-nude dark:bg-verde ${isOpen ? "relative flex shrink-0 flex-col select-none hover:cursor-pointer" : "absolute top-1/2 -translate-y-1/2"}`}
-                    style={{
-                      zIndex:
-                        selectedCardId === item.id
-                          ? ACTIVITIES.length + 1
-                          : ACTIVITIES.length - index,
-                    }}
-                  >
-                    {/* Imagen */}
-                    <motion.div
-                      layout
-                      initial={false}
-                      animate={{ height: imageHeight }}
-                      transition={{
-                        layout: { type: "spring", stiffness: 200, damping: 25 },
-                        height: { type: "spring", stiffness: 200, damping: 25 },
-                      }}
-                      className="shrink-0 relative w-full overflow-hidden"
-                    >
-                      <motion.img
-                        src={item.image}
-                        alt={item.label}
-                        layout
-                        draggable={false}
-                        className="w-full h-full object-cover object-bottom select-none pointer-events-none"
-                      />
-                    </motion.div>
-
-                    {/* Tiempo / Distancia */}
-                    <AnimatePresence>
-                      {isOpen && (
-                        <div className="flex justify-center items-center gap-[clamp(7px,1.25vw,16px)]">
-                          <motion.div className="flex flex-col gap-[clamp(1.81px,0.3125vw,4px)]">
-                            <motion.p
-                              initial={{ opacity: 0, y: 8 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              exit={{
-                                opacity: 0,
-                                y: 6,
-                                transition: { duration: 0 },
-                              }}
-                              transition={{
-                                duration: 0.4,
-                                delay: index * 0.2,
-                              }}
-                              className="flex justify-center items-center text-card-subtitle text-center font-regular text-cafe-claro dark:text-nude leading-[130%] uppercase"
-                            >
-                              Tiempo
-                            </motion.p>
-                            <motion.p
-                              initial={{ opacity: 0, y: 8 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              exit={{
-                                opacity: 0,
-                                y: 6,
-                                transition: { duration: 0 },
-                              }}
-                              transition={{
-                                duration: 0.4,
-                                delay: index * 0.2,
-                              }}
-                              className="flex justify-center items-center text-caption text-center font-regular text-gris dark:text-nude leading-[130%]"
-                            >
-                              {item.tiempo} min
-                            </motion.p>
-                          </motion.div>
-
-                          <div className="h-[clamp(19.03px,3.28125vw,42px)] border border-cafe-claro dark:border-nude" />
-
-                          <motion.div className="flex flex-col gap-[clamp(1.81px,0.3125vw,4px)]">
-                            <motion.p
-                              initial={{ opacity: 0, y: 8 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              exit={{
-                                opacity: 0,
-                                y: 6,
-                                transition: { duration: 0 },
-                              }}
-                              transition={{
-                                duration: 0.4,
-                                delay: index * 0.2,
-                              }}
-                              className="flex justify-center items-center text-card-subtitle text-center font-regular text-cafe-claro dark:text-nude leading-[130%] uppercase"
-                            >
-                              Distancia
-                            </motion.p>
-                            <motion.p
-                              initial={{ opacity: 0, y: 8 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              exit={{
-                                opacity: 0,
-                                y: 6,
-                                transition: { duration: 0 },
-                              }}
-                              transition={{
-                                duration: 0.4,
-                                delay: index * 0.2,
-                              }}
-                              className="flex justify-center items-center text-caption text-center font-regular text-gris dark:text-nude leading-[130%] uppercase"
-                            >
-                              {item.distancia} KM
-                            </motion.p>
-                          </motion.div>
-                        </div>
-                      )}
-                    </AnimatePresence>
-
-                    {/* Paper tear title */}
-                    <AnimatePresence>
-                      {isOpen && (
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-4/8 w-[clamp(105.57px,18.203125vw,228px)] h-[clamp(32.63px,5.625vw,72px)]">
-                          <div className="absolute w-full h-full flex justify-center items-center">
-                            <img
-                              src={PaperTear}
-                              alt="Imagen de fondo de textura de papel"
-                              className="absolute inset-0 w-full h-full"
-                            />
-                            <p className="relative z-10 text-activity-title text-center font-lavolta text-cafe dark:text-verde-claro leading-[100%] tracking-tight uppercase scale-85">
-                              {item.label}
-                            </p>
-                          </div>
-                        </div>
-                      )}
-                    </AnimatePresence>
-                  </motion.div>
-                ))}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        <AnimatePresence>
-          {isOpen && (
-            <>
-              {/* Flecha izquierda */}
-              <button
-                onClick={scrollPrev}
-                className="group absolute rotate-180 hover:cursor-pointer left-0"
-                style={{ transform: "translateX(130%)" }}
-              >
-                <RowIcon className="size-[clamp(12px,2.158594vw,27.63px)] text-gris dark:text-nude group-hover:text-cafe-claro dark:group-hover:text-amarillo" />
-              </button>
-
-              {/* Flecha derecha */}
-              <button
-                onClick={scrollNext}
-                className="group absolute right-0 hover:cursor-pointer"
-                style={{ transform: "translateX(130%)" }}
-              >
-                <RowIcon className="size-[clamp(12px,2.158594vw,27.63px)] text-gris dark:text-nude group-hover:text-cafe-claro dark:group-hover:text-amarillo" />
-              </button>
-            </>
-          )}
-        </AnimatePresence>
-
-        {/* Dots */}
-        <AnimatePresence>
-          {isOpen && (
-            <div className="absolute bottom-0 translate-y-full">
-              <div className="flex items-center gap-[clamp(6px,0.625vw,8px)]">
-                {GROUPS.map((_, index) => (
-                  <motion.button
-                    key={index}
-                    onClick={() => emblaApi?.scrollTo(index)}
-                    animate={{
-                      width:
-                        activeSlide === index
-                          ? "clamp(27.19px,4.6875vw,60px)" // pill cuando activo
-                          : "clamp(11.26px,1.94140625vw,24.85px)", // círculo cuando inactivo
-                      backgroundColor:
-                        activeSlide === index
-                          ? "var(--color-verde-claro)"
-                          : "var(--color-verde)",
-                    }}
-                    transition={{ duration: 0.3, ease: [0.32, 0, 0.67, 0] }}
-                    className="h-[clamp(14.05px,2.470588vh,21px)] rounded-full hover:cursor-pointer"
-                  />
-                ))}
-              </div>
-            </div>
-          )}
-        </AnimatePresence>
-
-        {/* Texto descriptivo */}
-        <AnimatePresence mode="popLayout">
-          {!isOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: 20, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{
-                opacity: 0,
-                y: 10,
-                scale: 0.95,
-                transition: { duration: 0.2 },
-              }}
-              transition={{
-                duration: 0.5,
-                ease: [0.32, 0, 0.67, 0],
-              }}
-              className="flex flex-col w-[clamp(158.03px,27.265625vw,459px)] h-full text-center gap-[clamp(9.06px,1.5625vw,20px)]
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{
+                  opacity: 0,
+                  y: 10,
+                  scale: 0.95,
+                  transition: { duration: 0.2 },
+                }}
+                transition={{
+                  duration: 0.5,
+                  ease: [0.32, 0, 0.67, 0],
+                }}
+                className="flex flex-col w-[clamp(158.03px,27.265625vw,459px)] h-full text-center gap-[clamp(9.06px,1.5625vw,20px)]
 "
-            >
-              <h3 className="text-activity-title text-cafe dark:text-amarillo font-lavolta leading-[120%] uppercase drop-shadow-md">
-                {selectedCard.label}
-              </h3>
-              <p className="text-[9px] font-medium md:text-paragraph whitespace-pre-line text-gris dark:text-nude leading-[125%]">
-                {selectedCard.description}
-              </p>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.div>
+              >
+                <h3 className="text-activity-title text-cafe dark:text-amarillo font-lavolta leading-[120%] uppercase drop-shadow-md">
+                  {selectedCard.label}
+                </h3>
+                <p className="text-[9px] font-medium md:text-paragraph whitespace-pre-line text-gris dark:text-nude leading-[125%]">
+                  {selectedCard.description}
+                </p>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
+      </div>
+
+      {/* Carrousel Mobile Wrapper*/}
+      <div className="[@media(min-height:640px)]:hidden flex grow justify-center items-center">
+        <div className="w-[clamp(490px,86.328125vw,1105px)] h-full">
+          <Carousel slides={slides} variant="card" arrows="outside" />
+        </div>
+      </div>
+
+      {/* Fake bottom navbar */}
+      <div className={`shrink-0 w-full h-[clamp(63.44px,10.9375vw,126px)]`} />
     </div>
   );
 }
