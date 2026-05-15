@@ -5,6 +5,7 @@ import GoogleMap from "@/components/ui/shared/map/GoogleMap";
 import Actividades from "@/sections/Ubicacion/Actividades/Actividades";
 import InterfazComoLlegar from "@/sections/Ubicacion/ComoLlegar/InterfazComoLlegar.jsx";
 import NavigationBarUbicacion from "@/sections/Ubicacion/NavigationBarUbicacion";
+import Actividades2 from "@/sections/Ubicacion/Actividades/Actividades2";
 
 export default function Ubicacion() {
   const [params] = useSearchParams();
@@ -27,7 +28,7 @@ export default function Ubicacion() {
 
       {/* BOTÓN "DESDE MONTERREY" Y "DESDE SALTILLO"  */}
       {activeParam === "como-llegar" && <InterfazComoLlegar />}
-      {activeParam === "actividades" && <Actividades />}
+      {activeParam === "actividades" && <Actividades2 />}
     </main>
   );
 }

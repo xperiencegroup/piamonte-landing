@@ -136,3 +136,9 @@ body {
   flex: 0 0 18%;
   min-width: 0;
 }
+
+.gallery_slide_full {
+  transform: translate3d(0, 0, 0);
+  flex: 0 0 100%;
+  min-width: 0;
+}

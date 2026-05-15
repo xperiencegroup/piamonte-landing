@@ -13,13 +13,13 @@ export default function MobileMenu() {
 
   return (
     <div
-      className={`fixed top-0 z-10 flex self-center justify-between items-center w-dvw h-fit`}
+      className={`fixed top-0 z-10 flex self-center justify-between items-center w-dvw h-fit bg-verde dark:bg-nude`}
     >
       <div className="flex flex-col w-full">
         <div className="relative z-10 flex justify-between items-center w-full p-[clamp(20px,5.333vw,30px)]">
           {/* Logo */}
           <Link to={"/"} className="justify-center">
-            <LogoPiamonte className="w-[clamp(111px,29.6vw,168px)] h-[clamp(20px,5.333vw,30px)] text-gris dark:text-nude" />
+            <LogoPiamonte className="w-[clamp(111px,29.6vw,168px)] h-[clamp(20px,5.333vw,30px)] text-nude dark:text-gris" />
           </Link>
 
           <motion.button
@@ -31,11 +31,11 @@ export default function MobileMenu() {
           >
             {isOpen ? (
               <>
-                <CloseIcon className="text-gris dark:text-nude size-[clamp(18.67px,4.979vw,28px)]" />
+                <CloseIcon className="text-nude dark:text-gris size-[clamp(18.67px,4.979vw,28px)]" />
               </>
             ) : (
               <>
-                <MenuIcon className="text-gris dark:text-nude size-[clamp(18.67px,4.979vw,28px)]" />
+                <MenuIcon className="text-nude dark:text-gris size-[clamp(18.67px,4.979vw,28px)]" />
               </>
             )}
           </motion.button>
@@ -49,26 +49,26 @@ export default function MobileMenu() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.35, ease: [0.32, 0, 0.67, 0] }}
-              className={`absolute top-0 left-0 flex flex-col p-[clamp(20px,5.333vw,30px)] pt-[clamp(72px,19.2vw,109px)] w-dvw bg-nude dark:bg-gris overflow-hidden shadow-md`}
+              className={`absolute top-0 left-0 flex flex-col p-[clamp(20px,5.333vw,30px)] pt-[clamp(72px,19.2vw,109px)] w-dvw bg-verde dark:bg-nude overflow-hidden shadow-md`}
             >
               <Link
                 to="/nosotros"
                 onClick={toggleMenu}
-                className="flex shrink-0 items-center h-[clamp(86px,22.933vw,130px)] text-gris uppercase dark:text-nude"
+                className="flex shrink-0 items-center h-[clamp(86px,22.933vw,130px)] uppercase text-nude dark:text-gris"
               >
                 Nosotros
               </Link>
               <Link
                 to="/contacto"
                 onClick={toggleMenu}
-                className="flex shrink-0 items-center h-[clamp(86px,22.933vw,130px)] text-gris uppercase dark:text-nude"
+                className="flex shrink-0 items-center h-[clamp(86px,22.933vw,130px)] uppercase text-nude dark:text-gris"
               >
                 Contacto
               </Link>
               <Link
                 to="/contacto"
                 onClick={toggleMenu}
-                className="flex shrink-0 items-center h-[clamp(86px,22.933vw,130px)] text-gris uppercase dark:text-nude"
+                className="flex shrink-0 items-center h-[clamp(86px,22.933vw,130px)] uppercase text-nude dark:text-gris"
               >
                 Escríbenos
               </Link>
