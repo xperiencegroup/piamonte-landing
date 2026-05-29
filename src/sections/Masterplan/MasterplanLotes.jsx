@@ -6,7 +6,7 @@ import ClickIcon from "@/assets/icons/home/clickIcon";
 export default function MasterplanLotes() {
   const navigate = useNavigate();
   const handleSelectLote = (id) => {
-    navigate(`/masterplan/lotes/${id}/vista-360`);
+    navigate(`/masterplan/lotes/${id}/informacion`);
   };
 
   return (

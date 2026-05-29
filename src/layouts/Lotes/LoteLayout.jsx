@@ -11,12 +11,12 @@ const LOTE_MENU = [
     icon: ReturnIcon,
   },
   {
-    to: "vista-360",
-    label: "Vista 360°",
-  },
-  {
     to: "informacion",
     label: "Información",
+  },
+  {
+    to: "vista-360",
+    label: "Vista 360°",
   },
   {
     to: "/contacto",
