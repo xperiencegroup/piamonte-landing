@@ -7,6 +7,7 @@ import MapIcon from "@/assets/icons/ubicacion/MapIcon";
 import CloseIcon from "@/assets/icons/shared/closeIcon";
 import { useEffect } from "react";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import { AnimatePresence } from "motion/react";
 
 const DIRECCIONES_MONTERREY = [
   {
@@ -82,9 +83,24 @@ export default function InterfazComoLlegar() {
               return prev;
             });
           }}
-          className={`relative w-[clamp(97.42px,16.796875vw,215px)] h-full text-boton-grande text-cafe dark:text-nude uppercase after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-cafe dark:after:bg-amarillo hover:cursor-pointer ${activeOrigen === "monterrey" && "font-bold after:h-[2px]"} transition-all pointer-events-auto`}
+          className={`group relative flex justify-center items-center w-fit h-full gap-[2vw] px-[1vw] text-boton-grande text-cafe dark:text-nude uppercase after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-cafe dark:after:bg-amarillo hover:cursor-pointer ${activeOrigen === "monterrey" && "font-bold after:h-[2px]"} transition-all pointer-events-auto`}
         >
-          Desde monterrey
+          <span className="shrink-0">Desde monterrey</span>
+
+          <span
+            className={`grid transition-[grid-template-columns,opacity] duration-300 ease-out
+              ${
+                activeOrigen === "monterrey"
+                  ? "grid-cols-[1fr] opacity-100"
+                  : "grid-cols-[0fr] opacity-0 group-hover:grid-cols-[1fr] group-hover:opacity-100"
+              }`}
+          >
+            <span className="overflow-hidden text-[9px] lg:text-botton-ubicacion font-normal whitespace-nowrap">
+              Tiempo
+              <br />
+              <span className="font-medium lowercase">1 hr 30 min</span>
+            </span>
+          </span>
         </button>
 
         <button
@@ -94,9 +110,25 @@ export default function InterfazComoLlegar() {
               return prev;
             });
           }}
-          className={`relative w-[clamp(97.42px,16.796875vw,215px)] h-full text-boton-grande text-cafe dark:text-nude uppercase after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-cafe dark:after:bg-amarillo hover:cursor-pointer ${activeOrigen === "saltillo" && "font-bold after:h-[2px]"} transition-all pointer-events-auto`}
+          className={`group relative flex justify-center items-center w-fit h-full gap-[2vw] px-[1vw] text-boton-grande text-cafe dark:text-nude uppercase after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-cafe dark:after:bg-amarillo hover:cursor-pointer ${activeOrigen === "saltillo" && "font-bold after:h-[2px]"} transition-all pointer-events-auto`}
         >
-          Desde saltillo
+          <span className="shrink-0">Desde saltillo</span>
+
+          <span
+            className={`grid transition-[grid-template-columns,opacity] duration-300 ease-out
+              ${
+                activeOrigen === "saltillo"
+                  ? "grid-cols-[1fr] opacity-100"
+                  : "grid-cols-[0fr] opacity-0 group-hover:grid-cols-[1fr] group-hover:opacity-100"
+              }
+            `}
+          >
+            <span className="overflow-hidden text-[9px] lg:text-botton-ubicacion font-normal whitespace-nowrap">
+              Tiempo
+              <br />
+              <span className="font-medium lowercase">30 min</span>
+            </span>
+          </span>
         </button>
       </div>
 
