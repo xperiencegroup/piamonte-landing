@@ -547,52 +547,24 @@ export default function Actividades() {
           <AnimatePresence>
             {isOpen && (
               <>
-                {/* Flecha izquierda */}
-                <button
-                  onClick={scrollPrev}
-                  className="group absolute rotate-180 hover:cursor-pointer left-0"
-                  style={{ transform: "translateX(130%)" }}
-                >
-                  <RowIcon className="size-[clamp(12px,2.158594vw,27.63px)] text-gris dark:text-nude group-hover:text-cafe-claro dark:group-hover:text-amarillo" />
-                </button>
+                <div className="absolute flex justify-between items-center w-full h-[50px] max-w-[1280px] pointer-events-none">
+                  {/* Flecha izquierda */}
+                  <button
+                    onClick={scrollPrev}
+                    className="group rotate-180 hover:cursor-pointer pointer-events-auto"
+                  >
+                    <RowIcon className="size-[clamp(12px,2.158594vw,27.63px)] text-gris dark:text-nude group-hover:text-cafe-claro dark:group-hover:text-amarillo" />
+                  </button>
 
-                {/* Flecha derecha */}
-                <button
-                  onClick={scrollNext}
-                  className="group absolute right-0 hover:cursor-pointer"
-                  style={{ transform: "translateX(130%)" }}
-                >
-                  <RowIcon className="size-[clamp(12px,2.158594vw,27.63px)] text-gris dark:text-nude group-hover:text-cafe-claro dark:group-hover:text-amarillo" />
-                </button>
-              </>
-            )}
-          </AnimatePresence>
-
-          {/* Dots */}
-          <AnimatePresence>
-            {isOpen && (
-              <div className="absolute bottom-0 translate-y-full">
-                <div className="flex items-center gap-[clamp(6px,0.625vw,8px)]">
-                  {GROUPS.map((_, index) => (
-                    <motion.button
-                      key={index}
-                      onClick={() => emblaApi?.scrollTo(index)}
-                      animate={{
-                        width:
-                          activeSlide === index
-                            ? "clamp(27.19px,4.6875vw,60px)" // pill cuando activo
-                            : "clamp(11.26px,1.94140625vw,24.85px)", // círculo cuando inactivo
-                        backgroundColor:
-                          activeSlide === index
-                            ? "var(--color-verde-claro)"
-                            : "var(--color-verde)",
-                      }}
-                      transition={{ duration: 0.3, ease: [0.32, 0, 0.67, 0] }}
-                      className="h-[clamp(14.05px,2.470588vh,21px)] rounded-full hover:cursor-pointer"
-                    />
-                  ))}
+                  {/* Flecha derecha */}
+                  <button
+                    onClick={scrollNext}
+                    className="group right-0 hover:cursor-pointer pointer-events-auto"
+                  >
+                    <RowIcon className="size-[clamp(12px,2.158594vw,27.63px)] text-gris dark:text-nude group-hover:text-cafe-claro dark:group-hover:text-amarillo" />
+                  </button>
                 </div>
-              </div>
+              </>
             )}
           </AnimatePresence>
 
