@@ -612,13 +612,13 @@ export default function Actividades() {
                   duration: 0.5,
                   ease: [0.32, 0, 0.67, 0],
                 }}
-                className="flex flex-col w-[clamp(158.03px,27.265625vw,459px)] h-full text-center gap-[clamp(9.06px,1.5625vw,20px)]
+                className="flex flex-col w-[clamp(158.03px,30.265625vw,459px)] h-full text-center gap-[clamp(9.06px,1.5625vw,20px)]
 "
               >
                 <h3 className="text-activity-title text-cafe dark:text-amarillo font-lavolta leading-[120%] uppercase drop-shadow-md">
                   {selectedCard.label}
                 </h3>
-                <p className="text-[9px] font-medium md:text-paragraph whitespace-pre-line text-gris dark:text-nude leading-[125%]">
+                <p className="text-[9px] font-medium md:text-body-md whitespace-pre-line text-gris dark:text-nude leading-[120%]">
                   {selectedCard.description}
                 </p>
               </motion.div>

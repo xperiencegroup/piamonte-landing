@@ -20,7 +20,7 @@ const VENTAJAS = [
     id: 1,
     specialLabel: (
       <span>
-        Pinares de Rancho Viejo, <strong>Arteaga, Coahuila, México</strong>
+        Pinares de Rancho Viejo, <strong>Arteaga, Coahuila, MX</strong>
       </span>
     ),
     label: "Pinares de Rancho Viejo, Arteaga, Coahuila, México",
@@ -180,7 +180,7 @@ export default function Ventajas() {
           })}
         </div>
 
-        {/* Texto Ubicación */}
+        {/* Texto descriptivo */}
         <AnimatePresence mode="popLayout">
           {!isOpen && (
             <motion.div
@@ -202,7 +202,7 @@ export default function Ventajas() {
                 className={`text-gris dark:text-nude ${selectedCard.id === 1 ? "h-[clamp(12.23px,2.109375vw,27px)]" : "h-[clamp(7.7px,1.328125vw,17px)]"}`}
               />
 
-              <p className="text-paragraph font-medium text-gris dark:text-nude">
+              <p className="text-body-md font-medium leading-[120%] tracking-wide text-gris dark:text-nude">
                 {selectedCard.specialLabel ?? selectedCard.label}
               </p>
             </motion.div>
