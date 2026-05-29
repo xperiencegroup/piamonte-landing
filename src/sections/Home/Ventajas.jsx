@@ -2,10 +2,12 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import useResponsiveScale from "@/hooks/useResponsiveScale";
 
-import ubicacionImage from "@/assets/images/Nosotros/ventajas/ubicacion.jpg";
-import legalImage from "@/assets/images/Nosotros/ventajas/legal.jpg";
-import conectividadImage from "@/assets/images/Nosotros/ventajas/conectividad.jpg";
-import proyectoImage from "@/assets/images/Nosotros/ventajas/proyecto.jpg";
+import ubicacionImage from "@/assets/images/Nosotros/ventajas/ubicacion.png";
+import conectividadImage from "@/assets/images/Nosotros/ventajas/conectividad.png";
+import proyectoImage from "@/assets/images/Nosotros/ventajas/proyecto.png";
+import legalImage from "@/assets/images/Nosotros/ventajas/estructura-legal.png";
+
+// Recursos extras
 import PaperTear from "../../assets/images/Masterplan/AmenidadesInformacion/Papeles/paperTear.png";
 import ClickIcon from "@/assets/icons/home/clickIcon";
 
