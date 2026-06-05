@@ -57,6 +57,13 @@ export default function ComoLlegarMarkers() {
     east: -100.389,
     west: -100.89,
   };
+
+  //   const desdeMonterrey2Bounds = {
+  //   north: 26.084,
+  //   south: 24.974,
+  //   east: -99.555,
+  //   west: -101.67,
+  // };
   const desdeSaltilloBounds = {
     north: 25.485,
     south: 25.282,
