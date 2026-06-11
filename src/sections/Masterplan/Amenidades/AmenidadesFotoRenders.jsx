@@ -26,6 +26,11 @@ import noche_render6 from "@/assets/images/Masterplan/FotoRenders/noche/FOTO REN
 import noche_render7 from "@/assets/images/Masterplan/FotoRenders/noche/FOTO RENDERS NOCHE PIAMONTE 7.jpg";
 import noche_render8 from "@/assets/images/Masterplan/FotoRenders/noche/FOTO RENDERS NOCHE PIAMONTE 8.jpg";
 import noche_render9 from "@/assets/images/Masterplan/FotoRenders/noche/FOTO RENDERS NOCHE PIAMONTE 9.jpg";
+import noche_render10 from "@/assets/images/Masterplan/FotoRenders/noche/FOTO RENDERS NOCHE PIAMONTE 10.jpg";
+import noche_render11 from "@/assets/images/Masterplan/FotoRenders/noche/FOTO RENDERS NOCHE PIAMONTE 11.jpg";
+import noche_render12 from "@/assets/images/Masterplan/FotoRenders/noche/FOTO RENDERS NOCHE PIAMONTE 12.jpg";
+import noche_render13 from "@/assets/images/Masterplan/FotoRenders/noche/FOTO RENDERS NOCHE PIAMONTE 13.jpg";
+import noche_render14 from "@/assets/images/Masterplan/FotoRenders/noche/FOTO RENDERS NOCHE PIAMONTE 14.jpg";
 import useDarkMode from "@/hooks/useDarkMode";
 
 const DAY_CAROUSEL_IMAGES = [
@@ -55,6 +60,11 @@ const NIGHT_CAROUSEL_IMAGES = [
   noche_render7,
   noche_render8,
   noche_render9,
+  noche_render10,
+  noche_render11,
+  noche_render12,
+  noche_render13,
+  noche_render14,
 ];
 
 export default function AmenidadesFotoRenders() {
