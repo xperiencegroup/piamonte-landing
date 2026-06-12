@@ -2,10 +2,12 @@ import { useParams } from "react-router";
 import loteBackground from "@/assets/images/Masterplan/Lotes/loteInfoBackgound.jpg";
 import "@/assets/images/Masterplan/Lotes/lotes_vista_cenital/LOTE-01.jpg";
 import { LOTES } from "@/data/lotes";
+import clasificar from "@/utils/clasificarLotes";
 
 export default function LoteInformacion() {
   const { id } = useParams();
   const lote = LOTES.find((lote) => lote.id === Number(id));
+  const loteTipo = clasificar(lote.id);
 
   return (
     <>
@@ -34,34 +36,27 @@ export default function LoteInformacion() {
               />
             </div>
             <div className="flex shrink-0 w-fit justify-between items-center [@media(min-height:755px)]:w-full [@media(min-height:755px)]:h-[54px] [@media(max-height:755px)]:flex-col [@media(max-height:755px)]:justify-center [@media(max-height:755px)]:items-start h-full max-h-[534px] gap-1">
+              {/* Tipo de lote */}
+              <p className="max-lg:pb-1 text-cafe dark:text-nude text-paper uppercase leading-[100%]">
+                <span className="font-bold uppercase">Lote {loteTipo}</span>
+              </p>
+
               {/* ID de lote */}
               <p className="max-lg:pb-1 text-cafe dark:text-nude text-paper uppercase leading-[100%]">
                 <span className="font-bold">#Id de lote:</span>{" "}
                 <span>{lote.id}</span>
               </p>
 
-              {/* Metros cuadrados del lote */}
-              <p className="text-cafe dark:text-nude text-paper uppercase leading-[100%]">
-                <span className="font-bold">M2 del lote:</span>{" "}
-                <span>{lote.metros} M2</span>
-              </p>
-
               {/* Dimensiones */}
-              <p className="text-cafe dark:text-nude text-paper uppercase leading-[100%]">
+              <p className="text-cafe dark:text-nude text-paper leading-[100%]">
                 <span className="font-bold">Dimensiones:</span>{" "}
                 <span>{lote.dimensiones}</span>
               </p>
 
               {/* Precio por m2 */}
               <p className="text-cafe dark:text-nude text-paper uppercase leading-[100%]">
-                <span className="font-bold">$ Por m2:</span>{" "}
+                <span className="font-bold">Precio Por m2:</span>{" "}
                 <span>{lote.preciom2}</span>
-              </p>
-
-              {/* Precio total */}
-              <p className="text-cafe dark:text-nude text-paper uppercase leading-[100%]">
-                <span className="font-bold">Precio total: $:</span>{" "}
-                <span>{lote.precio}</span>
               </p>
             </div>
           </div>
