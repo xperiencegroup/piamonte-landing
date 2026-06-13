@@ -65,63 +65,6 @@ export default function CapaLotesMapped({ className = "", handleSelectLote }) {
           );
         })}
       </g>
-
-      {/* Cuadros con letras */}
-      <g>
-        <g id="clase-c" transform="translate(440,250) scale(1.258)">
-          <rect
-            strokeWidth="2"
-            width="45"
-            height="46"
-            className="fill-amarillo stroke-verde"
-          />
-          <text
-            x="22"
-            y="25"
-            textAnchor="middle"
-            dominantBaseline="middle"
-            className="text-[20px] font-bold fill-verde"
-          >
-            C
-          </text>
-        </g>
-
-        <g id="clase-b" transform="translate(935,250) scale(1.258)">
-          <rect
-            strokeWidth="2"
-            width="45"
-            height="46"
-            className="fill-azul stroke-verde"
-          />
-          <text
-            x="22"
-            y="25"
-            textAnchor="middle"
-            dominantBaseline="middle"
-            className="text-[20px] font-bold fill-verde"
-          >
-            B
-          </text>
-        </g>
-
-        <g id="clase-b" transform="translate(1285,250) scale(1.258)">
-          <rect
-            strokeWidth="2"
-            width="45"
-            height="46"
-            className="fill-nude stroke-verde"
-          />
-          <text
-            x="22"
-            y="25"
-            textAnchor="middle"
-            dominantBaseline="middle"
-            className="text-[20px] font-bold fill-verde"
-          >
-            A
-          </text>
-        </g>
-      </g>
     </svg>
   );
 }

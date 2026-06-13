@@ -49,8 +49,10 @@ export default function LoteInformacion() {
 
               {/* Dimensiones */}
               <p className="text-cafe dark:text-nude text-paper leading-[100%]">
-                <span className="font-bold">Dimensiones:</span>{" "}
-                <span>{lote.dimensiones}</span>
+                <span className="font-bold">Superficie:</span>{" "}
+                <span>
+                  {lote.superficie ?? 0} m<sup>2</sup>
+                </span>
               </p>
 
               {/* Precio por m2 */}
