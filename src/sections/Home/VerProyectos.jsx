@@ -12,7 +12,7 @@ export default function VerProyectos() {
   return (
     <div className="flex flex-col justify-center items-center w-full h-dvh gap-[15vh]">
       {/* Banner */}
-      <div className="flex w-[clamp(540.63px,67.578125vw,865px)] min-h-fit bg-verde-claro">
+      <div className="flex w-fit min-h-fit bg-verde-claro">
         <div className="flex flex-col justify-center items-center gap-1.5 lg:gap-[clamp(9.38px,1.171875vw,15px)] px-[clamp(18.75px,2.34375vw,30px)] py-2 lg:py-[clamp(30.63px,3.828125vw,49px)] bg-gris">
           <LogoPiamonte className="max-lg:w-35 text-white" />
           <p className="font-baskerville text-activity-category text-center leading-none text-amarillo">
@@ -34,14 +34,14 @@ export default function VerProyectos() {
           </p>
 
           {/*Tipos de Lotes */}
-          <div className="flex w-full justify-between">
+          <div className="flex w-full justify-between gap-4">
             {/* TIPO A */}
             <div className="flex flex-col px-[clamp(18px,2.34375vw,24px)] py-2 lg:py-[clamp(11.25px,1.464844vw,15px)] gap-[clamp(6px,0.78125vw,8px)] text-center border-2 border-verde bg-nude">
               <p className="text-boton-grande tracking-wider font-baskerville uppercase text-gris">
                 Tipo A
               </p>
               <p className="text-body-lg tracking-wider font-baskerville font-semibold text-gris">
-                300 m<sup>2</sup>
+                $300 MXN/m<sup>2</sup>
               </p>
             </div>
 
@@ -51,7 +51,7 @@ export default function VerProyectos() {
                 Tipo B
               </p>
               <p className="text-body-lg tracking-wider font-baskerville font-semibold text-gris">
-                450 m<sup>2</sup>
+                $450 MXN/m<sup>2</sup>
               </p>
             </div>
 
@@ -61,7 +61,7 @@ export default function VerProyectos() {
                 Tipo C
               </p>
               <p className="text-body-lg tracking-wider font-baskerville font-semibold text-gris">
-                600 m<sup>2</sup>
+                $600 MXN/m<sup>2</sup>
               </p>
             </div>
           </div>
