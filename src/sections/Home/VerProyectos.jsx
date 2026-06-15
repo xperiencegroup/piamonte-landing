@@ -34,34 +34,34 @@ export default function VerProyectos() {
           </p>
 
           {/*Tipos de Lotes */}
-          <div className="flex w-full justify-between gap-4">
+          <div className="flex w-full justify-between gap-[clamp(4.73px,0.833333vw,16px)]">
             {/* TIPO A */}
-            <div className="flex flex-col px-[clamp(18px,2.34375vw,24px)] py-2 lg:py-[clamp(11.25px,1.464844vw,15px)] gap-[clamp(6px,0.78125vw,8px)] text-center border-2 border-verde bg-nude">
+            <div className="flex flex-col px-[clamp(10px,2.34375vw,16px)] py-2 lg:py-[clamp(11.25px,1.464844vw,15px)] gap-[clamp(6px,0.78125vw,8px)] text-center border-2 border-verde bg-nude">
               <p className="text-boton-grande tracking-wider font-baskerville uppercase text-gris">
                 Tipo A
               </p>
               <p className="text-body-lg tracking-wider font-baskerville font-semibold text-gris">
-                $300 MXN/m<sup>2</sup>
+                $300/m<sup>2</sup>
               </p>
             </div>
 
             {/* TIPO B */}
-            <div className="flex flex-col px-[clamp(18px,2.34375vw,24px)] py-2 lg:py-[clamp(11.25px,1.464844vw,15px)] gap-[clamp(6px,0.78125vw,8px)] text-center border-2 border-verde bg-azul">
+            <div className="flex flex-col px-[clamp(10px,2.34375vw,16px)] py-2 lg:py-[clamp(11.25px,1.464844vw,15px)] gap-[clamp(6px,0.78125vw,8px)] text-center border-2 border-verde bg-azul">
               <p className="text-boton-grande tracking-wider font-baskerville uppercase text-gris">
                 Tipo B
               </p>
               <p className="text-body-lg tracking-wider font-baskerville font-semibold text-gris">
-                $450 MXN/m<sup>2</sup>
+                $450/m<sup>2</sup>
               </p>
             </div>
 
             {/* TIPO C */}
-            <div className="flex flex-col px-[clamp(18px,2.34375vw,24px)] py-2 lg:py-[clamp(11.25px,1.464844vw,15px)] gap-[clamp(6px,0.78125vw,8px)] text-center border-2 border-verde bg-amarillo">
+            <div className="flex flex-col px-[clamp(10px,2.34375vw,16px)] py-2 lg:py-[clamp(11.25px,1.464844vw,15px)] gap-[clamp(6px,0.78125vw,8px)] text-center border-2 border-verde bg-amarillo">
               <p className="text-boton-grande tracking-wider font-baskerville uppercase text-gris">
                 Tipo C
               </p>
               <p className="text-body-lg tracking-wider font-baskerville font-semibold text-gris">
-                $600 MXN/m<sup>2</sup>
+                $600/m<sup>2</sup>
               </p>
             </div>
           </div>
