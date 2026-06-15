@@ -27,7 +27,7 @@ export default function VerProyectos() {
             Tu lote, tu naturaleza.
           </p>
           <p className="text-heading-xl text-center font-baskerville text-nude">
-            Desde $850,000
+            Desde $850,00
           </p>
           <p className="text-boton text-center font-baskerville text-amarillo">
             MXN · Financiamiento disponible

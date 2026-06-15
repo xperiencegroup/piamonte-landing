@@ -14,7 +14,6 @@ const getImageById = (id) => {
 export const LOTES = [
   {
     id: 1,
-    metros: "180",
     imageSrc: getImageById(1),
     superficie: "1,344.95",
     dimensiones: "-- . --m",
@@ -23,7 +22,6 @@ export const LOTES = [
   },
   {
     id: 2,
-    metros: "195",
     imageSrc: getImageById(2),
     superficie: "1,264.71",
     dimensiones: "-- . --m",
@@ -32,7 +30,6 @@ export const LOTES = [
   },
   {
     id: 3,
-    metros: "210",
     imageSrc: getImageById(3),
     superficie: "1,255.18",
     dimensiones: "-- . --m",
@@ -41,7 +38,6 @@ export const LOTES = [
   },
   {
     id: 4,
-    metros: "175",
     imageSrc: getImageById(4),
     superficie: "1,374.55",
     dimensiones: "-- . --m",
@@ -50,7 +46,6 @@ export const LOTES = [
   },
   {
     id: 5,
-    metros: "220",
     imageSrc: getImageById(5),
     superficie: "1,244.19",
     dimensiones: "-- . --m",
@@ -59,7 +54,6 @@ export const LOTES = [
   },
   {
     id: 6,
-    metros: "200",
     imageSrc: getImageById(6),
     superficie: "1,222.94",
     dimensiones: "-- . --m",
@@ -68,7 +62,6 @@ export const LOTES = [
   },
   {
     id: 7,
-    metros: "185",
     imageSrc: getImageById(7),
     superficie: "1,500.46",
     dimensiones: "-- . --m",
@@ -77,7 +70,6 @@ export const LOTES = [
   },
   {
     id: 8,
-    metros: "230",
     imageSrc: getImageById(8),
     superficie: "1,331.89",
     dimensiones: "-- . --m",
@@ -86,7 +78,6 @@ export const LOTES = [
   },
   {
     id: 9,
-    metros: "240",
     imageSrc: getImageById(9),
     superficie: "1,301.28",
     dimensiones: "-- . --m",
@@ -95,7 +86,6 @@ export const LOTES = [
   },
   {
     id: 10,
-    metros: "190",
     imageSrc: getImageById(10),
     superficie: "1,319.23",
     dimensiones: "-- . --m",
@@ -104,7 +94,6 @@ export const LOTES = [
   },
   {
     id: 11,
-    metros: "205",
     imageSrc: getImageById(11),
     superficie: "1,221.73",
     dimensiones: "-- . --m",
@@ -113,7 +102,6 @@ export const LOTES = [
   },
   {
     id: 12,
-    metros: "215",
     imageSrc: getImageById(12),
     superficie: "1,280.81",
     dimensiones: "-- . --m",
@@ -122,7 +110,6 @@ export const LOTES = [
   },
   {
     id: 13,
-    metros: "225",
     imageSrc: getImageById(13),
     superficie: "1,280.83",
     dimensiones: "-- . --m",
@@ -131,7 +118,6 @@ export const LOTES = [
   },
   {
     id: 14,
-    metros: "235",
     imageSrc: getImageById(14),
     superficie: "1,263.98",
     dimensiones: "-- . --m",
@@ -140,7 +126,6 @@ export const LOTES = [
   },
   {
     id: 15,
-    metros: "245",
     imageSrc: getImageById(15),
     superficie: "1,388.33",
     dimensiones: "-- . --m",
@@ -149,7 +134,6 @@ export const LOTES = [
   },
   {
     id: 16,
-    metros: "255",
     imageSrc: getImageById(16),
     superficie: "1,387.34",
     dimensiones: "-- . --m",
@@ -158,7 +142,6 @@ export const LOTES = [
   },
   {
     id: 17,
-    metros: "265",
     imageSrc: getImageById(17),
     superficie: "1,384.59",
     dimensiones: "-- . --m",
@@ -167,7 +150,6 @@ export const LOTES = [
   },
   {
     id: 18,
-    metros: "275",
     imageSrc: getImageById(18),
     superficie: "1,244.45",
     dimensiones: "-- . --m",
@@ -176,7 +158,6 @@ export const LOTES = [
   },
   {
     id: 19,
-    metros: "285",
     imageSrc: getImageById(19),
     superficie: "1,257.08",
     dimensiones: "-- . --m",
@@ -185,7 +166,6 @@ export const LOTES = [
   },
   {
     id: 20,
-    metros: "295",
     imageSrc: getImageById(20),
     superficie: "1,212.73",
     dimensiones: "-- . --m",
@@ -194,7 +174,6 @@ export const LOTES = [
   },
   {
     id: 21,
-    metros: "180",
     imageSrc: getImageById(21),
     superficie: "1,236.28",
     dimensiones: "-- . --m",
@@ -203,7 +182,6 @@ export const LOTES = [
   },
   {
     id: 22,
-    metros: "190",
     imageSrc: getImageById(22),
     superficie: "1,370.70",
     dimensiones: "-- . --m",
@@ -212,7 +190,6 @@ export const LOTES = [
   },
   {
     id: 23,
-    metros: "200",
     imageSrc: getImageById(23),
     superficie: "1,347.61",
     dimensiones: "-- . --m",
@@ -221,7 +198,6 @@ export const LOTES = [
   },
   {
     id: 24,
-    metros: "210",
     imageSrc: getImageById(24),
     superficie: "1,218.08",
     dimensiones: "-- . --m",
@@ -230,7 +206,6 @@ export const LOTES = [
   },
   {
     id: 25,
-    metros: "220",
     imageSrc: getImageById(25),
     superficie: "1,214.92",
     dimensiones: "-- . --m",
@@ -239,7 +214,6 @@ export const LOTES = [
   },
   {
     id: 26,
-    metros: "230",
     imageSrc: getImageById(26),
     superficie: "1,218.75",
     dimensiones: "-- . --m",
@@ -248,7 +222,6 @@ export const LOTES = [
   },
   {
     id: 27,
-    metros: "240",
     imageSrc: getImageById(27),
     superficie: "1,214.11",
     dimensiones: "-- . --m",
@@ -257,7 +230,6 @@ export const LOTES = [
   },
   {
     id: 28,
-    metros: "250",
     imageSrc: getImageById(28),
     superficie: "1,314.43",
     dimensiones: "-- . --m",
@@ -266,7 +238,6 @@ export const LOTES = [
   },
   {
     id: 29,
-    metros: "260",
     imageSrc: getImageById(29),
     superficie: "1,452.52",
     dimensiones: "-- . --m",
@@ -275,7 +246,6 @@ export const LOTES = [
   },
   {
     id: 30,
-    metros: "270",
     imageSrc: getImageById(30),
     superficie: "1,230.47",
     dimensiones: "-- . --m",
@@ -284,7 +254,6 @@ export const LOTES = [
   },
   {
     id: 31,
-    metros: "280",
     imageSrc: getImageById(31),
     superficie: "1,231.58",
     dimensiones: "-- . --m",
@@ -293,7 +262,6 @@ export const LOTES = [
   },
   {
     id: 32,
-    metros: "290",
     imageSrc: getImageById(32),
     superficie: "1,211.43",
     dimensiones: "-- . --m",
@@ -302,7 +270,6 @@ export const LOTES = [
   },
   {
     id: 33,
-    metros: "300",
     imageSrc: getImageById(33),
     superficie: "1,262.92",
     dimensiones: "-- . --m",
@@ -311,7 +278,6 @@ export const LOTES = [
   },
   {
     id: 34,
-    metros: "310",
     imageSrc: getImageById(34),
     superficie: "1,204.79",
     dimensiones: "-- . --m",
@@ -320,7 +286,6 @@ export const LOTES = [
   },
   {
     id: 35,
-    metros: "320",
     imageSrc: getImageById(35),
     superficie: "1,476.51",
     dimensiones: "-- . --m",
@@ -329,7 +294,6 @@ export const LOTES = [
   },
   {
     id: 36,
-    metros: "330",
     imageSrc: getImageById(36),
     superficie: "1,614.53",
     dimensiones: "-- . --m",
@@ -338,7 +302,6 @@ export const LOTES = [
   },
   {
     id: 37,
-    metros: "340",
     imageSrc: getImageById(37),
     superficie: "1,395.76",
     dimensiones: "-- . --m",
@@ -347,7 +310,6 @@ export const LOTES = [
   },
   {
     id: 38,
-    metros: "350",
     imageSrc: getImageById(38),
     superficie: "1,395.76",
     dimensiones: "-- . --m",
@@ -356,7 +318,6 @@ export const LOTES = [
   },
   {
     id: 39,
-    metros: "360",
     imageSrc: getImageById(39),
     superficie: "1,395.76",
     dimensiones: "-- . --m",
@@ -365,7 +326,6 @@ export const LOTES = [
   },
   {
     id: 40,
-    metros: "370",
     imageSrc: getImageById(40),
     superficie: "1,237.70",
     dimensiones: "-- . --m",
@@ -374,7 +334,6 @@ export const LOTES = [
   },
   {
     id: 41,
-    metros: "370",
     imageSrc: getImageById(41),
     superficie: "1,203.38",
     dimensiones: "-- . --m",
@@ -383,7 +342,6 @@ export const LOTES = [
   },
   {
     id: 42,
-    metros: "370",
     imageSrc: getImageById(42),
     superficie: "1,245.12",
     dimensiones: "-- . --m",
@@ -392,7 +350,6 @@ export const LOTES = [
   },
   {
     id: 43,
-    metros: "370",
     imageSrc: getImageById(43),
     superficie: "1,244.24",
     dimensiones: "-- . --m",
@@ -401,7 +358,6 @@ export const LOTES = [
   },
   {
     id: 44,
-    metros: "370",
     imageSrc: getImageById(44),
     superficie: "1,243.86",
     dimensiones: "-- . --m",
@@ -410,7 +366,6 @@ export const LOTES = [
   },
   {
     id: 45,
-    metros: "370",
     imageSrc: getImageById(45),
     superficie: "1,957.15",
     dimensiones: "-- . --m",
@@ -419,7 +374,6 @@ export const LOTES = [
   },
   {
     id: 46,
-    metros: "370",
     imageSrc: getImageById(46),
     superficie: "1,674.89",
     dimensiones: "-- . --m",
@@ -428,7 +382,6 @@ export const LOTES = [
   },
   {
     id: 47,
-    metros: "370",
     imageSrc: getImageById(47),
     superficie: "1,237.44",
     dimensiones: "-- . --m",
@@ -437,7 +390,6 @@ export const LOTES = [
   },
   {
     id: 48,
-    metros: "370",
     imageSrc: getImageById(48),
     superficie: "1,237.82",
     dimensiones: "-- . --m",
@@ -446,7 +398,6 @@ export const LOTES = [
   },
   {
     id: 49,
-    metros: "370",
     imageSrc: getImageById(49),
     superficie: "1,245.26",
     dimensiones: "-- . --m",
@@ -455,7 +406,6 @@ export const LOTES = [
   },
   {
     id: 50,
-    metros: "370",
     imageSrc: getImageById(50),
     superficie: "1,374.45",
     dimensiones: "-- . --m",
@@ -464,7 +414,6 @@ export const LOTES = [
   },
   {
     id: 51,
-    metros: "370",
     imageSrc: getImageById(51),
     superficie: "1,462.84",
     dimensiones: "-- . --m",
@@ -473,7 +422,6 @@ export const LOTES = [
   },
   {
     id: 52,
-    metros: "370",
     imageSrc: getImageById(52),
     superficie: "1,298.50",
     dimensiones: "-- . --m",
@@ -482,7 +430,6 @@ export const LOTES = [
   },
   {
     id: 53,
-    metros: "370",
     imageSrc: getImageById(53),
     superficie: "1,296.40",
     dimensiones: "-- . --m",
@@ -491,7 +438,6 @@ export const LOTES = [
   },
   {
     id: 54,
-    metros: "370",
     imageSrc: getImageById(54),
     superficie: "1,675.25",
     dimensiones: "-- . --m",
@@ -500,7 +446,6 @@ export const LOTES = [
   },
   {
     id: 55,
-    metros: "370",
     imageSrc: getImageById(55),
     superficie: "1,857.99",
     dimensiones: "-- . --m",
@@ -509,7 +454,6 @@ export const LOTES = [
   },
   {
     id: 56,
-    metros: "370",
     imageSrc: getImageById(56),
     superficie: "1,200.46",
     dimensiones: "-- . --m",
@@ -518,7 +462,6 @@ export const LOTES = [
   },
   {
     id: 57,
-    metros: "370",
     imageSrc: getImageById(57),
     superficie: "1,200.30",
     dimensiones: "-- . --m",
@@ -527,7 +470,6 @@ export const LOTES = [
   },
   {
     id: 58,
-    metros: "370",
     imageSrc: getImageById(58),
     superficie: "1,200.56",
     dimensiones: "-- . --m",
@@ -536,7 +478,6 @@ export const LOTES = [
   },
   {
     id: 59,
-    metros: "370",
     imageSrc: getImageById(59),
     superficie: "1,200.48",
     dimensiones: "-- . --m",
@@ -545,7 +486,6 @@ export const LOTES = [
   },
   {
     id: 60,
-    metros: "370",
     imageSrc: getImageById(60),
     superficie: "1,714.16",
     dimensiones: "-- . --m",
@@ -554,7 +494,6 @@ export const LOTES = [
   },
   {
     id: 61,
-    metros: "370",
     imageSrc: getImageById(61),
     superficie: "1,770.13",
     dimensiones: "-- . --m",
@@ -563,7 +502,6 @@ export const LOTES = [
   },
   {
     id: 62,
-    metros: "370",
     imageSrc: getImageById(62),
     superficie: "1,577.41",
     dimensiones: "-- . --m",
@@ -572,7 +510,6 @@ export const LOTES = [
   },
   {
     id: 63,
-    metros: "370",
     imageSrc: getImageById(63),
     superficie: "1,200.20",
     dimensiones: "-- . --m",
@@ -581,7 +518,6 @@ export const LOTES = [
   },
   {
     id: 64,
-    metros: "370",
     imageSrc: getImageById(64),
     superficie: "1,200.55",
     dimensiones: "-- . --m",
@@ -590,7 +526,6 @@ export const LOTES = [
   },
   {
     id: 65,
-    metros: "370",
     imageSrc: getImageById(65),
     superficie: "1,200.66",
     dimensiones: "-- . --m",
@@ -599,7 +534,6 @@ export const LOTES = [
   },
   {
     id: 66,
-    metros: "370",
     imageSrc: getImageById(66),
     superficie: "1,200.78",
     dimensiones: "-- . --m",
@@ -608,7 +542,6 @@ export const LOTES = [
   },
   {
     id: 67,
-    metros: "370",
     imageSrc: getImageById(67),
     superficie: "1,200.89",
     dimensiones: "-- . --m",
@@ -617,7 +550,6 @@ export const LOTES = [
   },
   {
     id: 68,
-    metros: "370",
     imageSrc: getImageById(68),
     superficie: "1,201.00",
     dimensiones: "-- . --m",
@@ -626,7 +558,6 @@ export const LOTES = [
   },
   {
     id: 69,
-    metros: "370",
     imageSrc: getImageById(69),
     superficie: "1,415.34",
     dimensiones: "-- . --m",
@@ -635,7 +566,6 @@ export const LOTES = [
   },
   {
     id: 70,
-    metros: "370",
     imageSrc: getImageById(70),
     superficie: "2,052.52",
     dimensiones: "-- . --m",
@@ -644,7 +574,6 @@ export const LOTES = [
   },
   {
     id: 71,
-    metros: "370",
     imageSrc: getImageById(71),
     superficie: "1,592.93",
     dimensiones: "-- . --m",
@@ -653,7 +582,6 @@ export const LOTES = [
   },
   {
     id: 72,
-    metros: "370",
     imageSrc: getImageById(72),
     superficie: "1,343.25",
     dimensiones: "-- . --m",
@@ -662,7 +590,6 @@ export const LOTES = [
   },
   {
     id: 73,
-    metros: "370",
     imageSrc: getImageById(73),
     superficie: "1,408.66",
     dimensiones: "-- . --m",
@@ -671,7 +598,6 @@ export const LOTES = [
   },
   {
     id: 74,
-    metros: "370",
     imageSrc: getImageById(74),
     superficie: "1,425.64",
     dimensiones: "-- . --m",
@@ -680,7 +606,6 @@ export const LOTES = [
   },
   {
     id: 75,
-    metros: "370",
     imageSrc: getImageById(75),
     superficie: "1,379.96",
     dimensiones: "-- . --m",
@@ -689,7 +614,6 @@ export const LOTES = [
   },
   {
     id: 76,
-    metros: "370",
     imageSrc: getImageById(76),
     superficie: "1,677.85",
     dimensiones: "-- . --m",
@@ -698,7 +622,6 @@ export const LOTES = [
   },
   {
     id: 77,
-    metros: "370",
     imageSrc: getImageById(77),
     superficie: "1,671.01",
     dimensiones: "-- . --m",
