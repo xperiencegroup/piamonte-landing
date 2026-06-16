@@ -1,18 +1,22 @@
+import { useState } from "react";
+import { useSearchParams } from "react-router";
 import InstagramIcon from "@/assets/icons/contact/InstagramIcon";
 import SendIcon from "@/assets/icons/contact/SendIcon";
 import PaperBackground from "@/assets/images/Contacto/paperBackground.svg";
 import XperienceLogo from "../assets/icons/xperienceGroup/logo.svg";
-import { useSearchParams } from "react-router";
+import toast from "react-hot-toast";
 
 export default function Contacto() {
   const [searchParams] = useSearchParams();
   const loteId = searchParams.get("lote");
+  const [isSending, setIsSending] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isSending) return;
 
+    setIsSending(true);
     const formData = new FormData(e.target);
-
     const data = Object.fromEntries(formData.entries());
 
     try {
@@ -30,10 +34,14 @@ export default function Contacto() {
       const result = await response.json();
 
       if (result.success) {
-        alert("Correo enviado");
+        toast.success("Correo enviado");
+        e.target.reset();
       }
     } catch (error) {
       console.error(error);
+      toast.error("Error al enviar, intenta de nuevo");
+    } finally {
+      setIsSending(false);
     }
   };
 
@@ -86,19 +94,19 @@ export default function Contacto() {
                   Redes Sociales
                 </h3>
 
-                <div className="flex gap-2">
-                  <a
-                    href={"https://www.instagram.com/piamonteresidencial"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="size-[clamp(12px,2.03125vw,26px)]"
-                  >
+                <a
+                  href={"https://www.instagram.com/piamonteresidencial"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex gap-2"
+                >
+                  <span className="size-[clamp(12px,2.03125vw,26px)]">
                     <InstagramIcon className="w-full h-full text-verde dark:text-amarillo" />
-                  </a>
-                  <p className="text-paragraph leading-[130%]">
+                  </span>
+                  <span className="text-paragraph leading-[130%]">
                     @piamonteresidencial
-                  </p>
-                </div>
+                  </span>
+                </a>
               </div>
             </div>
           </div>
@@ -187,13 +195,14 @@ export default function Contacto() {
 
               <button
                 type="submit"
-                className="flex self-end justify-center items-center gap-[clamp(4px,0.78125vw,10px)] lg:p-[clamp(7px,1.25vw,16px)] hover:cursor-pointer"
+                disabled={isSending}
+                className="flex self-end justify-center items-center gap-[clamp(4px,0.78125vw,10px)] lg:p-[clamp(7px,1.25vw,16px)] cursor-pointer disabled:opacity-40 disabled:cursor-progress transition-opacity duration-300"
               >
                 <span className="flex justify-center items-center size-[clamp(11px,1.875vw,24px)]">
                   <SendIcon className="w-[clamp(8px,1.464844vw,18.75px)] h-[clamp(9px,1.640625vw,21px)] text-gris" />
                 </span>
                 <span className="text-boton-normal text-gris uppercase">
-                  Enviar
+                  {isSending ? "Enviando..." : "Enviar"}
                 </span>
               </button>
             </form>

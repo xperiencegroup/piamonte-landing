@@ -18,12 +18,14 @@ import LoteLayout from "@/layouts/Lotes/LoteLayout";
 import LoteVista360 from "@/sections/Masterplan/Lotes/LoteVista360";
 import LoteInformacion from "@/sections/Masterplan/Lotes/LoteInformacion";
 import { ScrollToTop } from "@/components/layouts/components/ScrollToTop";
+import { Toaster } from "react-hot-toast";
 
 export default function Router() {
   return (
     <VideoPlayerProvider>
       <BrowserRouter basename="/">
         <ScrollToTop />
+        <Toaster position="top-center" />
         <Routes>
           <Route element={<VideoComponentLayout />}>
             <Route element={<MainLayout />}>
