@@ -36,6 +36,8 @@ export default function Contacto() {
       if (result.success) {
         toast.success("Correo enviado");
         e.target.reset();
+      } else {
+        toast.error("Error al enviar, intenta de nuevo");
       }
     } catch (error) {
       console.error(error);
