@@ -23,7 +23,7 @@ export default function Wellness() {
         {/* Content */}
         <div className="relative flex flex-col w-full h-full justify-center items-center gap-1.5 lg:gap-[clamp(7px,1.25vw,16px)] max-lg:py-3">
           {/* Title */}
-          <div className="flex absolute top-0 -translate-y-[85%] w-[clamp(249.22px,42.96875vw,550px)] h-[clamp(41.22px,7.109375vw,91px)] justify-center items-center portrait:w-[clamp(140px,12.65625vw,162px)] portrait:h-[clamp(55px,5vw,64px)]">
+          <div className="flex absolute top-0 -translate-y-[105%] w-[clamp(249.22px,42.96875vw,550px)] h-[clamp(41.22px,7.109375vw,91px)] justify-center items-center portrait:w-[clamp(140px,12.65625vw,162px)] portrait:h-[clamp(55px,5vw,64px)]">
             <img
               src={PaperTitle}
               alt="Imagen de titulo de carta"
@@ -56,8 +56,8 @@ export default function Wellness() {
 
           <br />
 
-          <p className="text-frase text-center font-selinea leading-[50%] text-verde">
-            Un entorno diseñado para conectar y florecer en comunidad
+          <p className="w-[80%] text-lavolta-title text-center font-lavolta leading-none text-verde uppercase">
+            Un entorno disenado para conectar y florecer en comunidad
           </p>
         </div>
       </div>

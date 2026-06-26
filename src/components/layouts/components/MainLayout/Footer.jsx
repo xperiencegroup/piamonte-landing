@@ -3,6 +3,7 @@ import Isotipo from "@/assets/icons/main/Isotipo";
 import InstagramIcon from "@/assets/icons/shared/instagramIcon";
 import PhoneIcon from "@/assets/icons/shared/phoneIcon";
 import WhatsappIcon from "@/assets/icons/shared/whatsappIcon";
+import XperienceDeveloped from "@/assets/icons/shared/XperienceDeveloped";
 import LogoPiamonte from "@/assets/logos/main/LogoPiamonte";
 
 export default function Footer() {
@@ -41,14 +42,7 @@ export default function Footer() {
             </a>
 
             {/* Coordernadas */}
-            <a
-              href="https://maps.google.com/?q=25.32980262256113,-100.79694551307698"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-[clamp(113.28px,19.53125vw,250px)] text-center text-paper font-bold"
-            >
-              25°19'54.5"N 100°47'48.3"W
-            </a>
+            <XperienceDeveloped className="pt-[2vh] w-[clamp(80.34px,7.291667vw,140px)]" />
 
             {/* Número */}
             <p className="w-[clamp(113.28px,19.53125vw,250px)] text-center text-paper font-bold">
