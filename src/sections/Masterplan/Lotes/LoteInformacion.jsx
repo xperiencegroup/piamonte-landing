@@ -4,17 +4,10 @@ import "@/assets/images/Masterplan/Lotes/lotes_vista_cenital/LOTE-01.jpg";
 import { LOTES } from "@/data/lotes";
 import clasificar from "@/utils/clasificarLotes";
 
-const LOTE_PRECIOS = {
-  A: "300",
-  B: "450",
-  C: "600",
-};
-
 export default function LoteInformacion() {
   const { id } = useParams();
   const lote = LOTES.find((lote) => lote.id === Number(id));
   const loteTipo = clasificar(lote.id);
-  const lotePrecio = LOTE_PRECIOS[loteTipo];
 
   return (
     <>
@@ -41,7 +34,7 @@ export default function LoteInformacion() {
               className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
-          <div className="flex shrink-0 w-fit justify-between items-center [@media(min-height:755px)]:w-full [@media(min-height:755px)]:h-[54px] [@media(max-height:755px)]:flex-col [@media(max-height:755px)]:justify-center [@media(max-height:755px)]:items-start h-full max-h-[534px] gap-1">
+          <div className="flex shrink-0 w-fit justify-around items-center [@media(min-height:755px)]:w-full [@media(min-height:755px)]:h-[54px] [@media(max-height:755px)]:flex-col [@media(max-height:755px)]:justify-center [@media(max-height:755px)]:items-start h-full max-h-[534px] gap-1">
             {/* Tipo de lote */}
             <p className="max-lg:pb-1 text-cafe dark:text-nude text-paper uppercase leading-[100%]">
               <span className="font-bold uppercase">Lote {loteTipo}</span>
@@ -59,12 +52,6 @@ export default function LoteInformacion() {
               <span>
                 {lote.superficie ?? 0} m<sup>2</sup>
               </span>
-            </p>
-
-            {/* Precio por m2 */}
-            <p className="text-cafe dark:text-nude text-paper uppercase leading-[100%]">
-              <span className="font-bold">Precio Por m2:</span>{" "}
-              <span>${lotePrecio} MXN</span>
             </p>
           </div>
         </div>
