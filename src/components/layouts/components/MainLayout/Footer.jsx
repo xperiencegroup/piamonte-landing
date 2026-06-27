@@ -42,7 +42,7 @@ export default function Footer() {
             </a>
 
             {/* Coordernadas */}
-            <XperienceDeveloped className="pt-[2vh] w-[clamp(80.34px,7.291667vw,140px)]" />
+            <XperienceDeveloped className="text-verde dark:text-nude pt-[2vh] w-[clamp(80.34px,7.291667vw,140px)]" />
 
             {/* Número */}
             <p className="w-[clamp(113.28px,19.53125vw,250px)] text-center text-paper font-bold">

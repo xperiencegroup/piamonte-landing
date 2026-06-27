@@ -28,7 +28,7 @@ export default function Socios() {
               alt="Imagen de titulo de carta"
               className="absolute inset-0 w-full h-full"
             />
-            <p className="relative text-lavolta-title portrait:text-[clamp(19.31px,8.533333vw,32px)] font-lavolta text-cafe whitespace-nowrap">
+            <p className="relative text-lavolta-title portrait:text-[clamp(19.31px,8.533333vw,32px)] font-lavolta text-cafe whitespace-nowrap uppercase">
               Socios
             </p>
           </div>

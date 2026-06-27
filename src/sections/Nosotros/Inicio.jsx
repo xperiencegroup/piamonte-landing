@@ -22,13 +22,13 @@ export default function NosotrosInicio() {
         {/* Content */}
         <div className="relative flex flex-col w-full h-full justify-center items-center gap-1.5 lg:gap-[clamp(7px,1.25vw,16px)] max-lg:py-6">
           {/* Title */}
-          <div className="flex absolute top-0 portrait:-translate-y-[115%]  -translate-y-[65%] w-[clamp(81.56px,14.0625vw,180px)] h-[clamp(31.72px,5.46875vw,70px)] justify-center items-center portrait:w-[clamp(140px,12.65625vw,162px)] portrait:h-[clamp(55px,5vw,64px)]">
+          <div className="flex absolute top-0 portrait:-translate-y-[115%]  -translate-y-[65%] w-[clamp(91.56px,15.0625vw,210px)] h-[clamp(31.72px,5.46875vw,70px)] justify-center items-center portrait:w-[clamp(140px,12.65625vw,162px)] portrait:h-[clamp(55px,5vw,64px)]">
             <img
               src={PaperTitle}
               alt="Imagen de titulo de carta"
               className="absolute inset-0 w-full h-full"
             />
-            <p className="relative text-lavolta-title portrait:text-[clamp(19.31px,8.533333vw,32px)] font-lavolta text-cafe whitespace-nowrap">
+            <p className="relative text-lavolta-title portrait:text-[clamp(19.31px,8.533333vw,32px)] font-lavolta text-cafe whitespace-nowrap uppercase">
               Nosotros
             </p>
           </div>
