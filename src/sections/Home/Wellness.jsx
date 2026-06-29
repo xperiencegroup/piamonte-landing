@@ -5,7 +5,7 @@ import wellnessTitle from "@/assets/texts/home/wellnessTitle.svg";
 
 export default function Wellness() {
   return (
-    <div className="relative flex flex-col w-full h-dvh justify-center items-center overflow-hidden">
+    <div className="relative flex flex-col w-full h-lvh justify-center items-center overflow-hidden">
       <div className="relative portrait:w-full portrait:h-[clamp(422px,70.78vh,1323.65px)] w-[clamp(478px,84.0625vw,1076px)] h-fit lg:h-[clamp(140px,28.5vw,387px)] lg:h-[clamp(176px,31.015625vw,397px)]">
         {/* Image */}
         <img

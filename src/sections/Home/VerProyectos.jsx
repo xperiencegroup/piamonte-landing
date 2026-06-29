@@ -10,7 +10,7 @@ export default function VerProyectos() {
   const { mode } = useContext(VideoPlayerContext);
 
   return (
-    <div className="flex flex-col justify-center items-center w-full h-dvh gap-[15vh]">
+    <div className="flex flex-col justify-center items-center w-full h-lvh gap-[15vh]">
       {/* Banner */}
       <div className="flex w-fit min-h-fit bg-verde-claro">
         <div className="flex flex-col justify-center items-center gap-1.5 lg:gap-[clamp(9.38px,1.171875vw,15px)] px-[clamp(18.75px,2.34375vw,30px)] py-2 lg:py-[clamp(30.63px,3.828125vw,49px)] bg-gris">

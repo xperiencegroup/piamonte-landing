@@ -4,7 +4,7 @@ import PaperBackground from "@/assets/images/Nosotros/paperBackground.svg";
 
 export default function NosotrosInicio() {
   return (
-    <div className="relative flex flex-col w-full h-dvh justify-center items-center overflow-hidden">
+    <div className="relative flex flex-col w-full h-lvh justify-center items-center overflow-hidden">
       <div className="relative portrait:w-[80%] portrait:h-[320px] w-[clamp(478px,84.0625vw,1076px)] h-fit lg:h-[clamp(163.13px,28.125vw,360px)]">
         {/* Image */}
         <img

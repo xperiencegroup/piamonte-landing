@@ -3,7 +3,7 @@ import frase from "@/assets/logos/main/FraseInicio.svg";
 
 export default function Inicio() {
   return (
-    <div className="flex justify-center items-center w-full h-dvh">
+    <div className="flex justify-center items-center w-full h-lvh">
       <div className="flex lg:flex-col lg:items-center gap-[clamp(14px,2.5vw,32px)]">
         <div className="flex flex-col items-center gap-[clamp(11.33px,1.953125vw,25px)]">
           {/* Frase */}

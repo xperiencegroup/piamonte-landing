@@ -66,7 +66,7 @@ export default function Ventajas() {
 
   const SelectedTitleImage = selectedCard.titleImage;
   return (
-    <div className="relative flex w-full h-dvh justify-center items-center">
+    <div className="relative flex w-full h-lvh justify-center items-center">
       <div
         onClick={() => {
           if (!isOpen) setIsOpen(true);

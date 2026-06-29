@@ -74,10 +74,10 @@ export default function SplashScreen() {
     <>
       {/* Background */}
       <motion.div
-        className="relative w-full h-dvh"
+        className="relative w-full h-lvh"
         style={{ zIndex: splashZIndex }}
       >
-        <motion.div className="relative w-full h-dvh bg-verde dark:bg-nude pointer-events-none">
+        <motion.div className="relative w-full h-lvh bg-verde dark:bg-nude pointer-events-none">
           {/* Linea decortativa */}
           <motion.div
             className="w-[clamp(1px,0.15625vw,2px)] h-[clamp(40px,11vw,200px)] lg:h-[clamp(107px,18.75vw,240px)] bg-nude dark:bg-verde"

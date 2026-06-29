@@ -6,9 +6,9 @@ import Wellness from "@/sections/Home/Wellness";
 
 export default function Home() {
   return (
-    <main className="relative w-full">
+    <main className="relative w-full h-full">
       {/* Overlay */}
-      <div className="fixed w-full h-dvh -z-10 bg-linear-to-b from-nude/85 via-nude/75 via-30% to-nude/55 dark:from-gris/95 dark:via-gris/90 dark:via-30% dark:to-gris/65" />
+      <div className="fixed w-full h-full -z-10 bg-linear-to-b from-nude/85 via-nude/75 via-30% to-nude/55 dark:from-gris/95 dark:via-gris/90 dark:via-30% dark:to-gris/65" />
 
       {/* SplashScreen */}
       <SplashScreen />
